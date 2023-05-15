@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le : lun. 15 mai 2023 à 13:07
--- Version du serveur : 8.0.31
--- Version de PHP : 8.0.26
+-- Hôte : localhost
+-- Généré le : lun. 15 mai 2023 à 17:53
+-- Version du serveur :  10.3.38-MariaDB-0+deb10u1
+-- Version de PHP : 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,33 +19,31 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `coupe_de_rugby_2023`
+-- Base de données : `esin`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `equipe`
+-- Structure de la table `equipes`
 --
 
-DROP TABLE IF EXISTS `equipe`;
-CREATE TABLE IF NOT EXISTS `equipe` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `embleme` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `Classement_Mondial` int NOT NULL,
-  `Pays` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `equipes` (
+  `id` int(11) NOT NULL,
+  `embleme` varchar(255) NOT NULL,
+  `classement_mondial` int(11) NOT NULL,
+  `pays` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Déchargement des données de la table `equipe`
+-- Déchargement des données de la table `equipes`
 --
 
-INSERT INTO `equipe` (`id`, `embleme`, `Classement_Mondial`, `Pays`) VALUES
+INSERT INTO `equipes` (`id`, `embleme`, `classement_mondial`, `pays`) VALUES
 (1, 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg/langfr-225px-Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg.png', 2, 'France'),
-(2, 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/250px-Flag_of_New_Zealand.svg.png', 3, 'Nouvelle-Zélande'),
-(3, 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Italy_%282003%E2%80%932006%29.svg/220px-Flag_of_Italy_%282003%E2%80%932006%29.svg.png', 14, 'Italie'),
-(4, 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Flag_of_Namibia.svg/langfr-225px-Flag_of_Namibia.svg.png', 21, 'Namibie'),
+(2, 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Italy_%282003%E2%80%932006%29.svg/220px-Flag_of_Italy_%282003%E2%80%932006%29.svg.png', 14, 'Italie'),
+(3, 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Flag_of_Namibia.svg/langfr-225px-Flag_of_Namibia.svg.png', 21, 'Namibie'),
+(4, 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/250px-Flag_of_New_Zealand.svg.png', 3, 'Nouvelle-Zélande'),
 (5, 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/langfr-225px-Flag_of_Uruguay.svg.png', 17, 'Uruguay'),
 (6, 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Flag_of_South_Africa.svg/langfr-225px-Flag_of_South_Africa.svg.png', 4, 'Afrique du Sud'),
 (7, 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_Scotland.svg/langfr-225px-Flag_of_Scotland.svg.png', 5, 'Ecosse'),
@@ -68,21 +67,18 @@ INSERT INTO `equipe` (`id`, `embleme`, `Classement_Mondial`, `Pays`) VALUES
 -- Structure de la table `joueurs`
 --
 
-DROP TABLE IF EXISTS `joueurs`;
-CREATE TABLE IF NOT EXISTS `joueurs` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `poste` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `pays_id` int NOT NULL,
-  `club` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `age` int NOT NULL,
+CREATE TABLE `joueurs` (
+  `id` int(11) NOT NULL,
+  `poste` varchar(255) NOT NULL,
+  `pays_id` int(11) NOT NULL,
+  `club` varchar(255) NOT NULL,
+  `age` int(11) NOT NULL,
   `taille` float NOT NULL,
   `poids` float NOT NULL,
-  `nom` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `prenom` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `joueurs_ibfk_1` (`pays_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `nom` varchar(255) NOT NULL,
+  `prenom` varchar(255) NOT NULL,
+  `photo` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `joueurs`
@@ -137,64 +133,122 @@ INSERT INTO `joueurs` (`id`, `poste`, `pays_id`, `club`, `age`, `taille`, `poids
 (46, 'Arrière', 1, 'Section Paloise', 23, 1.76, 80, 'Buros', 'Romain', 'https://medias.lequipe.fr/img-sportif-rugby/8406/100'),
 (47, 'Arrière', 1, 'RC Toulon', 22, 1.86, 89, 'Jaminet', 'Melvyn', 'https://medias.lequipe.fr/img-sportif-rugby/11225/100'),
 (48, 'Arrière', 1, 'Stade Toulousain', 26, 1.86, 86, 'Ramos', 'Thomas', 'https://medias.lequipe.fr/img-sportif-rugby/7403/100'),
-(49, 'Talonneur', 2, 'Wellington Hurricanes', 25, 1.77, 108, 'Aumua', 'Asafo', 'https://medias.lequipe.fr/img-sportif-rugby/9807/110');
+(49, 'Talonneur', 3, 'Windhoek', 26, 1.79, 98, 'Obert', 'Nortje', 'https://medias.lequipe.fr/img-sportif-rugby/10871/110'),
+(50, 'Talonneur', 3, 'Cheetahs', 28, 1.83, 101, 'Louis', 'Van der Westhuizen', 'https://medias.lequipe.fr/img-sportif-rugby/8064/100'),
+(51, 'Talonneur', 3, 'Bayonne', 35, 1.75, 106, 'Torsten', 'Van Jaarsveld', 'https://medias.lequipe.fr/img-sportif-rugby/8063/100'),
+(52, 'Pilier', 3, '', 35, 1.87, 122, 'Johannes', 'Aranos Coetzee', 'https://medias.lequipe.fr/img-sportif-rugby/5809/110'),
+(53, 'Pilier', 3, 'Wanderers', 31, 185, 136, 'A.J.', 'De Klerk', 'http://medias.lequipe.fr/img-sportif-rugby/8066/110');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `rencontre`
+-- Structure de la table `rencontres`
 --
 
-DROP TABLE IF EXISTS `rencontre`;
-CREATE TABLE IF NOT EXISTS `rencontre` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `Horaire` datetime NOT NULL,
-  `Equipe_1` int NOT NULL,
-  `Equipe_2` int NOT NULL,
+CREATE TABLE `rencontres` (
+  `id` int(11) NOT NULL,
+  `horaire` datetime NOT NULL,
+  `equipe_1` int(11) NOT NULL,
+  `equipe_2` int(11) NOT NULL,
   `lieu` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `Equipe_1` (`Equipe_1`),
-  KEY `Equipe_2` (`Equipe_2`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `score` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Déchargement des données de la table `rencontre`
+-- Déchargement des données de la table `rencontres`
 --
 
-INSERT INTO `rencontre` (`id`, `Horaire`, `Equipe_1`, `Equipe_2`, `lieu`) VALUES
-(1, '2023-09-08 21:00:00', 1, 2, 'Stade Geoffroy-Guichard, Saint-Étienne'),
-(2, '2023-09-09 13:00:00', 3, 4, 'Stade de Bordeaux, Bordeaux'),
-(3, '2023-09-14 21:00:00', 1, 5, 'Stadium de Toulouse, Toulouse'),
-(4, '2023-09-15 21:00:00', 2, 4, 'Stade de Marseille, Marseille'),
-(5, '2023-09-20 17:45:00', 3, 5, 'Stade Pierre-Mauroy, Lille'),
-(6, '2023-09-21 21:00:00', 1, 4, 'Stade de Nice, Nice'),
-(7, '2023-09-27 17:45:00', 5, 4, 'Stade de la Beaujoire, Nantes'),
-(8, '2023-09-29 21:00:00', 2, 3, ''),
-(9, '2023-10-05 21:00:00', 2, 5, ''),
-(10, '2023-10-06 21:00:00', 1, 3, '');
+INSERT INTO `rencontres` (`id`, `horaire`, `equipe_1`, `equipe_2`, `lieu`, `score`) VALUES
+(1, '2023-09-08 21:00:00', 1, 4, 'Stade Geoffroy-Guichard, Saint-Étienne', '--'),
+(2, '2023-09-09 13:00:00', 2, 3, 'Stade de Bordeaux, Bordeaux', '--'),
+(3, '2023-09-14 21:00:00', 1, 5, 'Stadium de Toulouse, Toulouse', '--'),
+(4, '2023-09-15 21:00:00', 4, 3, 'Stade de Marseille, Marseille', '--'),
+(5, '2023-09-20 17:45:00', 2, 5, 'Stade Pierre-Mauroy, Lille', '--'),
+(6, '2023-09-21 21:00:00', 1, 3, 'Stade de Nice, Nice', '--'),
+(7, '2023-09-27 17:45:00', 5, 3, 'Stade de la Beaujoire, Nantes', '--'),
+(8, '2023-09-29 21:00:00', 4, 2, '\'\'', '--'),
+(9, '2023-10-05 21:00:00', 4, 5, '\'\'', '--'),
+(10, '2023-10-06 21:00:00', 1, 2, '\'\'', '--');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `utilisateur`
+-- Structure de la table `utilisateurs`
 --
 
-DROP TABLE IF EXISTS `utilisateur`;
-CREATE TABLE IF NOT EXISTS `utilisateur` (
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `id` int NOT NULL AUTO_INCREMENT,
-  `pseudo` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `utilisateurs` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `pseudo` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Déchargement des données de la table `utilisateur`
+-- Déchargement des données de la table `utilisateurs`
 --
 
-INSERT INTO `utilisateur` (`email`, `password`, `id`, `pseudo`) VALUES
-('hamon.yohann0416@gmail.com', '$2y$10$N7N.dOj4xFU/TomjCe7dw.6Ch3kwlA.1X5SZPSip2zJfAUPk4sJGi', 1, 'admin1'),
-('test@test', '$2y$10$wPGDcOG9toy6NuGvIpDmHOlMjPa4iOVd6QG0NhfwBFZ97k/qMWH7S', 3, 'test');
+INSERT INTO `utilisateurs` (`id`, `email`, `password`, `pseudo`) VALUES
+(1, 'hamon.yohann0416@gmail.com', '$2y$10$N7N.dOj4xFU/TomjCe7dw.6Ch3kwlA.1X5SZPSip2zJfAUPk4sJGi', 'admin1'),
+(3, 'test@test', '$2y$10$wPGDcOG9toy6NuGvIpDmHOlMjPa4iOVd6QG0NhfwBFZ97k/qMWH7S', 'test');
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `equipes`
+--
+ALTER TABLE `equipes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `joueurs`
+--
+ALTER TABLE `joueurs`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `joueurs_ibfk_1` (`pays_id`);
+
+--
+-- Index pour la table `rencontres`
+--
+ALTER TABLE `rencontres`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `equipe_1` (`equipe_1`) USING BTREE,
+  ADD KEY `equipe_2` (`equipe_2`) USING BTREE;
+
+--
+-- Index pour la table `utilisateurs`
+--
+ALTER TABLE `utilisateurs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `equipes`
+--
+ALTER TABLE `equipes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT pour la table `joueurs`
+--
+ALTER TABLE `joueurs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+
+--
+-- AUTO_INCREMENT pour la table `rencontres`
+--
+ALTER TABLE `rencontres`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
+--
+-- AUTO_INCREMENT pour la table `utilisateurs`
+--
+ALTER TABLE `utilisateurs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Contraintes pour les tables déchargées
@@ -204,14 +258,14 @@ INSERT INTO `utilisateur` (`email`, `password`, `id`, `pseudo`) VALUES
 -- Contraintes pour la table `joueurs`
 --
 ALTER TABLE `joueurs`
-  ADD CONSTRAINT `joueurs_ibfk_1` FOREIGN KEY (`pays_id`) REFERENCES `equipe` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `joueurs_ibfk_1` FOREIGN KEY (`pays_id`) REFERENCES `equipes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Contraintes pour la table `rencontre`
+-- Contraintes pour la table `rencontres`
 --
-ALTER TABLE `rencontre`
-  ADD CONSTRAINT `rencontre_ibfk_1` FOREIGN KEY (`Equipe_1`) REFERENCES `equipe` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `rencontre_ibfk_2` FOREIGN KEY (`Equipe_2`) REFERENCES `equipe` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `rencontres`
+  ADD CONSTRAINT `rencontres_ibfk_1` FOREIGN KEY (`Equipe_1`) REFERENCES `equipes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `rencontres_ibfk_2` FOREIGN KEY (`Equipe_2`) REFERENCES `equipes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
