@@ -24,7 +24,7 @@ if(isset($_POST['ajouter'])) {
     else{
         $erreurs = true;
         ?>
-        <a tabindex="0" href="modifier.php">
+        <a href="modifier.php">
             Le joueur n'a pas été modifié, veuillez réessayer.
         </a> 
         <?php 
@@ -32,7 +32,7 @@ if(isset($_POST['ajouter'])) {
     if($erreurs == false)
     {
         $joueur = new Joueurs();
-        $joueurs = $joueur->ajout( 
+        $joueurs = $joueurs->add( 
         $_POST['photo'],
         $_POST['prenom'],
         $_POST['nom'], 
@@ -46,8 +46,8 @@ if(isset($_POST['ajouter'])) {
         $_SESSION['nom'] = $_POST['nom'];
         ?>
 
-        <a tabindex="0" href="index.php">
-            Le joueur <?php echo $_SESSION['nom']; ?> a été ajouté !
+        <a href="index.php">
+            Le joueur <?php echo $_SESSION['prenom'],['nom']; ?> a été ajouté !
         </a>
 
         <?php

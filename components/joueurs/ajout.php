@@ -1,5 +1,11 @@
-<form action="traitement.php" method="POST">
+<?php
+include 'BDD.php';
+include 'Equipes.php';
 
+// création d'un formulaire d'ajout
+?>
+
+<form action="gestion_joueurs.php" method="POST">
   <div>
     <label for="photo" > Photo </label>
     <input type="text" name="photo" id="photo">
@@ -33,10 +39,10 @@
     <label for="pays_id"> Équipe </label>
         <?php
             $equipe = new Equipes();
-            $equipes = $equipe->findAll();
-            echo '<select name="equipe" >';
+            $equipes = $equipes->findAll();
+            echo '<select name="equipes" >';
             foreach($equipes as $equipe) {
-                echo '<option" value="' . $equipe['id'] . '">' . $equipe['nom'] . '</option>';
+                echo '<option" value="' . $equipe['id'] . '">' . $equipe['pays'] . '</option>';
             }
             echo '</select>';
         ?>

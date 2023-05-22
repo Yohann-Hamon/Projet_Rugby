@@ -1,5 +1,4 @@
 <?php
-
 class Joueurs extends BDD{
 	private $id;
 	private $poste;
