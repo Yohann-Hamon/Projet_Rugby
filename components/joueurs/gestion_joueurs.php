@@ -56,4 +56,35 @@ if(isset($_POST['ajouter'])) {
         $erreurs = true;
     }
 
+
+    if(isset($_POST['update_joueur']))
+    {
+        $joueur_id = mysqli_real_escape_string($con, $_POST['joueur_id']);
+    
+        $prenom = mysqli_real_escape_string($con, $_POST['prenom']);
+        $nom = mysqli_real_escape_string($con, $_POST['nom']);
+        $poste = mysqli_real_escape_string($con, $_POST['poste']);
+        $club = mysqli_real_escape_string($con, $_POST['club']);
+        $age= mysqli_real_escape_string($con, $_POST['age']);
+        $poids= mysqli_real_escape_string($con, $_POST['poids']);
+        $taille = mysqli_real_escape_string($con, $_POST['taille']);
+    
+    
+        $query = "UPDATE joueurs SET prenom='$prenom', nom='$nom, poste='$poste', club='$club', age='$age, poids='$poids', taille='$taille' WHERE id='$joueur_id' ";
+        $query_run = mysqli_query($con, $query);
+    
+        
+            header("Location: menu.php");
+    
+    }
+    
+    if(isset($_POST['delete_joueur']))
+    {
+        $joueur_id = mysqli_real_escape_string($con, $_POST['delete_joueur']);
+    
+        $query = "DELETE FROM joueur WHERE id='$joueur_id' ";
+        $query_run = mysqli_query($con, $query);
+        header("Location: first.php");
+        
+    }    
 }
