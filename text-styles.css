@@ -1,0 +1,97 @@
+/* Main Style */
+
+.main-title
+{
+    font-family: "Inter";
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: none;
+}
+
+.subtitle
+{
+    font-family: "Inter";
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: none;
+}
+
+.title
+{
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 28px;
+    letter-spacing: none;
+    text-transform: uppercase;
+}
+
+.navigation
+{
+    font-family: "Inter";
+    font-weight: medium;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: none;
+}
+
+/* Style Specify */
+
+.title_card
+{
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: none;
+    text-transform: uppercase;
+}
+
+.description_card {
+    font-family: "Inter";
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: none;
+    text-transform: uppercase;
+}
+
+.value_name_card
+{
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: none;
+}
+
+.value_card
+{
+    font-family: "Inter";
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: none;
+}
+
+/* Admin Options */
+
+.form_category
+{
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: none;
+}
+
+.submit_button
+{
+    font-family: "Inter";
+    font-weight: Bold;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: none;
+}
