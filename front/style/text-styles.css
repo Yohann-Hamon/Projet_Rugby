@@ -1,101 +1,106 @@
 /* Main Style */
 
-:root{
+:root
+{
     --font-family: "Inter";
-  }
+    --font-weight-1: bold;
+    --font-weight-2: normal;
+    --font-weight-3: 600;
+    --font-weight-4: medium;
+    --font-size-1: 40px; 
+    --font-size-2: 20px;
+    --font-size-3: 28px;
+    --font-size-4: 14px;
+    --font-size-5: 16px;
+    --line-height-1: 40px; 
+    --line-height-2: 20px;
+    --line-height-3: 28px;
+    --line-height-4: 14px;
+    --line-height-5: 16px;
+} 
 
 .main-title
 {
     font-family: var(--font-family);
-    font-weight: bold;
-    font-size: 40px;
-    line-height: 40px;
-    letter-spacing: none;
+    font-weight: var(--font-weight-1);
+    font-size: var(--font-size-1);
+    line-height: var(--line-height-1);
 }
 
 .subtitle
 {
-    font-family: "Inter";
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 20px;
-    letter-spacing: none;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-2);
+    font-size: var(--font-size-2);
+    line-height: var(--line-height-2);
 }
 
 .title
 {
-    font-family: "Inter";
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 28px;
-    letter-spacing: none;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-3);
+    font-size: var(--font-size-3);
+    line-height: var(--line-height-3);
     text-transform: uppercase;
 }
 
 .navigation
 {
-    font-family: "Inter";
-    font-weight: medium;
-    font-size: 14px;
-    line-height: 14px;
-    letter-spacing: none;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-4);
+    font-size: var(--font-size-4);
+    line-height: var(--line-height-4);
 }
 
 /* Style Specify */
 
 .title_card
 {
-    font-family: "Inter";
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 20px;
-    letter-spacing: none;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-3);
+    font-size: var(--font-size-2);
+    line-height: var(--line-height-2);
     text-transform: uppercase;
 }
 
 .description_card {
-    font-family: "Inter";
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 16px;
-    letter-spacing: none;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-2);
+    font-size: var(--font-size-5);
+    line-height: var(--line-height-5);
     text-transform: uppercase;
 }
 
 .value_name_card
 {
-    font-family: "Inter";
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 16px;
-    letter-spacing: none;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-3);
+    font-size: var(--font-size-5);
+    line-height: var(--line-height-5);
 }
 
 .value_card
 {
-    font-family: "Inter";
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 14px;
-    letter-spacing: none;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-2);
+    font-size: var(--font-size-4);
+    line-height: var(--line-height-4);
 }
 
 /* Admin Options */
 
 .form_category
 {
-    font-family: "Inter";
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 20px;
-    letter-spacing: none;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-3);
+    font-size: var(--font-size-2);
+    line-height: var(--line-height-2);
 }
 
 .submit_button
 {
-    font-family: "Inter";
-    font-weight: Bold;
-    font-size: 16px;
-    line-height: 16px;
-    letter-spacing: none;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-1);
+    font-size: var(--font-size-5);
+    line-height: var(--line-height-5);
 }
