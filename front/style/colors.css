@@ -1,0 +1,217 @@
+
+:root
+{
+  /* Primary */
+  --primary-100: #011D7E;
+  --primary-200: #0025A4;
+  --primary-300: #0038FB;
+  --primary-400: #5F71AE;
+  --primary-500: #BAC5EC;
+  --primary-600: #E5EBFF;
+  /* informative */
+  --infromative-100: #947300;
+  --infromative-200: #C5910D;
+  --infromative-300: #DA9443;
+  --infromative-400: #BDB090;
+  --infromative-500: #CFC09A;
+  --infromative-600: #F9EEE1;
+  /* Success */
+  --success-100: #427433;
+  --success-200: #4D9F35;
+  --success-300: #66DA43;
+  --success-400: #9DB795;
+  --success-500: #A6CF9A;
+  --success-600: #E6F9E1;
+  /* Danger */
+  --danger-100: #743333;
+  --danger-200: #A94040;
+  --danger-300: #FF0000;
+  --danger-400: #A77474;
+  --danger-500: #CF9A9A;
+  --danger-600: #FFE9E9;
+  /* Neutral */
+  --neutral-100: #333333;
+  --neutral-200: #686767;
+  --neutral-300: #8D8D8D;
+  --neutral-400: #ACACAC;
+  --neutral-500: #C9C9C9;
+  --neutral-600: #E9E9E9;
+  /* Base */
+  --base-100: #000000;
+  --base-200: #FFFFFF;
+
+
+}
+
+/* Primary */
+
+.primary100 
+{
+  color: var(--primary-100);
+}
+
+.primary200 
+{
+  color: var(--primary-200);
+}
+
+.primary300 
+{
+  color: var(--primary-300);
+}
+
+.primary400 
+{
+  color: var(--primary-400);
+}
+
+.primary500 
+{
+  color: var(--primary-500);
+}
+
+.primary600 
+{
+  color: var(--primary-600);
+}
+
+/* Informative */
+
+.informative100 
+{
+  color: var(--informative-100);
+}
+
+.informative200 
+{
+  color: var(--informative-200);
+}
+
+.informative300 
+{
+  color: var(--informative-300);
+}
+
+.informative400 
+{
+  color: var(--informative-400);
+}
+
+.informative500 
+{
+  color: var(--informative-500);
+}
+
+.informative600 
+{
+  color: var(--informative-600);
+}
+
+
+/* Success */
+
+.success100 
+{
+  color: var(--success-100);
+}
+
+.success200 
+{
+  color: var(--success-200);
+}
+
+.success300 
+{
+  color: var(--success-300);
+}
+
+.success400 
+{
+  color: var(--success-400);
+}
+
+.success500 
+{
+  color: var(--success-500);
+}
+
+.success600 
+{
+  color: var(--success-600);
+}
+
+/* Danger */
+
+.danger100 
+{
+  color: var(--danger-100);
+}
+
+.danger200 
+{
+  color: var(--danger-200);
+}
+
+.danger300 
+{
+  color: var(--danger-300);
+}
+
+.danger400 
+{
+  color: var(--danger-400);
+}
+
+.danger500 
+{
+  color: var(--danger-500);
+}
+
+.danger600 
+{
+  color: var(--danger-600);
+}
+
+/* Neutral */
+
+.neutral100 
+{
+  color: var(--neutral-100);
+}
+
+.neutral200 
+{
+  color: var(--neutral-200);
+}
+
+.neutral300 
+{
+  color: var(--neutral-300)#8D8D8D;
+}
+
+.neutral400 
+{
+  color: var(--neutral-400);
+}
+
+.neutral500 
+{
+  color: var(--neutral-500);
+}
+
+.neutral600 
+{
+  color: var(--neutral-600);
+}
+
+/* Base */
+
+.base100 
+{
+  color: var(--base-100);
+}
+
+.base200 
+{
+  color: var(--base-200);
+}
