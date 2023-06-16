@@ -92,11 +92,10 @@
     line-height: var(--line-height-1);
 }
 
-.button
+.text-button
 {
     font-family: var(--font-family);
     font-weight: var(--font-weight-1);
     font-size: var(--font-size-5);
     line-height: var(--line-height-1);
 }
-
