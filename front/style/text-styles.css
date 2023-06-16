@@ -11,11 +11,7 @@
     --font-size-3: 28px;
     --font-size-4: 14px;
     --font-size-5: 16px;
-    --line-height-1: 40px; 
-    --line-height-2: 20px;
-    --line-height-3: 28px;
-    --line-height-4: 14px;
-    --line-height-5: 16px;
+    --line-height-1: 1;
 } 
 
 .main-title
@@ -31,7 +27,7 @@
     font-family: var(--font-family);
     font-weight: var(--font-weight-2);
     font-size: var(--font-size-2);
-    line-height: var(--line-height-2);
+    line-height: var(--line-height-1);
 }
 
 .title
@@ -39,7 +35,7 @@
     font-family: var(--font-family);
     font-weight: var(--font-weight-3);
     font-size: var(--font-size-3);
-    line-height: var(--line-height-3);
+    line-height: var(--line-height-1);
     text-transform: uppercase;
 }
 
@@ -48,7 +44,7 @@
     font-family: var(--font-family);
     font-weight: var(--font-weight-4);
     font-size: var(--font-size-4);
-    line-height: var(--line-height-4);
+    line-height: var(--line-height-1);
 }
 
 /* Style Specify */
@@ -58,7 +54,7 @@
     font-family: var(--font-family);
     font-weight: var(--font-weight-3);
     font-size: var(--font-size-2);
-    line-height: var(--line-height-2);
+    line-height: var(--line-height-1);
     text-transform: uppercase;
 }
 
@@ -66,7 +62,7 @@
     font-family: var(--font-family);
     font-weight: var(--font-weight-2);
     font-size: var(--font-size-5);
-    line-height: var(--line-height-5);
+    line-height: var(--line-height-1);
     text-transform: uppercase;
 }
 
@@ -75,7 +71,7 @@
     font-family: var(--font-family);
     font-weight: var(--font-weight-3);
     font-size: var(--font-size-5);
-    line-height: var(--line-height-5);
+    line-height: var(--line-height-1);
 }
 
 .value_card
@@ -83,7 +79,7 @@
     font-family: var(--font-family);
     font-weight: var(--font-weight-2);
     font-size: var(--font-size-4);
-    line-height: var(--line-height-4);
+    line-height: var(--line-height-1);
 }
 
 /* Admin Options */
@@ -93,7 +89,7 @@
     font-family: var(--font-family);
     font-weight: var(--font-weight-3);
     font-size: var(--font-size-2);
-    line-height: var(--line-height-2);
+    line-height: var(--line-height-1);
 }
 
 .submit_button
@@ -101,5 +97,5 @@
     font-family: var(--font-family);
     font-weight: var(--font-weight-1);
     font-size: var(--font-size-5);
-    line-height: var(--line-height-5);
+    line-height: var(--line-height-1);
 }
