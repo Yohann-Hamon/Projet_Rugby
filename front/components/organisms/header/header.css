@@ -1,13 +1,8 @@
-.o-header
+.o-footer
 {
   display: flex;
   justify-content: space-between;
   padding: 20px;
   background-color: var(--primary-200);
   color: var(--base-200);
-}
-
-.o-header__user > * + *
-{
-  margin-left: 10px;
 }
