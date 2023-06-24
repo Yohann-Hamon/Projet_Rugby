@@ -19,10 +19,10 @@
      </nav> -->
      
      <div class="o-header__user">
-       <button>
+       <button class="o-header__button">
          Login
        </button>
-       <button>
+       <button class="o-header__button">
          Sign up
        </button>
      </div>
