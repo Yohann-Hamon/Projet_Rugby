@@ -1,5 +1,5 @@
 <?php
-    include './bdd/BDD.php';
+    // include './bdd/BDD.php';
     include './bdd/meetings/Meetings.php';
 ?>
 

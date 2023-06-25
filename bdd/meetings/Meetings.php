@@ -1,5 +1,8 @@
 <?php
 
+require_once './bdd/BDD.php';
+
+
 class Meetings extends BDD{
 	private $id;
 	private $datetime;
