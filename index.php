@@ -6,9 +6,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- reset.css -->
-        <link rel="stylesheet" href="./front/style/reset.css">
-        
         <!-- style.css -->
         <link rel="stylesheet" href="./front/style/colors.css">
         <link rel="stylesheet" href="./front/style/text-styles.css">
