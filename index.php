@@ -23,6 +23,9 @@
         <link rel="stylesheet" href="./front/components/organisms/hero/hero.css">
         <!-- meetings -->
         <link rel="stylesheet" href="./front/components/organisms/meetings/meetings.css">
+        <!-- teams -->
+        <link rel="stylesheet" href="./front/components/organisms/teams/teams.css">
+
 
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,6 +43,9 @@
 
             // meetings
             include './front/components/organisms/meetings/meetings.php';
+
+            // teams
+            include './front/components/organisms/teams/teams.php';
         ?>  
     </body>
 </html>
