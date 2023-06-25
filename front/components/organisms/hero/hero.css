@@ -1,0 +1,9 @@
+.o-hero
+{
+    margin: 0;
+    padding-top: 253px;
+    text-align: center;
+    background-color: var(--primary-600);
+    height: 956px;
+    width: 100%;
+}
