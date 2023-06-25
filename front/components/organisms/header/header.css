@@ -1,9 +1,10 @@
 .o-header
 {
   display: flex;
+  
   justify-content: space-between;
   padding: 20px;
-  background-color: var(--primary-400);
+  background-color: var(blue);
   color: var(--base-200);
 }
 
