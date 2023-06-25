@@ -12,9 +12,10 @@
         <link rel="stylesheet" href="./front/style/text-styles.css">
         <!-- main.css -->
         <link rel="stylesheet" href="./front/style/main.css">
+        
         <!-- COMPONENTS -->
         <!-- Header -->
-        <!-- <link rel="stylesheet" href="./front/components/organisms/header/header.css"> -->
+        <link rel="stylesheet" href="./front/components/organisms/header/header.css">
 
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,8 +25,7 @@
     </head>
     <body>
         <?php
-                
+          include './front/components/organisms/header/header.php';      
         ?>  
-
     </body>
 </html>

@@ -1,21 +1,21 @@
 .o-header
 {
   display: flex;
-  
   justify-content: space-between;
-  padding: 20px;
-  background-color: var(blue);
+  align-items: center;
+  padding: 12px 34px;
+  background-color: var(--primary-400);
   color: var(--base-200);
 }
 
-.o-header__button
+.o-header .o-header__user
 {
-  margin-right: 10px;
-  font-family: var(--font-family);
-  font-weight: var(--font-weight-2);
-  font-size: var(--font-size-5);
-  line-height: var(--line-height-1);
-  background-color: var(--primary-500);
-  color: var(--base-100);
-  border-radius: 8px;
+  
+  
 }
+
+.o-header .o-header__user > * + *
+{
+  margin-left: 56px;
+}
+
