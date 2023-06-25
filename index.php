@@ -16,6 +16,8 @@
         <!-- buttons -->
         <link rel="stylesheet" href="./front/components/molecules/buttons/navbutton/navbutton.css">
         <!-- meeting -->
+        <!-- team -->
+        <link rel="stylesheet" href="./front/components/molecules/team/team.css">
 
         <!-- Header -->
         <link rel="stylesheet" href="./front/components/organisms/header/header.css">
