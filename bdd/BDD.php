@@ -2,10 +2,10 @@
 
 	class BDD{
 		
-		private $host = 'https://pma.jedy.fr/';
-		private $dbname = 'esin';
-		private $user = 'esin';
-		private $pwd = '€s1N';
+		private $host = 'localhost';
+		private $dbname = 'rugby_world_cup_2023';
+		private $user = 'root';
+		private $pwd = '';
 
 		protected $co = false;
 

@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost
--- Généré le : Dim 25 juin 2023 à 16:59
--- Version du serveur :  10.3.39-MariaDB-0+deb10u1
--- Version de PHP : 7.4.33
+-- Hôte : 127.0.0.1:3306
+-- Généré le : dim. 25 juin 2023 à 18:00
+-- Version du serveur : 8.0.31
+-- Version de PHP : 8.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `esin`
+-- Base de données : `rugby_world_cup_2023`
 --
 
 -- --------------------------------------------------------
@@ -28,14 +27,18 @@ SET time_zone = "+00:00";
 -- Structure de la table `meetings`
 --
 
-CREATE TABLE `meetings` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `meetings`;
+CREATE TABLE IF NOT EXISTS `meetings` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `datetime` datetime NOT NULL,
-  `team_1` int(11) NOT NULL,
-  `team_2` int(11) NOT NULL,
+  `team_1` int NOT NULL,
+  `team_2` int NOT NULL,
   `place` varchar(255) NOT NULL,
-  `score` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  `score` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `equipe_1` (`team_1`) USING BTREE,
+  KEY `equipe_2` (`team_2`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `meetings`
@@ -59,18 +62,21 @@ INSERT INTO `meetings` (`id`, `datetime`, `team_1`, `team_2`, `place`, `score`) 
 -- Structure de la table `players`
 --
 
-CREATE TABLE `players` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `players`;
+CREATE TABLE IF NOT EXISTS `players` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `position` varchar(255) NOT NULL,
-  `country_id` int(11) NOT NULL,
+  `country_id` int NOT NULL,
   `club` varchar(255) NOT NULL,
-  `age` int(11) NOT NULL,
+  `age` int NOT NULL,
   `height` float NOT NULL,
   `weight` float NOT NULL,
   `lastname` varchar(255) NOT NULL,
   `firstname` varchar(255) NOT NULL,
-  `picture` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  `picture` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `joueurs_ibfk_1` (`country_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=128 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `players`
@@ -205,12 +211,14 @@ INSERT INTO `players` (`id`, `position`, `country_id`, `club`, `age`, `height`, 
 -- Structure de la table `teams`
 --
 
-CREATE TABLE `teams` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `teams`;
+CREATE TABLE IF NOT EXISTS `teams` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `emblem` varchar(255) NOT NULL,
-  `world_ranking` int(11) NOT NULL,
-  `country` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  `world_ranking` int NOT NULL,
+  `country` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `teams`
@@ -244,12 +252,14 @@ INSERT INTO `teams` (`id`, `emblem`, `world_ranking`, `country`) VALUES
 -- Structure de la table `users`
 --
 
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `mail` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `username` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  `username` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `users`
@@ -258,65 +268,6 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `mail`, `password`, `username`) VALUES
 (1, 'hamon.yohann0416@gmail.com', '$2y$10$N7N.dOj4xFU/TomjCe7dw.6Ch3kwlA.1X5SZPSip2zJfAUPk4sJGi', 'admin1'),
 (3, 'test@test', '$2y$10$wPGDcOG9toy6NuGvIpDmHOlMjPa4iOVd6QG0NhfwBFZ97k/qMWH7S', 'test');
-
---
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `meetings`
---
-ALTER TABLE `meetings`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `equipe_1` (`team_1`) USING BTREE,
-  ADD KEY `equipe_2` (`team_2`) USING BTREE;
-
---
--- Index pour la table `players`
---
-ALTER TABLE `players`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `joueurs_ibfk_1` (`country_id`);
-
---
--- Index pour la table `teams`
---
-ALTER TABLE `teams`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `meetings`
---
-ALTER TABLE `meetings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
-
---
--- AUTO_INCREMENT pour la table `players`
---
-ALTER TABLE `players`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
-
---
--- AUTO_INCREMENT pour la table `teams`
---
-ALTER TABLE `teams`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
-
---
--- AUTO_INCREMENT pour la table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Contraintes pour les tables déchargées
