@@ -26,5 +26,4 @@
          Sign up
        </button>
      </div>
-    
-  </header>
+</header>

@@ -1,5 +1,6 @@
 <?php
-include 'components/bdd/BDD.php';
+    // include 'components/bdd/BDD.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +12,8 @@ include 'components/bdd/BDD.php';
     <title>Projet Rugby</title>
 </head>
 <body>
-    <h1>Coupe du monde de Rugby 2023 </h1>
+
+
+
 </body>
 </html>
