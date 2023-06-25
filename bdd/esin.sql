@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : Dim 25 juin 2023 à 03:16
+-- Généré le : Dim 25 juin 2023 à 16:59
 -- Version du serveur :  10.3.39-MariaDB-0+deb10u1
 -- Version de PHP : 7.4.33
 
@@ -25,10 +25,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `meeting`
+-- Structure de la table `meetings`
 --
 
-CREATE TABLE `meeting` (
+CREATE TABLE `meetings` (
   `id` int(11) NOT NULL,
   `datetime` datetime NOT NULL,
   `team_1` int(11) NOT NULL,
@@ -38,10 +38,10 @@ CREATE TABLE `meeting` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Déchargement des données de la table `meeting`
+-- Déchargement des données de la table `meetings`
 --
 
-INSERT INTO `meeting` (`id`, `datetime`, `team_1`, `team_2`, `place`, `score`) VALUES
+INSERT INTO `meetings` (`id`, `datetime`, `team_1`, `team_2`, `place`, `score`) VALUES
 (1, '2023-09-08 21:00:00', 1, 4, 'Stade Geoffroy-Guichard, Saint-Étienne', '--'),
 (2, '2023-09-09 13:00:00', 2, 3, 'Stade de Bordeaux, Bordeaux', '--'),
 (3, '2023-09-14 21:00:00', 1, 5, 'Stadium de Toulouse, Toulouse', '--'),
@@ -264,9 +264,9 @@ INSERT INTO `users` (`id`, `mail`, `password`, `username`) VALUES
 --
 
 --
--- Index pour la table `meeting`
+-- Index pour la table `meetings`
 --
-ALTER TABLE `meeting`
+ALTER TABLE `meetings`
   ADD PRIMARY KEY (`id`),
   ADD KEY `equipe_1` (`team_1`) USING BTREE,
   ADD KEY `equipe_2` (`team_2`) USING BTREE;
@@ -295,9 +295,9 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT pour la table `meeting`
+-- AUTO_INCREMENT pour la table `meetings`
 --
-ALTER TABLE `meeting`
+ALTER TABLE `meetings`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
@@ -323,11 +323,11 @@ ALTER TABLE `users`
 --
 
 --
--- Contraintes pour la table `meeting`
+-- Contraintes pour la table `meetings`
 --
-ALTER TABLE `meeting`
-  ADD CONSTRAINT `meeting_ibfk_1` FOREIGN KEY (`team_1`) REFERENCES `teams` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `meeting_ibfk_2` FOREIGN KEY (`team_2`) REFERENCES `teams` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `meetings`
+  ADD CONSTRAINT `meetings_ibfk_1` FOREIGN KEY (`team_1`) REFERENCES `teams` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `meetings_ibfk_2` FOREIGN KEY (`team_2`) REFERENCES `teams` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `players`

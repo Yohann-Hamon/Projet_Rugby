@@ -3,7 +3,6 @@
 ?>
 
 <header class="o-header">
-  
   <div class="o-header__logo">
     <img src="#" alt="logo">
   </div>
@@ -14,7 +13,6 @@
       navButtonComponent('#','Sign up');
     ?>
   </div>
-
 </header>
 
 

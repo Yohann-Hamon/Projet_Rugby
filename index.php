@@ -1,6 +1,6 @@
 <?php
-    // include 'components/bdd/BDD.php';
-
+    // include './bdd/BDD.php';
+    // include 'bdd/meetings/Meetings.php';
 ?>
 
 <!DOCTYPE html>
@@ -16,13 +16,14 @@
         <!-- COMPONENTS -->
         <!-- buttons -->
         <link rel="stylesheet" href="./front/components/molecules/buttons/navbutton/navbutton.css">
+        <!-- meeting -->
 
         <!-- Header -->
         <link rel="stylesheet" href="./front/components/organisms/header/header.css">
         <!-- Hero -->
         <link rel="stylesheet" href="./front/components/organisms/hero/hero.css">
-
-
+        <!-- meetings -->
+        <link rel="stylesheet" href="./front/components/organisms/meetings/meetings.css">
 
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,6 +38,9 @@
             
             // hero
             include './front/components/organisms/hero/hero.php';
+
+            // meetings
+            include './front/components/organisms/meetings/meetings.php';
         ?>  
     </body>
 </html>

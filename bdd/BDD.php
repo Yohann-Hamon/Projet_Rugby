@@ -2,7 +2,7 @@
 
 	class BDD{
 		
-		private $host = 'localhost';
+		private $host = 'https://pma.jedy.fr';
 		private $dbname = 'esin';
 		private $user = 'esin';
 		private $pwd = '€s1N';
