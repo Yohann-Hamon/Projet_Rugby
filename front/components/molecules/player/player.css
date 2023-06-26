@@ -1,0 +1,11 @@
+.o-player
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.o-player__picture
+{
+    width: 200px;
+    height: 200px;
+}

@@ -18,6 +18,8 @@
         <!-- meeting -->
         <!-- team -->
         <link rel="stylesheet" href="./front/components/molecules/team/team.css">
+        <!-- player -->
+        <link rel="stylesheet" href="./front/components/molecules/player/player.css">
 
         <!-- Header -->
         <link rel="stylesheet" href="./front/components/organisms/header/header.css">
@@ -27,7 +29,8 @@
         <link rel="stylesheet" href="./front/components/organisms/meetings/meetings.css">
         <!-- teams -->
         <link rel="stylesheet" href="./front/components/organisms/teams/teams.css">
-
+        <!-- players -->
+        <link rel="stylesheet" href="./front/components/organisms/players/players.css">
 
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,6 +51,9 @@
 
             // teams
             include './front/components/organisms/teams/teams.php';
+
+            // players
+            include './front/components/organisms/players/players.php';
         ?>  
     </body>
 </html>
