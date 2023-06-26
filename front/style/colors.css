@@ -1,43 +1,45 @@
 :root
 {
   /* Primary */
-  --primary-100: #011D7E;
-  --primary-200: #0025A4;
-  --primary-300: #0038FB;
-  --primary-400: #5F71AE;
-  --primary-500: #BAC5EC;
-  --primary-600: #E5EBFF;
-  /* informative */
-  --infromative-100: #947300;
-  --infromative-200: #C5910D;
-  --infromative-300: #DA9443;
-  --infromative-400: #BDB090;
-  --infromative-500: #CFC09A;
-  --infromative-600: #F9EEE1;
-  /* Success */
-  --success-100: #427433;
-  --success-200: #4D9F35;
-  --success-300: #66DA43;
-  --success-400: #9DB795;
-  --success-500: #A6CF9A;
-  --success-600: #E6F9E1;
-  /* Danger */
-  --danger-100: #743333;
-  --danger-200: #A94040;
-  --danger-300: #FF0000;
-  --danger-400: #A77474;
-  --danger-500: #CF9A9A;
-  --danger-600: #FFE9E9;
+  --primary-100: #031452;
+  --primary-200: #03218C;
+  --primary-300: #002DC9;
+  --primary-400: #7289D7;
+  --primary-500: #869CE8;
+  --primary-600: #A5B0D7;
+  --primary-700: #B4C4FF;
+  --primary-800: #C9D5FF;
+  --primary-900: #E0E7FF;
+  /* Sencondary */
+  --sencondary-100: #D08800;
+  --sencondary-200: #D7A13C;
+  --sencondary-300: #E5BF78;
+  --sencondary-400: #E09D1E;
+  --sencondary-500: #FFA700;
+  --sencondary-600: #E7C40E;
+  --sencondary-700: #F1C40D;
+  --sencondary-800: #F5DD5C;
+  --sencondary-900: #F6E1A2;
+  /* Terciary */
+  --terciary-100: #5E0000;
+  --terciary-200: #900000;
+  --terciary-300: #B30000;
+  --terciary-400: #8A4219;
+  --terciary-500: #A43B00;
+  --terciary-600: #C94800;
+  --terciary-700: #E18A58;
+  --terciary-800: #DA9F7F;
+  --terciary-900: #F1C3A8;
   /* Neutral */
-  --neutral-100: #333333;
-  --neutral-200: #686767;
-  --neutral-300: #8D8D8D;
-  --neutral-400: #ACACAC;
-  --neutral-500: #C9C9C9;
-  --neutral-600: #E9E9E9;
-  /* Base */
-  --base-100: #000000;
-  --base-200: #FFFFFF;
+  --neutral-100: #232323;
+  --neutral-200: #414141;
+  --neutral-300: #6F6E6E;
+  --neutral-400: #8B8B8B;
+  --neutral-500: #A1A1A1;
+  --neutral-600: #BEBEBE;
+  --neutral-700: #C9C9C9;
+  --neutral-800: #DDDDDD;
+  --neutral-900: #EFEFEF;
 }
 
 /* Primary */
@@ -62,111 +64,124 @@
   color: var(--primary-400);
 }
 
-.primary500 
+.secondary500 
 {
-  color: var(--primary-500);
+  color: var(--secondary-500);
 }
 
-.primary600 
+.secondary600 
 {
-  color: var(--primary-600);
+  color: var(--secondary-600);
 }
 
-/* Informative */
-
-.informative100 
+.secondary700
 {
-  color: var(--informative-100);
+  color: var(--secondary-700);
 }
 
-.informative200 
+.secondary800
 {
-  color: var(--informative-200);
+  color: var(--secondary-800);
 }
 
-.informative300 
+.secondary900
 {
-  color: var(--informative-300);
-}
-
-.informative400 
-{
-  color: var(--informative-400);
-}
-
-.informative500 
-{
-  color: var(--informative-500);
-}
-
-.informative600 
-{
-  color: var(--informative-600);
+  color: var(--secondary-900);
 }
 
 
-/* Success */
+/* Terciary */
 
-.success100 
+.terciary100 
 {
-  color: var(--success-100);
+  color: var(--terciary-100);
 }
 
-.success200 
+.terciary200 
 {
-  color: var(--success-200);
+  color: var(--terciary-200);
 }
 
-.success300 
+.terciary300 
 {
-  color: var(--success-300);
+  color: var(--terciary-300);
 }
 
-.success400 
+.terciary400 
 {
-  color: var(--success-400);
+  color: var(--terciary-400);
 }
 
-.success500 
+.terciary500 
 {
-  color: var(--success-500);
+  color: var(--terciary-500);
 }
 
-.success600 
+.terciary600 
 {
-  color: var(--success-600);
+  color: var(--terciary-600);
 }
 
-/* Danger */
-
-.danger100 
+.terciary700
 {
-  color: var(--danger-100);
+  color: var(--terciary-700);
 }
 
-.danger200 
+.terciary800
 {
-  color: var(--danger-200);
+  color: var(--terciary-800);
 }
 
-.danger300 
+.terciary900
 {
-  color: var(--danger-300);
+  color: var(--terciary-900);
 }
 
-.danger400 
+/* Neutral */
+
+.primary100 
 {
-  color: var(--danger-400);
+  color: var(--primary-100);
 }
 
-.danger500 
+.primary200 
 {
-  color: var(--danger-500);
+  color: var(--primary-200);
 }
 
-.danger600 
+.primary300 
 {
-  color: var(--danger-600);
+  color: var(--primary-300);
+}
+
+.primary400 
+{
+  color: var(--primary-400);
+}
+
+.neutral500 
+{
+  color: var(--neutral-500);
+}
+
+.neutral600 
+{
+  color: var(--neutral-600);
+}
+
+.neutral700
+{
+  color: var(--neutral-700);
+}
+
+.neutral800
+{
+  color: var(--neutral-800);
+}
+
+.neutral900
+{
+  color: var(--neutral-900);
 }
 
 /* Neutral */
@@ -199,16 +214,4 @@
 .neutral600 
 {
   color: var(--neutral-600);
-}
-
-/* Base */
-
-.base100 
-{
-  color: var(--base-100);
-}
-
-.base200 
-{
-  color: var(--base-200);
 }
