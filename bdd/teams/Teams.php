@@ -67,11 +67,12 @@ class Teams extends BDD{
 	public function ranking(){
 		$co = $this->co;
 
-		$sql = 'SELECT * FROM teams ORDER BY Poule ASC';
+		$sql = 'SELECT * FROM teams ORDER BY pool ASC';
 		$req = $co->prepare($sql); 
 		$req->execute();
 
 		$teams_ranked = $req->fetchAll();
+		
 
 		return $teams_ranked;
 	}
