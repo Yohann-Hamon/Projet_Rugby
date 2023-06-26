@@ -6,9 +6,9 @@
             include './bdd/teams/Teams.php';
 
             $team = new Teams();
-            $teams = $team->findAll();
+            $teams_ranked = $team->ranking();
 
-            foreach($teams as $a_team){
+            foreach($teams_ranked as $a_team){
 
                 include './front/components/molecules/team/team.php';
             }

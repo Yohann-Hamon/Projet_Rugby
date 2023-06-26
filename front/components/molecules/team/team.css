@@ -1,10 +1,8 @@
-.o-team
-{
-    
+.o-team {
+    display: flex;
+    align-items: center;
 }
 
-.o-team__emblem
-{
-    width: 200px;
-    height: 200px;
+.o-team__emblem {
+    margin-right: 10px;
 }
