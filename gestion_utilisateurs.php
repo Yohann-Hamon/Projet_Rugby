@@ -41,8 +41,8 @@ if(isset($_POST['inscription'])){
     if($erreurs == false)
     {
     $mail = mysqli_real_escape_string($con, $_POST['mail']);
-    $pswd = mysqli_real_escape_string($con, $_POST['pswd']);
-    $username = mysqli_real_escape_string($con, $_POST['username']);
+    $pswd = mysqli_real_escape_string($con, $_POST['password']);
+    $username = mysqli_real_escape_string($con, $_POST['pseudo']);
 
     $query = "INSERT INTO users (mail,pswd,username) VALUES ('$mail','$pswd','$username')";
         // Création d'une variable
