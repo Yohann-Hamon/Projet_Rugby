@@ -40,18 +40,17 @@ if(isset($_POST['inscription'])){
 
     if($erreurs == false)
     {
-        $users = new utilisateurs();
-        $joueurs = $users->signIn( 
-            $_POST['mail'],
-            $_POST['pseudo'],
-            $_POST['password']);
+    $mail = mysqli_real_escape_string($con, $_POST['mail']);
+    $pswd = mysqli_real_escape_string($con, $_POST['pswd']);
+    $username = mysqli_real_escape_string($con, $_POST['username']);
 
+    $query = "INSERT INTO users (mail,pswd,username) VALUES ('$mail','$pswd','$username')";
         // Création d'une variable
         $_SESSION['users'] = true;
         echo '<p>Vous avez été inscrit</p>';
         
         // Redirection 
-        header('Location: index.php');
+        $query_run = mysqli_query($con, $query);
     }
     else{
         ?>
@@ -63,7 +62,7 @@ if(isset($_POST['inscription'])){
 }
 
 
-if (isset($_POST['mail']) && isset($_POST['password']) && isset($_POST['pseudo'])) {
+if(isset($_POST['connexion'])){
 
 	function validate($data){
        $data = trim($data);
