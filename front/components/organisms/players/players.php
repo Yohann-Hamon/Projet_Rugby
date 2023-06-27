@@ -5,6 +5,15 @@
         <?php
             include './bdd/players/Players.php';
 
+            $team = new Teams();
+            $teams = $team->findAll();
+
+            $player = new Players();
+            $players_position = $player->position();
+
+            $player = new Players();
+            $players_club = $player->club();
+
             $player = new Players();
             $players = $player->findAll();
 
@@ -14,6 +23,14 @@
             }
         ?>
     </div>
+
+    <?php
+        include './front/components/molecules/player/add_player.php';
+        
+        include './front/components/molecules/player/edit_player.php';
+
+        include './front/components/molecules/player/delete_player.php';
+    ?>
 
 </section>
 

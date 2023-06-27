@@ -1,5 +1,7 @@
 <?php
 
+require_once './bdd/BDD.php';
+
 class Teams extends BDD{
 	private $id;
 	private $emblem;

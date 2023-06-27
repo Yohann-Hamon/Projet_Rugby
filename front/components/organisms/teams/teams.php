@@ -8,7 +8,8 @@
             
             
                  
-
+            $team = new Teams();
+            $teams = $team->findAll();
 
             $team = new Teams();
             $teams_ranked = $team->ranking();
@@ -49,7 +50,7 @@
             
         ?>
     </div>
-
+    
 </section>
 
 <script src="./front/components/organisms/teams/teams.js"></script>
