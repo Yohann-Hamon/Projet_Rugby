@@ -9,8 +9,9 @@
   
   <div class="o-header__user">
     <?php
-      navButtonComponent('#','Sign in');
-      navButtonComponent('#','Sign up');
+      navButtonComponent('#','équipes');
+      navButtonComponent('#','joueurs');
+      navButtonComponent('#','rencontres');
     ?>
   </div>
 </header>
