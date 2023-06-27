@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le : dim. 25 juin 2023 à 18:00
--- Version du serveur : 8.0.31
--- Version de PHP : 8.0.26
+-- Hôte : 127.0.0.1
+-- Généré le : lun. 26 juin 2023 à 23:05
+-- Version du serveur : 10.4.22-MariaDB
+-- Version de PHP : 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `rugby_world_cup_2023`
+-- Base de données : `rugby__world_cup_2023`
 --
 
 -- --------------------------------------------------------
@@ -27,18 +27,14 @@ SET time_zone = "+00:00";
 -- Structure de la table `meetings`
 --
 
-DROP TABLE IF EXISTS `meetings`;
-CREATE TABLE IF NOT EXISTS `meetings` (
-  `id` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `meetings` (
+  `id` int(11) NOT NULL,
   `datetime` datetime NOT NULL,
-  `team_1` int NOT NULL,
-  `team_2` int NOT NULL,
+  `team_1` int(11) NOT NULL,
+  `team_2` int(11) NOT NULL,
   `place` varchar(255) NOT NULL,
-  `score` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `equipe_1` (`team_1`) USING BTREE,
-  KEY `equipe_2` (`team_2`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb3;
+  `score` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `meetings`
@@ -62,21 +58,18 @@ INSERT INTO `meetings` (`id`, `datetime`, `team_1`, `team_2`, `place`, `score`) 
 -- Structure de la table `players`
 --
 
-DROP TABLE IF EXISTS `players`;
-CREATE TABLE IF NOT EXISTS `players` (
-  `id` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `players` (
+  `id` int(11) NOT NULL,
   `position` varchar(255) NOT NULL,
-  `country_id` int NOT NULL,
+  `country_id` int(11) NOT NULL,
   `club` varchar(255) NOT NULL,
-  `age` int NOT NULL,
+  `age` int(11) NOT NULL,
   `height` float NOT NULL,
   `weight` float NOT NULL,
   `lastname` varchar(255) NOT NULL,
   `firstname` varchar(255) NOT NULL,
-  `picture` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `joueurs_ibfk_1` (`country_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=128 DEFAULT CHARSET=utf8mb3;
+  `picture` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `players`
@@ -211,40 +204,39 @@ INSERT INTO `players` (`id`, `position`, `country_id`, `club`, `age`, `height`, 
 -- Structure de la table `teams`
 --
 
-DROP TABLE IF EXISTS `teams`;
-CREATE TABLE IF NOT EXISTS `teams` (
-  `id` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `teams` (
+  `id` int(11) NOT NULL,
   `emblem` varchar(255) NOT NULL,
-  `world_ranking` int NOT NULL,
+  `world_ranking` int(11) NOT NULL,
   `country` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb3;
+  `pool` varchar(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `teams`
 --
 
-INSERT INTO `teams` (`id`, `emblem`, `world_ranking`, `country`) VALUES
-(1, 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg/langfr-225px-Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg.png', 2, 'France'),
-(2, 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Italy_%282003%E2%80%932006%29.svg/220px-Flag_of_Italy_%282003%E2%80%932006%29.svg.png', 14, 'Italie'),
-(3, 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Flag_of_Namibia.svg/langfr-225px-Flag_of_Namibia.svg.png', 21, 'Namibie'),
-(4, 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/250px-Flag_of_New_Zealand.svg.png', 3, 'Nouvelle-Zélande'),
-(5, 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/langfr-225px-Flag_of_Uruguay.svg.png', 17, 'Uruguay'),
-(6, 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Flag_of_South_Africa.svg/langfr-225px-Flag_of_South_Africa.svg.png', 4, 'Afrique du Sud'),
-(7, 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_Scotland.svg/langfr-225px-Flag_of_Scotland.svg.png', 5, 'Ecosse'),
-(8, 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Flag_of_Ireland.svg/langfr-225px-Flag_of_Ireland.svg.png', 1, 'Irlande'),
-(9, 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flag_of_Romania.svg/langfr-225px-Flag_of_Romania.svg.png', 19, 'Roumanie'),
-(10, 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Tonga.svg/1280px-Flag_of_Tonga.svg.png', 15, 'Tonga'),
-(11, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/langfr-225px-Flag_of_Australia_%28converted%29.svg.png', 7, 'Australie'),
-(12, 'https://www.larousse.fr/encyclopedie/data/images/1009491-Drapeau_des_%C3%AEles_Fidji.jpg', 13, 'Fidji'),
-(13, 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Flag_of_Wales.svg/langfr-225px-Flag_of_Wales.svg.png', 9, 'Pays de Galles'),
-(14, 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Flag_of_Georgia.svg/langfr-225px-Flag_of_Georgia.svg.png', 11, 'Géorgie'),
-(15, 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/langfr-225px-Flag_of_Portugal.svg.png', 16, 'Portugal'),
-(16, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/langfr-225px-Flag_of_the_United_Kingdom_%283-5%29.svg.png', 6, 'Angleterre'),
-(17, 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/langfr-225px-Flag_of_Argentina.svg.png', 8, 'Argentine'),
-(18, 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Flag_of_Chile.svg/langfr-225px-Flag_of_Chile.svg.png', 22, 'Chili'),
-(19, 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/langfr-225px-Flag_of_Japan.svg.png', 10, 'Japon'),
-(20, 'https://upload.wikimedia.org/wikipedia/commons/3/31/Flag_of_Samoa.svg', 12, 'Samoa');
+INSERT INTO `teams` (`id`, `emblem`, `world_ranking`, `country`, `pool`) VALUES
+(1, 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg/langfr-225px-Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg.png', 2, 'France', 'A'),
+(2, 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Italy_%282003%E2%80%932006%29.svg/220px-Flag_of_Italy_%282003%E2%80%932006%29.svg.png', 14, 'Italie', 'A'),
+(3, 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Flag_of_Namibia.svg/langfr-225px-Flag_of_Namibia.svg.png', 21, 'Namibie', 'A'),
+(4, 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/250px-Flag_of_New_Zealand.svg.png', 3, 'Nouvelle-Zélande', 'A'),
+(5, 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_Uruguay.svg/langfr-225px-Flag_of_Uruguay.svg.png', 17, 'Uruguay', 'A'),
+(6, 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Flag_of_South_Africa.svg/langfr-225px-Flag_of_South_Africa.svg.png', 4, 'Afrique du Sud', 'B'),
+(7, 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_Scotland.svg/langfr-225px-Flag_of_Scotland.svg.png', 5, 'Ecosse', 'B'),
+(8, 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Flag_of_Ireland.svg/langfr-225px-Flag_of_Ireland.svg.png', 1, 'Irlande', 'B'),
+(9, 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flag_of_Romania.svg/langfr-225px-Flag_of_Romania.svg.png', 19, 'Roumanie', 'B'),
+(10, 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Tonga.svg/1280px-Flag_of_Tonga.svg.png', 15, 'Tonga', 'B'),
+(11, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/langfr-225px-Flag_of_Australia_%28converted%29.svg.png', 7, 'Australie', 'C'),
+(12, 'https://www.larousse.fr/encyclopedie/data/images/1009491-Drapeau_des_%C3%AEles_Fidji.jpg', 13, 'Fidji', 'C'),
+(13, 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Flag_of_Wales.svg/langfr-225px-Flag_of_Wales.svg.png', 9, 'Pays de Galles', 'C'),
+(14, 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Flag_of_Georgia.svg/langfr-225px-Flag_of_Georgia.svg.png', 11, 'Géorgie', 'C'),
+(15, 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/langfr-225px-Flag_of_Portugal.svg.png', 16, 'Portugal', 'C'),
+(16, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/langfr-225px-Flag_of_the_United_Kingdom_%283-5%29.svg.png', 6, 'Angleterre', 'D'),
+(17, 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/langfr-225px-Flag_of_Argentina.svg.png', 8, 'Argentine', 'D'),
+(18, 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Flag_of_Chile.svg/langfr-225px-Flag_of_Chile.svg.png', 22, 'Chili', 'D'),
+(19, 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/langfr-225px-Flag_of_Japan.svg.png', 10, 'Japon', 'D'),
+(20, 'https://upload.wikimedia.org/wikipedia/commons/3/31/Flag_of_Samoa.svg', 12, 'Samoa', 'D');
 
 -- --------------------------------------------------------
 
@@ -252,14 +244,12 @@ INSERT INTO `teams` (`id`, `emblem`, `world_ranking`, `country`) VALUES
 -- Structure de la table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
   `mail` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+  `username` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `users`
@@ -268,6 +258,65 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id`, `mail`, `password`, `username`) VALUES
 (1, 'hamon.yohann0416@gmail.com', '$2y$10$N7N.dOj4xFU/TomjCe7dw.6Ch3kwlA.1X5SZPSip2zJfAUPk4sJGi', 'admin1'),
 (3, 'test@test', '$2y$10$wPGDcOG9toy6NuGvIpDmHOlMjPa4iOVd6QG0NhfwBFZ97k/qMWH7S', 'test');
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `meetings`
+--
+ALTER TABLE `meetings`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `equipe_1` (`team_1`) USING BTREE,
+  ADD KEY `equipe_2` (`team_2`) USING BTREE;
+
+--
+-- Index pour la table `players`
+--
+ALTER TABLE `players`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `joueurs_ibfk_1` (`country_id`);
+
+--
+-- Index pour la table `teams`
+--
+ALTER TABLE `teams`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `meetings`
+--
+ALTER TABLE `meetings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
+--
+-- AUTO_INCREMENT pour la table `players`
+--
+ALTER TABLE `players`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
+
+--
+-- AUTO_INCREMENT pour la table `teams`
+--
+ALTER TABLE `teams`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT pour la table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Contraintes pour les tables déchargées

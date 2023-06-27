@@ -1,8 +1,16 @@
-.o-team {
-    display: flex;
-    align-items: center;
+table {
+    border-collapse: collapse;
+    width: 800px;
+    margin: auto ;
+}
+
+td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
 }
 
 .o-team__emblem {
-    margin-right: 10px;
+    /* margin-right: 10px; */
+    height: 140px;
 }
