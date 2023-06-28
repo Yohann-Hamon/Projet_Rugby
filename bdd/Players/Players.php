@@ -1,4 +1,6 @@
 <?php
+
+
 class Players extends BDD{
 	private $id;
 	private $position;
@@ -134,115 +136,113 @@ class Players extends BDD{
 		return $players;
 	}
 
-	// public function poste(){
-	// 	$co = $this->co;
+	public function position(){
+		$co = $this->co;
 
-	// 	$sql = 'SELECT DISTINCT poste FROM joueurs ' ;
-	// 	$req = $co->prepare($sql);
-	// 	$req->execute();
+		$sql = 'SELECT DISTINCT position FROM players ' ;
+		$req = $co->prepare($sql);
+		$req->execute();
 
-	// 	$joueurs_poste = $req->fetchAll();
+		$players_position = $req->fetchAll();
 
-	// 	return $joueurs_poste;
-	// }
+		return $players_position;
+	}
 
-	// public function club(){
-	// 	$co = $this->co;
+	public function club(){
+		$co = $this->co;
 
-	// 	$sql = 'SELECT DISTINCT club FROM joueurs ' ;
-	// 	$req = $co->prepare($sql);
-	// 	$req->execute();
+		$sql = 'SELECT DISTINCT club FROM players ' ;
+		$req = $co->prepare($sql);
+		$req->execute();
 
-	// 	$joueurs_club = $req->fetchAll();
+		$players_club = $req->fetchAll();
 
-	// 	return $joueurs_club;
-	// }
+		return $players_club;
+	}
 
 
-	// public function add($id, $poste, $pays_id, $club, $age, $taille, $poids, $nom, $prenom, $photo){
-    //     $co = $this->co;
+	public function add($country_id, $lastname, $firstname, $position, $club, $age, $height, $weight, $picture ){
+        $co = $this->co;
 
-    //     $sql = 'INSERT INTO joueurs(id, poste, pays_id, club, age, taille, poids, nom, prenom, photo) 
-	// 	VALUES(:id, :poste, :pays_id, :club, :age, :taille, :poids,  :nom, :prenom, :photo )';
-    //     $req = $co->prepare($sql);
+        $sql = 'INSERT INTO players(country_id, lastname, firstname, position, Club, Age, height, weight ,picture ) 
+		VALUES(:country_id, :lastname, :firstname, :position, :club, :age, :height, :weight, :picture )';
+        $req = $co->prepare($sql);
 		
-	// 	$req->execute([
-	// 		'id' => $id,
-    //         'poste' => $poste,
-    //         'pays_id' => $pays_id,
-	// 		'club' => $club,
-    //         'age' => $age,
-	// 		'taille' => $taille,
-	// 		'poids' => $poids,
-	// 		'nom' => $nom,
-	// 		'prenom' => $prenom,
-	// 		'photo' => $photo
-	// 	]);
+		$req->execute([
+			'country_id' => $country_id,
+            'lastname' => $lastname,
+            'firstname' => $firstname,
+			'position' => $position,
+            'club' => $club,
+			'weight' => $weight,
+			'age' => $age,
+			'height' => $height,
+			'picture' => $picture
+		]);
 
-	// 	$joueurs = $req->rowCount();
-	// 	return $joueurs;
-    // }
+		$players = $req->rowCount();
+		return $players;
+    }
 
 
-	// public function modify(){
+	public function modify(){
 
-	// 	$co = $this->co;
+		$co = $this->co;
 		
-    //     $sql = 'UPDATE joueurs
-	// 	SET 
-	// 	poste = :poste,
-	// 	pays_id = :pays_id,
-	// 	club = :club,
-	// 	age = :age,
-	// 	taille = :taille,
-	// 	poids = :poids,
-	// 	nom = :nom,
-	// 	prenom = :prenom
-	// 	photo = :photo
+        $sql = 'UPDATE players
+		SET 
+		lastname = :lastname,
+		firstname = :firstname,
+		country_id = :teams,
+		club = :club,
+		position = :position,
+		age = :age,
+		height = :height,
+		weight = :weight,
+		picture = :picture
 
-	// 	WHERE 
-	// 	Id = :id ';
+		WHERE 
+		id = :id ';
 
-    //     $req = $co->prepare($sql);
-		
-	// 	$id = $_POST['id'];
-	// 	$poste = $_POST['poste'];
-	// 	$pays_id = $_POST['pays_id'];
-	// 	$club = $_POST['club'];
-	// 	$age = $_POST['age'];
-	// 	$taille = $_POST['taille'];
-	// 	$poids = $_POST['poids'];
-	// 	$nom = $_POST['nom'];
-	// 	$prenom = $_POST['prenom'];
-	// 	$photo = $_POST['photo'];
+        $req = $co->prepare($sql);
 
-	// 	$req->bindParam(':id', $id, PDO::PARAM_INT);
-	// 	$req->bindParam(':poste', $poste, PDO::PARAM_STR);
-	// 	$req->bindParam(':pays_id', $pays_id, PDO::PARAM_INT);
-	// 	$req->bindParam(':club', $club, PDO::PARAM_STR);
-	// 	$req->bindParam(':age', $age, PDO::PARAM_INT);
-	// 	$req->bindParam(':taille', $taille, PDO::PARAM_INT);
-	// 	$req->bindParam(':poids', $poids, PDO::PARAM_INT);
-	// 	$req->bindParam(':nom', $nom, PDO::PARAM_STR);
-	// 	$req->bindParam(':prenom', $prenom, PDO::PARAM_STR);
-    //     $req->bindParam(':photo', $photo, PDO::PARAM_STR);
+		$lastname = $_POST['lastname'];
+		$firstname = $_POST['firstname'];
+		$id = $_POST['id'];
+		$teams = $_POST['teams'];
+		$club = $_POST['club'];
+		$position = $_POST['position'];
+		$age = $_POST['age'];
+		$height = $_POST['height'];
+		$weight = $_POST['weight'];
+		$picture = $_POST['picture'];
 
-	// 	$req->execute();
+		$req->bindParam(':id', $id, PDO::PARAM_INT);
+		$req->bindParam(':lastname', $lastname, PDO::PARAM_STR);
+		$req->bindParam(':firstname', $firstname, PDO::PARAM_STR);
+		$req->bindParam(':teams', $teams, PDO::PARAM_INT);
+		$req->bindParam(':club', $club, PDO::PARAM_STR);
+		$req->bindParam(':position', $position, PDO::PARAM_STR);
+		$req->bindParam(':age', $age, PDO::PARAM_INT);
+		$req->bindParam(':height', $height, PDO::PARAM_INT);
+		$req->bindParam(':weight', $weight, PDO::PARAM_INT);
+        $req->bindParam(':picture', $picture, PDO::PARAM_INT);
+        
+		$req->execute();
 
-	// 	$joueurs = $req->rowCount();
-	// 	return $joueurs;
-    // }
+		$players = $req->rowCount();
+		return $players;
+    }
 
+	public function delete($id){
+        $co = $this->co;
 
-	// public function delete($id){
-    //     $co = $this->co;
-
-    //     $sql = 'DELETE FROM joueurs WHERE id = :id';
-    //     $req = $co->prepare($sql);
-    //     $req->execute([
-	// 		'id' => $id
-	// 	]);
-	// 	$joueurs = $req->rowCount();
-	// 	return $joueurs;
-    // }
+        $sql = 'DELETE FROM players WHERE id = :id';
+        $req = $co->prepare($sql);
+        $req->execute([
+			'id' => $id
+		]);
+		$players = $req->rowCount();
+		return $players;
+    }
 }

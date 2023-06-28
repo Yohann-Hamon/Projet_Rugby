@@ -28,9 +28,19 @@ function traiterSelection() {
     const selectElement = document.getElementById('pools');
     const selectedValue = selectElement.value;
 
+    fetch('./front/components/organisms/teams/teams.php.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: 'selectedValue=' + encodeURIComponent(selectedValue)
+      })
+      .then(response => response.text())
+      .then(data => {
+        console.log(data);
+      });
 
-
-    const xhr = new XMLHttpRequest();
+    // const xhr = new XMLHttpRequest();
 
     // xhr.open('POST', './front/components/organisms/teams/teams.php', true);
     // xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');

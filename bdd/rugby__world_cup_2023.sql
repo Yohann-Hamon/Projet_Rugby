@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 26 juin 2023 à 23:05
+-- Généré le : mar. 27 juin 2023 à 23:28
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 8.1.2
 
@@ -247,7 +247,7 @@ INSERT INTO `teams` (`id`, `emblem`, `world_ranking`, `country`, `pool`) VALUES
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `mail` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `pswd` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -255,9 +255,10 @@ CREATE TABLE `users` (
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `mail`, `password`, `username`) VALUES
+INSERT INTO `users` (`id`, `mail`, `pswd`, `username`) VALUES
 (1, 'hamon.yohann0416@gmail.com', '$2y$10$N7N.dOj4xFU/TomjCe7dw.6Ch3kwlA.1X5SZPSip2zJfAUPk4sJGi', 'admin1'),
-(3, 'test@test', '$2y$10$wPGDcOG9toy6NuGvIpDmHOlMjPa4iOVd6QG0NhfwBFZ97k/qMWH7S', 'test');
+(3, 'test@test', '$2y$10$wPGDcOG9toy6NuGvIpDmHOlMjPa4iOVd6QG0NhfwBFZ97k/qMWH7S', 'test'),
+(4, 'test@gmail.fr', '123', 'allo');
 
 --
 -- Index pour les tables déchargées
@@ -316,7 +317,7 @@ ALTER TABLE `teams`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Contraintes pour les tables déchargées

@@ -1,5 +1,6 @@
 <?php
 
+
 class Teams extends BDD{
 	private $id;
 	private $emblem;
@@ -80,7 +81,6 @@ class Teams extends BDD{
 		$co = $this->co;
 
 		$sql = 'SELECT * FROM teams ORDER BY world_rank ASC';
-		$sql = 'SELECT * FROM teams ORDER BY pool ASC';
 		$req = $co->prepare($sql); 
 		$req->execute();
 
