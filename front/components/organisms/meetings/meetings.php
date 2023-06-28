@@ -16,16 +16,6 @@
         ?>
     </div>
 
-    <div>
-        <?php
-            include './front/components/molecules/meeting/add_meeting.php';
-            
-            include './front/components/molecules/meeting/edit_meeting.php';
-
-            include './front/components/molecules/meeting/delete_meeting.php';
-        ?>
-    </div>
-
 </section>
 
 <?php
