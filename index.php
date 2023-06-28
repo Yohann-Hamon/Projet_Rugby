@@ -44,7 +44,9 @@
             // hero
             include './front/components/organisms/hero/hero.php';
 
-            // posts instagram
+            // meetings
+            // include './front/components/organisms/meetings/meetings.php';
+
             include './front/components/molecules/insta/insta.php';
 
             //footer

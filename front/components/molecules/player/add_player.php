@@ -3,7 +3,7 @@
 <div class="add-player"> AJOUTER a player
 <br>
 <br>
-<form action="./bdd/players/player_processing.php" method="POST">
+<form action="player_processing.php" method="POST">
     <br>
     <label for="teams">teams : </label>
     <select name="teams" id="teams">

@@ -1,7 +1,7 @@
 <div> SUPPRIMER a player
 <br>
 <br>
-    <form action="./bdd/players/player_processing.php" method="POST">
+    <form action="player_processing.php" method="POST">
     <br>
     <label for="players">players : </label>
     <select name="players" id="players">
