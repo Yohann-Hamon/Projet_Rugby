@@ -1,5 +1,4 @@
 <h1 >Suivez les comptes Instagram les plus actifs pour plus d’infos </h1>
-<hr>
 <div class="o-embed__user" style= "display: flex">
 
 

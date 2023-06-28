@@ -1,0 +1,19 @@
+.o-insta
+{
+  background: #A3A7B5; 
+  max-width: 450px; 
+  width: calc(100% - 2px);
+  border-radius: 3px;
+  border: 1px solid rgb(219, 219, 219); 
+  box-shadow: none; 
+  display: block; 
+  margin: 0px 0px 12px; 
+  min-width: 449px; 
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 34px;
+  background-color: var(--primary-100);
+  color: var(--base-200);
+}

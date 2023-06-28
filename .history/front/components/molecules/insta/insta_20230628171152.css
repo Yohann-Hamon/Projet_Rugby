@@ -1,9 +1,5 @@
-@font-face {
-  font-family: 'Anton';
-  src: url('../../../style/fonts/anton.woff2');
-}
-
 .o-insta {
+  background: #A3A7B5;
   max-width: 450px;
   width: calc(100% - 2px);
   border-radius: 10px;
@@ -17,12 +13,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 12px 34px;
-}
-
-h1 {
-  font-family: 'Anton';
-}
-
-hr {
-  height: 50px;
+  background-color: var(--primary-100);
+  color: var(--base-200);
 }
