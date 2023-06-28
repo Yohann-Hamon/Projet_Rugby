@@ -4,7 +4,6 @@
 }
 
 .o-hero {
-    background-color: #000E41;
     background-image: url("../../organisms/hero/background.png");
     background-size: cover;
     overflow: auto;

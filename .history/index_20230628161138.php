@@ -3,6 +3,7 @@
     <head>
         <!-- style.css -->
         <link rel="stylesheet" href="./front/style/colors.css">
+        <link rel="stylesheet" href="./front/style/text-styles.css">
         
         <!-- main.css -->
         <link rel="stylesheet" href="./front/style/main.css">

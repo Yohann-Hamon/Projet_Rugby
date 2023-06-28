@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'Michroma';
+  src: url(front/style/fonts/michroma.woff2);
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url(front/style/fonts/inter.woff2);
+}
+
+@font-face {
+  font-family: 'Anton';
+  src: url(front/style/fonts/anton.woff2);
+}
+
+body {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.test {
+  height: 100px;
+  padding: 20px;
+  background-color: rgb(87, 151, 151);
+}
+
+h1 {
+  /* font-family: 'Anton'; */
+  margin: 0;
+}
+
+h2 {
+  /* font-family: 'Anton'; */
+  margin: 0;
+}

@@ -11,9 +11,9 @@
 </head>
 <body>
 <section class="o-hero">
-    <h2 class=" neutral600">A partir du 8 septembre 2023</h2>
-    <h1 class=" neutral900">Venez suivre le XV d’oeuFrance</h1>
-    <h3 class=" neutral900">Durant le Grand tournoi de Rugby</h3>
+    <h2 class=" neutral400">A partir du 8 septembre 2023</h2>
+    <h1 class=" neutral100">Venez suivre le XV d’oeuFrance</h1>
+    <h3 class=" neutral100">Durant le Grand tournoi de Rugby</h3>
 </section>
 </body>
 </html>

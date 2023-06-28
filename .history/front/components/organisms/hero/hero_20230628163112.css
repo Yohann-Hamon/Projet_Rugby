@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Anton';
+    src: url('./front/style/fonts/anton.woff2') format('woff2');
+}
+
+.o-hero {
+    margin: 0;
+    padding-top: 253px;
+    text-align: center;
+    background-color: var(--base-200);
+    height: 956px;
+    width: 100%;
+    font-family: 'Anton', Arial;
+
+}
+
+.o-hero__main-title {
+    padding-top: 20px;
+    font-family: 'Anton', Arial;
+
+}
