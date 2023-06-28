@@ -3,7 +3,10 @@
   src: url('../../../style/fonts/inter.woff2');
 }
 
+
 .o-footer {
+  font-family: 'Inter';
+
   display: flex;
   justify-content: space-around;
   padding: 10px 20px 100px 20px;
@@ -13,8 +16,8 @@
 
 .o-footer__content {
   display: inline;
-  font-family: 'Inter';
   align-items: center;
+  color: #EFEFEF;
 
 }
 

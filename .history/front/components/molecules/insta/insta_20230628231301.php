@@ -1,4 +1,4 @@
-<h1 class="insta-title neutral900">Suivez ces comptes Instagram pour ne rater aucunes infos !</h1>
+<h1 class="neutral900">Suivez ces comptes Instagram pour ne rater aucunes infos !</h1>
 
 <div class="o-embed__user" style="display: flex">
   <div class="posts">

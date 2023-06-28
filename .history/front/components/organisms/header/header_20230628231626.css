@@ -3,12 +3,6 @@
   src: url('../../../style/fonts/anton.woff2');
 }
 
-@font-face {
-  font-family: 'Inter';
-  src: url('../../../style/fonts/inter.woff2');
-}
-
-
 .o-header {
   display: flex;
   justify-content: flex-end;
@@ -21,12 +15,6 @@
 
 .o-header .o-header__user>*+* {
   margin-left: 56px;
-  font-family: 'Inter';
-  font-size: 16px;
-}
-
-.navtitle {
-  font-size: 24px;
 }
 
 .o-header__logo {

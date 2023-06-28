@@ -22,11 +22,7 @@
 .o-header .o-header__user>*+* {
   margin-left: 56px;
   font-family: 'Inter';
-  font-size: 16px;
-}
-
-.navtitle {
-  font-size: 24px;
+  font-weight: 600;
 }
 
 .o-header__logo {

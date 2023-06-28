@@ -1,35 +1,26 @@
 @font-face {
   font-family: 'Anton';
-  src: url('../../../style/fonts/anton.woff2');
+  src: url(../../../style/fonts/anton.woff2);
 }
 
-@font-face {
-  font-family: 'Inter';
-  src: url('../../../style/fonts/inter.woff2');
-}
-
-
-.o-header {
+.o-header
+{
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 12px 34px;
   background-color: none;
-  color: var(--neutral-9 00);
+  color: var(--neutral-9  00);
   font-family: 'Anton';
 }
 
-.o-header .o-header__user>*+* {
+.o-header .o-header__user > * + *
+{
   margin-left: 56px;
-  font-family: 'Inter';
-  font-size: 16px;
 }
 
-.navtitle {
-  font-size: 24px;
-}
-
-.o-header__logo {
+.o-header__logo
+{
   position: absolute;
   display: flex;
   justify-content: space-between;
