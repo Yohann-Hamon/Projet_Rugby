@@ -26,15 +26,6 @@
         ?>
     </div>
     
-    <div>
-        <?php
-            include './front/components/molecules/player/add_player.php';
-            
-            include './front/components/molecules/player/edit_player.php';
-
-            include './front/components/molecules/player/delete_player.php';
-        ?>
-    </div>
 
 </section>
 
