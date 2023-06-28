@@ -50,6 +50,16 @@
             
         ?>
     </div>
+
+    <div>
+        <?php
+            include './front/components/molecules/team/add_team.php';
+            
+            include './front/components/molecules/team/edit_team.php';
+
+            include './front/components/molecules/team/delete_team.php';
+        ?>
+    </div>
     
 </section>
 

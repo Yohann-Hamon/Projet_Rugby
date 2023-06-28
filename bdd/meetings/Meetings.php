@@ -1,7 +1,6 @@
 <?php
 
-require_once './bdd/BDD.php';
-
+require_once '../BDD.php';
 
 class Meetings extends BDD{
 	private $id;
@@ -89,4 +88,73 @@ class Meetings extends BDD{
 
 		return $meetings;
 	}
+
+	public function add($datetime, $team_1, $team_2, $place, $score ){
+        $co = $this->co;
+
+        $sql = 'INSERT INTO meetings(datetime, team_1, team_2, place, score ) 
+		VALUES(:datetime, :team_1, :team_2, :place, :score )';
+        $req = $co->prepare($sql);
+		
+		$req->execute([
+			'datetime' => $datetime,
+            'team_1' => $team_1,
+            'team_2' => $team_2,
+			'place' => $place,
+            'score' => $score,
+		]);
+
+		$meetings = $req->rowCount();
+		return $meetings;
+    }
+
+
+	public function modify(){
+
+		$co = $this->co;
+		
+        $sql = 'UPDATE meetings
+		SET 
+		datetime = :datetime,
+		team_1 = :team_1,
+		team_2 = :team_2,
+		place = :place,
+		score = :score
+
+		WHERE 
+		id = :id ';
+
+        $req = $co->prepare($sql);
+
+		$id = $_POST['id'];
+		$datetime = $_POST['datetime'];
+		$team_1 = $_POST['team_1'];
+		$team_2 = $_POST['team_2'];
+		$place = $_POST['place'];
+		$score = $_POST['score'];
+
+		$req->bindParam(':id', $id, PDO::PARAM_INT);
+		$req->bindParam(':datetime', $datetime, PDO::PARAM_STR);
+		$req->bindParam(':team_1', $team_1, PDO::PARAM_STR);
+		$req->bindParam(':team_2', $team_2, PDO::PARAM_INT);
+		$req->bindParam(':place', $place, PDO::PARAM_STR);
+		$req->bindParam(':score', $score, PDO::PARAM_STR);
+		
+		$req->execute();
+
+		$meetings = $req->rowCount();
+		return $meetings;
+    }
+
+	public function delete($id){
+        $co = $this->co;
+
+        $sql = 'DELETE FROM meetings WHERE id = :id';
+        $req = $co->prepare($sql);
+        $req->execute([
+			'id' => $id
+		]);
+		$meetings = $req->rowCount();
+		return $meetings;
+    }
 }
