@@ -4,14 +4,15 @@
 
 <header class="o-header">
   <div class="o-header__logo">
-    <img src="#" alt="logo">
+    <img src="./front/style/images/logo.svg" alt="logo">
+    <h1>Le XV d'oeuFrance</h1>
   </div>
   
   <div class="o-header__user">
     <?php
+      navButtonComponent('#','rencontres');
       navButtonComponent('#','équipes');
       navButtonComponent('#','joueurs');
-      navButtonComponent('#','rencontres');
     ?>
   </div>
 </header>
