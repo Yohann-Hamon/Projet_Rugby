@@ -3,6 +3,7 @@
 
     <div class="o-players__table">
         <?php
+        
             include './bdd/players/Players.php';
 
             $team = new Teams();
@@ -23,14 +24,16 @@
             }
         ?>
     </div>
+    
+    <div>
+        <?php
+            include './front/components/molecules/player/add_player.php';
+            
+            include './front/components/molecules/player/edit_player.php';
 
-    <?php
-        include './front/components/molecules/player/add_player.php';
-        
-        include './front/components/molecules/player/edit_player.php';
-
-        include './front/components/molecules/player/delete_player.php';
-    ?>
+            include './front/components/molecules/player/delete_player.php';
+        ?>
+    </div>
 
 </section>
 

@@ -4,7 +4,7 @@ include 'bdd/BDD.php';
 include 'bdd/utilisateurs/Utilisateurs.php';
 
 
-$con = mysqli_connect("localhost","root","","rugby__world_cup_2023");
+$con = mysqli_connect("localhost","root","","rugby_world_cup_2023");
 
 if(!$con){
     die('Connection Failed'. mysqli_connect_error());

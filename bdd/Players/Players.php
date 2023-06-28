@@ -1,6 +1,5 @@
 <?php
 
-require_once './bdd/BDD.php';
 
 class Players extends BDD{
 	private $id;
@@ -152,7 +151,7 @@ class Players extends BDD{
 	public function club(){
 		$co = $this->co;
 
-		$sql = 'SELECT DISTINCT Club FROM players ' ;
+		$sql = 'SELECT DISTINCT club FROM players ' ;
 		$req = $co->prepare($sql);
 		$req->execute();
 
@@ -166,7 +165,7 @@ class Players extends BDD{
         $co = $this->co;
 
         $sql = 'INSERT INTO players(country_id, lastname, firstname, position, Club, Age, height, weight ,picture ) 
-		VALUES(:country_id, :lastname, :firstname, :position, :club, :age, :height,  :weight, :picture )';
+		VALUES(:country_id, :lastname, :firstname, :position, :club, :age, :height, :weight, :picture )';
         $req = $co->prepare($sql);
 		
 		$req->execute([
@@ -194,25 +193,25 @@ class Players extends BDD{
 		SET 
 		lastname = :lastname,
 		firstname = :firstname,
-		country_id = :country_id,
-		Club = :club,
+		country_id = :teams,
+		club = :club,
 		position = :position,
-		Age = :age,
+		age = :age,
 		height = :height,
 		weight = :weight,
 		picture = :picture
 
 		WHERE 
-		Id = :id ';
+		id = :id ';
 
         $req = $co->prepare($sql);
 
 		$lastname = $_POST['lastname'];
 		$firstname = $_POST['firstname'];
 		$id = $_POST['id'];
-		$country_id = $_POST['country_id'];
-		$club = $_POST['clubs'];
-		$position = $_POST['positions'];
+		$teams = $_POST['teams'];
+		$club = $_POST['club'];
+		$position = $_POST['position'];
 		$age = $_POST['age'];
 		$height = $_POST['height'];
 		$weight = $_POST['weight'];
@@ -221,7 +220,7 @@ class Players extends BDD{
 		$req->bindParam(':id', $id, PDO::PARAM_INT);
 		$req->bindParam(':lastname', $lastname, PDO::PARAM_STR);
 		$req->bindParam(':firstname', $firstname, PDO::PARAM_STR);
-		$req->bindParam(':country_id', $country_id, PDO::PARAM_INT);
+		$req->bindParam(':teams', $teams, PDO::PARAM_INT);
 		$req->bindParam(':club', $club, PDO::PARAM_STR);
 		$req->bindParam(':position', $position, PDO::PARAM_STR);
 		$req->bindParam(':age', $age, PDO::PARAM_INT);

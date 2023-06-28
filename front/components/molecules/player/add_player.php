@@ -1,3 +1,5 @@
+<br>
+<br>
 <div class="add-player"> AJOUTER a player
 <br>
 <br>
@@ -9,7 +11,7 @@
         
             foreach($teams as $a_team )
             {
-                echo '<option value="'.$a_team['id'].'">'.$a_team['lastname'].'</option>';
+                echo '<option value="'.$a_team['id'].'">'.$a_team['country'].'</option>';
             }
         
         ?>
@@ -40,10 +42,11 @@
     <label for="club">club : </label>
     <select name="club" id="club">
         <?php
-        foreach($players_club as $a_player )
-        {
-            echo '<option value="'.$a_player['club'].'">'.$a_player['club'].'</option>';
-        };
+
+            foreach($players_club as $a_player )
+            {
+                echo '<option value="'.$a_player['club'].'">'.$a_player['club'].'</option>';
+            }
         ?>
     </select>
     <br>
@@ -58,6 +61,10 @@
     <br>
     <label for="height">height (165 à 300 cm) : </label>
     <input type="number" name="height" id="height" min="165" max="300">
+    <br>
+    <br>
+    <label for="picture">Picture : </label>
+    <input type="text" name="picture" id="picture">
     <br>
     <br>
     <input type="checkbox" name="cgu" id="cgu" value="cgu">

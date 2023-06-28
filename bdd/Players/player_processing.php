@@ -2,6 +2,7 @@
             session_start();
 
             require_once '../BDD.php';
+            // include 'Players.php';
             require_once './Players.php';
 ?>
 
@@ -85,6 +86,14 @@
                     echo "<p>Veuillez renseigner le height</p>";
                 }
 
+                if(isset($_POST['picture']) && !empty($_POST['picture'])){
+                    echo "<p>picture : ".$_POST['picture']."</p>";
+                }
+                else{
+                    $erreurs = true;
+                    echo "<p>Veuillez renseigner la picture</p>";
+                }
+
                 // isset test si la donnée à été reçue
                 // empty test si le champ est vide
                 // !empty test si le champ n'est pas vide
@@ -102,7 +111,7 @@
                     // Création d'une variable de session
                     // $_SESSION['Admin'] = true;
                     // $_SESSION['Admin'] = $_POST['lastname'];
-                    $player = new Player();
+                    $player = new Players();
                     $players = $player->add( 
                         $_POST['teams'], 
                         $_POST['lastname'],
@@ -111,7 +120,8 @@
                         $_POST['club'], 
                         $_POST['age'], 
                         $_POST['height'],
-                        $_POST['weight']); 
+                        $_POST['weight'],
+                        $_POST['picture']); 
             
                     $_SESSION['add'] = true;
                     $_SESSION['lastname'] = $_POST['lastname'];
@@ -119,7 +129,8 @@
                    
                     // exit;
                     // Redirection vers index.php
-                    // header('Location:   ../../../index.php');
+                    // header('Location:   ../../index.php');
+                    echo "<p><a href='../../index.php'>Retour a la page d'accueil</a></p>";
                 }
                 else{
                     echo "<p><a href='../../index.php'>Retour au formulaire</a></p>";
@@ -143,65 +154,37 @@
                 if(isset($_POST['teams']) && !empty($_POST['teams'])){
                     echo "<p>Equipe : ".$_POST['teams']."</p>";
                 }
-                else{
-                    $erreurs = true;
-                    echo "<p>Veuillez renseigner l'equipe</p>";
-                }
 
                 if(isset($_POST['lastname']) && !empty($_POST['lastname'])){
                     echo "<p>lastname : ".$_POST['lastname']."</p>";
-                }
-                else{
-                    $erreurs = true;
-                    echo "<p>Veuillez renseigner le lastname</p>";
                 }
 
                 if(isset($_POST['firstname']) && !empty($_POST['firstname'])){
                     echo "<p>firstname : ".$_POST['firstname']."</p>";
                 }
-                else{
-                    $erreurs = true;
-                    echo "<p>Veuillez renseigner le firstname</p>";
-                }
 
                 if(isset($_POST['position']) && !empty($_POST['position'])){
                     echo "<p>position : ".$_POST['position']."</p>";
-                }
-                else{
-                    $erreurs = true;
-                    echo "<p>Veuillez renseigner le position</p>";
                 }
 
                 if(isset($_POST['club']) && !empty($_POST['club'])){
                     echo "<p>Club : ".$_POST['club']."</p>";
                 }
-                else{
-                    $erreurs = true;
-                    echo "<p>Veuillez renseigner le club</p>";
-                }
 
                 if(isset($_POST['weight']) && !empty($_POST['weight'])){
                     echo "<p>weight : ".$_POST['weight']."</p>";
-                }
-                else{
-                    $erreurs = true;
-                    echo "<p>Veuillez renseigner le weight</p>";
                 }
 
                 if(isset($_POST['age']) && !empty($_POST['age'])){
                     echo "<p>Age : ".$_POST['age']."</p>";
                 }
-                else{
-                    $erreurs = true;
-                    echo "<p>Veuillez renseigner le age</p>";
-                }
 
                 if(isset($_POST['height']) && !empty($_POST['height'])){
                     echo "<p>height : ".$_POST['height']."</p>";
                 }
-                else{
-                    $erreurs = true;
-                    echo "<p>Veuillez renseigner le height</p>";
+
+                if(isset($_POST['picture']) && !empty($_POST['picture'])){
+                    echo "<p>picture : ".$_POST['picture']."</p>";
                 }
 
                 if(isset($_POST['cgu']) && !empty($_POST['cgu'])){
@@ -218,33 +201,35 @@
                     
                     // Création d'une variable de session
                     // $_SESSION['Admin'] = true;
-                    // $_SESSION['Admin'] = $_POST['nom'];
-                    $player = new Player();
+                    // $_SESSION['Admin'] = $_POST['lastname'];
+                    $player = new Players();
 
                     // $teams = $_POST['teams'];
                     $teams = $_POST['teams'];
-                    $nom = $_POST['nom'];
+                    $lastname = $_POST['lastname'];
                     $firstname = $_POST['firstname'];
                     $club = $_POST['club'];
                     $position = $_POST['position'];
                     $age = $_POST['age'];
                     $height = $_POST['height'];
                     $weight = $_POST['weight'];
+                    $picture = $_POST['picture'];
 
                     $players = $player->modify();
                     
 
                     $_SESSION['edit'] = true;
-                    $_SESSION['nom'] = $_POST['nom'];
-                    echo '<p>Le player ' . $_SESSION['nom'] . ' a bien été modifié</p>';
+                    $_SESSION['lastname'] = $_POST['lastname'];
+                    echo '<p>Le player ' . $_SESSION['lastname'] . ' a bien été modifié</p>';
                    
                     // exit;
                     // Redirection vers index.php
                     // header('Location:   ../../../index.php');
-                    
+                    echo '<p>Le player a bien été modifié</p>';
+                    echo "<p><a href='../../index.php'>Retour a la page d'accueil</a></p>";
                 }
                 else{
-                    echo "<p><a href='../../index.php'>Retour au formulaire</a></p>";
+                    echo "<p><a href='./edit_players.php'>Retour au formulaire</a></p>";
                 }
             }
 
@@ -264,13 +249,14 @@
 
                 if($erreurs == false)
                 {
-                    $player = new Player();
+                    $player = new Players();
                     $players = $player->delete( 
                         $_POST['players']);
             
                     $_SESSION['delete'] = true;
                     
                     echo '<p>Le player a bien été supprimée</p>';
+                    echo "<p><a href='../../index.php'>Retour a la page d'accueil</a></p>";
                 }
                 else{
                     echo "<p><a href='../../index.php'>Retour au formulaire</a></p>";

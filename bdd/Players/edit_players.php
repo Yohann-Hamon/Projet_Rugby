@@ -18,20 +18,22 @@
     <body>
 
         <?php
-            $id = $_POST['players'];
+            
+            $id = $_POST['players'];       
 
             if(isset($_POST['choose']))
-            {
-                $team = new Team();
+            {   
+
+                $team = new Teams();
                 $teams = $team->findAll();
 
-                $player = new Player();
+                $player = new Players();
                 $players = $player->findAll();
 
-                $player = new Player();
+                $player = new Players();
                 $players_position = $player->position();
 
-                $player = new Player();
+                $player = new Players();
                 $players_club = $player->club();
 
                 $erreurs = false;
@@ -59,10 +61,10 @@
                                         {
                                             if($a_player['country_id'] == $a_team['id'])
                                             {
-                                                echo '<option value="'.$a_player['country_id'].'" hidden>'.$a_team['lastname'].'</option>';
+                                                echo '<option value="'.$a_player['country_id'].'" hidden>'.$a_team['country'].'</option>';
                                                 foreach($teams as $a_team)
                                                 {
-                                                    echo '<option value="'.$a_team['id'].'">'.$a_team['lastname'].'</option>';    
+                                                    echo '<option value="'.$a_team['id'].'">'.$a_team['country'].'</option>';    
                                             
                                                 }
                                             } 
@@ -85,8 +87,8 @@
                                     ?>">
                                     <br>
                                     <br>
-                                    <label for="positions">positions : </label>
-                                    <select name="positions" id="positions">
+                                    <label for="position">positions : </label>
+                                    <select name="position" id="position">
                                     <?php
                                         echo '<option value="'.$a_player['position'].'" hidden>'.$a_player['position'].'</option>';
                                         foreach($players_position  as $a_player1 )
@@ -97,8 +99,8 @@
                                     </select>
                                     <br>
                                     <br>
-                                    <label for="clubs">Clubs : </label>
-                                    <select name="clubs" id="clubs">
+                                    <label for="club">Clubs : </label>
+                                    <select name="club" id="club">
                                     <?php
                                         echo '<option value="'.$a_player['club'].'" hidden>'.$a_player['club'].'</option>';
                                         foreach($players_club as $a_player1)
@@ -112,7 +114,7 @@
                                     <label for="age">Age (18 à 35 ans) : </label>
                                     <input type="number" name="age" id="age" min="18" max="35"
                                     value="<?php
-                                        echo $a_player['Age'];
+                                        echo $a_player['age'];
                                     ?>">
                                     <br>
                                     <br>
@@ -127,6 +129,13 @@
                                     <input type="number" name="weight" id="weight" min="65" max="140"
                                     value="<?php
                                         echo $a_player['weight'];
+                                    ?>">
+                                    <br>
+                                    <br>
+                                    <label for="picture">Picture : </label>
+                                    <input type="text" name="picture" id="picture" 
+                                    value="<?php
+                                        echo $a_player['picture'];
                                     ?>">
                                     <br>
                                     <br>
