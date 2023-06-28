@@ -1,5 +1,5 @@
 <?php
-
+require_once '../BDD.php';
 
 class Teams extends BDD{
 	private $id;
@@ -113,4 +113,69 @@ class Teams extends BDD{
 
 		return $teams_pool;
 	}
+
+	public function add($country, $world_rank, $emblem, $pool ){
+        $co = $this->co;
+
+        $sql = 'INSERT INTO teams(country, world_rank, emblem, pool ) 
+		VALUES(:country, :world_rank, :emblem, :pool )';
+        $req = $co->prepare($sql);
+		
+		$req->execute([
+			'country' => $country,
+            'world_rank' => $world_rank,
+            'emblem' => $emblem,
+			'pool' => $pool
+		]);
+
+		$teams = $req->rowCount();
+		return $teams;
+    }
+
+
+	public function modify(){
+
+		$co = $this->co;
+		
+        $sql = 'UPDATE teams
+		SET 
+		country = :country,
+		world_rank = :world_rank,
+		emblem = :emblem,
+		pool = :pool
+
+		WHERE 
+		id = :id ';
+
+        $req = $co->prepare($sql);
+
+		$id = $_POST['id'];
+		$country = $_POST['country'];
+		$world_rank = $_POST['world_rank'];
+		$emblem = $_POST['emblem'];
+		$pool = $_POST['pool'];
+
+		$req->bindParam(':id', $id, PDO::PARAM_INT);
+		$req->bindParam(':country', $country, PDO::PARAM_STR);
+		$req->bindParam(':world_rank', $world_rank, PDO::PARAM_STR);
+		$req->bindParam(':emblem', $emblem, PDO::PARAM_STR);
+		$req->bindParam(':pool', $pool, PDO::PARAM_INT);
+
+		$req->execute();
+
+		$teams = $req->rowCount();
+		return $teams;
+    }
+
+	public function delete($id){
+        $co = $this->co;
+
+        $sql = 'DELETE FROM teams WHERE id = :id';
+        $req = $co->prepare($sql);
+        $req->execute([
+			'id' => $id
+		]);
+		$teams = $req->rowCount();
+		return $teams;
+    }
 }

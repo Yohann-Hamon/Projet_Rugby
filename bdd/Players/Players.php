@@ -1,5 +1,5 @@
 <?php
-
+require_once '../BDD.php';
 
 class Players extends BDD{
 	private $id;
