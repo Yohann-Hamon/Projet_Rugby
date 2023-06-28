@@ -1,0 +1,13 @@
+.o-footer
+{
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 20px 100px 20px;
+  background-color: var(--primary-200);
+  color: var(--base-200);
+}
+
+.o-footer__content
+{
+  display: flex;
+}

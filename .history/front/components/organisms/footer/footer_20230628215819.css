@@ -1,11 +1,4 @@
-@font-face {
-  font-family: 'Anton';
-  src: url('../../../style/fonts/anton.woff2');
-}
-
 .o-footer {
-  font-family: 'Anton';
-
   display: flex;
   justify-content: space-around;
   padding: 10px 20px 100px 20px;
@@ -16,6 +9,10 @@
 .o-footer__content {
   display: flex;
   align-items: center;
-  color: #EFEFEF;
+}
 
+.o-footer__content p {
+  white-space: nowrap;
+  color: #EFEFEF;
+  margin: 0;
 }

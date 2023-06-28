@@ -38,8 +38,8 @@
     <body>
         <?php
             // header
-            include './front/components/organisms/header/header.php';
-
+            include './front/components/organisms/header/header.php'; 
+            
             // hero
             include './front/components/organisms/hero/hero.php';
 

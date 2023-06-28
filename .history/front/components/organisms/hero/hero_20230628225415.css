@@ -4,8 +4,7 @@
 }
 
 body {
-    overflow: auto;
-    background-image: url("../../organisms/hero/background.png");
+    /* background-image: linear-gradient(to left, rgba(0, 14, 65, 0.5) 0%, rgba(0, 14, 65, 0.5) 100%), url("../../organisms/hero/background.png"); */
     background-repeat: no-repeat;
     height: 500px;
     background-size: cover;
@@ -16,6 +15,7 @@ body {
     position: relative;
     top: 300px;
     left: 40px;
+    background-image: linear-gradient(to left, rgba(0, 14, 65, 0.5) 0%, rgba(0, 14, 65, 0.5) 100%), url("../../organisms/hero/background.png");
     background-color: var(--base-200);
     height: 956px;
     width: 100%;
@@ -24,7 +24,7 @@ body {
 }
 
 .title {
-    font-size: 50px;
+    font-size: 60px;
 }
 
 .subtitle {

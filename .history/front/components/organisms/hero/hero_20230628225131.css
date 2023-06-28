@@ -4,8 +4,7 @@
 }
 
 body {
-    overflow: auto;
-    background-image: url("../../organisms/hero/background.png");
+    background-image: linear-gradient(to left, rgba(0, 14, 65, 0.5), rgba(0, 14, 65, 0.5)), url("../../organisms/hero/background.png");
     background-repeat: no-repeat;
     height: 500px;
     background-size: cover;
@@ -24,7 +23,7 @@ body {
 }
 
 .title {
-    font-size: 50px;
+    font-size: 60px;
 }
 
 .subtitle {

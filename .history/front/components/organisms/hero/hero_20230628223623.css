@@ -4,7 +4,6 @@
 }
 
 body {
-    overflow: auto;
     background-image: url("../../organisms/hero/background.png");
     background-repeat: no-repeat;
     height: 500px;
@@ -15,7 +14,6 @@ body {
 .o-hero {
     position: relative;
     top: 300px;
-    left: 40px;
     background-color: var(--base-200);
     height: 956px;
     width: 100%;
@@ -24,7 +22,7 @@ body {
 }
 
 .title {
-    font-size: 50px;
+    font-size: 60px;
 }
 
 .subtitle {

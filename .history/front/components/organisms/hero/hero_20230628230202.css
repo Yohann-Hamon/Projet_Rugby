@@ -4,7 +4,6 @@
 }
 
 body {
-    overflow: auto;
     background-image: url("../../organisms/hero/background.png");
     background-repeat: no-repeat;
     height: 500px;

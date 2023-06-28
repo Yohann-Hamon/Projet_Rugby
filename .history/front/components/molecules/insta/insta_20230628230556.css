@@ -11,11 +11,14 @@
 }
 
 .o-insta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 20px;
   padding: 12px 34px;
 }
 
-h1 {
+.insta {
   font-family: 'Anton';
   font-size: 30px;
   margin: 20px;
