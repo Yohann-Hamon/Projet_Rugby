@@ -1,7 +1,8 @@
-:root {
+:root
+{
   /* Primary */
-  --primary-100: #000E41;
-  --primary-200: #031452;
+  --primary-100: #031452;
+  --primary-200: #03218C;
   --primary-300: #002DC9;
   --primary-400: #7289D7;
   --primary-500: #869CE8;
@@ -43,141 +44,174 @@
 
 /* Primary */
 
-.primary100 {
+.primary100 
+{
   color: var(--primary-100);
 }
 
-.primary200 {
+.primary200 
+{
   color: var(--primary-200);
 }
 
-.primary300 {
+.primary300 
+{
   color: var(--primary-300);
 }
 
-.primary400 {
+.primary400 
+{
   color: var(--primary-400);
 }
 
-.secondary500 {
+.secondary500 
+{
   color: var(--secondary-500);
 }
 
-.secondary600 {
+.secondary600 
+{
   color: var(--secondary-600);
 }
 
-.secondary700 {
+.secondary700
+{
   color: var(--secondary-700);
 }
 
-.secondary800 {
+.secondary800
+{
   color: var(--secondary-800);
 }
 
-.secondary900 {
+.secondary900
+{
   color: var(--secondary-900);
 }
 
 
 /* Terciary */
 
-.terciary100 {
+.terciary100 
+{
   color: var(--terciary-100);
 }
 
-.terciary200 {
+.terciary200 
+{
   color: var(--terciary-200);
 }
 
-.terciary300 {
+.terciary300 
+{
   color: var(--terciary-300);
 }
 
-.terciary400 {
+.terciary400 
+{
   color: var(--terciary-400);
 }
 
-.terciary500 {
+.terciary500 
+{
   color: var(--terciary-500);
 }
 
-.terciary600 {
+.terciary600 
+{
   color: var(--terciary-600);
 }
 
-.terciary700 {
+.terciary700
+{
   color: var(--terciary-700);
 }
 
-.terciary800 {
+.terciary800
+{
   color: var(--terciary-800);
 }
 
-.terciary900 {
+.terciary900
+{
   color: var(--terciary-900);
 }
 
 /* Neutral */
 
-.primary100 {
+.primary100 
+{
   color: var(--primary-100);
 }
 
-.primary200 {
+.primary200 
+{
   color: var(--primary-200);
 }
 
-.primary300 {
+.primary300 
+{
   color: var(--primary-300);
 }
 
-.primary400 {
+.primary400 
+{
   color: var(--primary-400);
 }
 
-.neutral500 {
+.neutral500 
+{
   color: var(--neutral-500);
 }
 
-.neutral600 {
+.neutral600 
+{
   color: var(--neutral-600);
 }
 
-.neutral700 {
+.neutral700
+{
   color: var(--neutral-700);
 }
 
-.neutral800 {
+.neutral800
+{
   color: var(--neutral-800);
 }
 
-.neutral900 {
+.neutral900
+{
   color: var(--neutral-900);
 }
 
 /* Neutral */
 
-.neutral100 {
+.neutral100 
+{
   color: var(--neutral-100);
 }
 
-.neutral200 {
+.neutral200 
+{
   color: var(--neutral-200);
 }
 
-.neutral300 {
+.neutral300 
+{
   color: var(--neutral-300);
 }
 
-.neutral400 {
+.neutral400 
+{
   color: var(--neutral-400);
 }
 
-.neutral500 {
+.neutral500 
+{
   color: var(--neutral-500);
 }
 
-.neutral600 {
+.neutral600 
+{
   color: var(--neutral-600);
 }
