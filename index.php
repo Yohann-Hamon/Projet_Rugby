@@ -50,7 +50,9 @@
             include './front/components/organisms/hero/hero.php';
 
             // meetings
-            // include './front/components/organisms/meetings/meetings.php';
+            include './front/components/organisms/meetings/meetings.php';
+            include './front/components/organisms/player/players.php';
+            include './front/components/organisms/team/teams.php';
 
             include './front/components/molecules/insta/insta.php';
         ?>  
