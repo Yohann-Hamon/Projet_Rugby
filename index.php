@@ -1,5 +1,5 @@
 <?php
-    
+   
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +18,8 @@
         <!-- meeting -->
         <!-- team -->
         <link rel="stylesheet" href="./front/components/molecules/team/team.css">
+
+        <link rel="stylesheet" href="./front/components/molecules/insta/insta.css">
         <!-- player -->
         <link rel="stylesheet" href="./front/components/molecules/player/player.css">
 
@@ -41,19 +43,16 @@
     <body>
         <?php
             // header
-            include './front/components/organisms/header/header.php';      
-            
+            include './front/components/organisms/header/header.php'; ?>      
+
+  <?php
             // hero
             include './front/components/organisms/hero/hero.php';
 
             // meetings
             include './front/components/organisms/meetings/meetings.php';
 
-            // teams
-            include './front/components/organisms/teams/teams.php';
-
-            // players
-            include './front/components/organisms/players/players.php';
+            include './front/components/molecules/insta/insta.php';
         ?>  
     </body>
 </html>
