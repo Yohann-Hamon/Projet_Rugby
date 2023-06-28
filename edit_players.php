@@ -3,8 +3,8 @@
             // var_dump($_SESSION);
             // var_dump($_POST);
             // require_once '../BDD.php';
-            require_once './Players.php';
-            require_once '../teams/Teams.php';
+            require_once './bdd/Players.php';
+            require_once './bdd/Teams.php';
 ?>
 
 <!DOCTYPE html>

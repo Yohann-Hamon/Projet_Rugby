@@ -3,7 +3,7 @@
 <div class="add-meeting"> AJOUTER a meeting
 <br>
 <br>
-<form action="./bdd/meetings/meeting_processing.php" method="POST">
+<form action="meeting_processing.php" method="POST">
     <br>
     <label for="datetime">date : </label>
     <input type="text" name="datetime" id="datetime">

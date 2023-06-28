@@ -1,7 +1,7 @@
 <div> SUPPRIMER a team
 <br>
 <br>
-    <form action="./bdd/teams/team_processing.php" method="POST">
+    <form action="team_processing.php" method="POST">
     <br>
     <label for="teams">teams : </label>
     <select name="teams" id="teams">

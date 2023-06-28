@@ -1,7 +1,7 @@
 <div> SUPPRIMER a meeting
 <br>
 <br>
-    <form action="./bdd/meetings/meeting_processing.php" method="POST">
+    <form action="meeting_processing.php" method="POST">
     <br>
     <label for="meetings">meetings : </label>
     <select name="meetings" id="meetings">

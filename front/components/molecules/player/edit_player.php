@@ -1,7 +1,7 @@
 <div> MODIFIER a player
 <br>
 <br>
-    <form action="./bdd/players/edit_players.php" method="POST">
+    <form action="edit_players.php" method="POST">
     <br>
     <label for="players">players : </label>
     <select name="players" id="players">

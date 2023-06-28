@@ -1,5 +1,5 @@
 <?php
-require_once '../BDD.php';
+require_once './bdd/BDD.php';
 
 class Teams extends BDD{
 	private $id;

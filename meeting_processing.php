@@ -2,7 +2,7 @@
             session_start();
 
             // require_once '../BDD.php';
-            require_once './Meetings.php';
+            require_once './bdd/Meetings.php';
 ?>
 
 <!DOCTYPE html>

@@ -1,7 +1,7 @@
 <div> MODIFIER a meeting
 <br>
 <br>
-    <form action="./bdd/meetings/edit_meetings.php" method="POST">
+    <form action="edit_meetings.php" method="POST">
     <br>
     <label for="meetings">meetings : </label>
     <select name="meetings" id="meetings">

@@ -1,9 +1,9 @@
 <?php
-            session_start();
+        session_start();
 
-            require_once '../BDD.php';
-            // include 'teams.php';
-            require_once './Teams.php';
+        // require_once '../BDD.php';
+        // include 'teams.php';
+        require_once './bdd/Teams.php';
 ?>
 
 <!DOCTYPE html>

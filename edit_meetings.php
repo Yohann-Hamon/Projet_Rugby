@@ -3,7 +3,7 @@
             // var_dump($_SESSION);
             // var_dump($_POST);
             // require_once '../BDD.php';
-            require_once './Meetings.php';
+            require_once './bdd/Meetings.php';
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +17,8 @@
     <body>
 
         <?php
+
+            print_r($_POST);
             $id = $_POST['meetings'];       
 
             if(isset($_POST['choose']))

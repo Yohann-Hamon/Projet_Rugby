@@ -4,7 +4,7 @@
     <div class="o-meetings__table">
         <?php
 
-            include './bdd/meetings/Meetings.php';
+            include './bdd/Meetings.php';
 
             $meeting = new Meetings();
             $meetings = $meeting->findAll();

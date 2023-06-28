@@ -1,6 +1,6 @@
 <?php
 
-require_once '../BDD.php';
+require_once './bdd/BDD.php';
 
 class Meetings extends BDD{
 	private $id;

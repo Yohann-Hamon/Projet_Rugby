@@ -3,7 +3,7 @@
 <div class="add-team"> AJOUTER a team
 <br>
 <br>
-<form action="./bdd/teams/team_processing.php" method="POST">
+<form action="team_processing.php" method="POST">
     <br>
     <label for="country">country : </label>
     <input type="text" name="country" id="country">

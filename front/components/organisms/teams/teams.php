@@ -3,7 +3,7 @@
 
     <div class="o-teams__table">
         <?php
-            include './bdd/teams/Teams.php';
+            require_once './bdd/Teams.php';
             
             
             
