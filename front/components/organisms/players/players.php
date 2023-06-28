@@ -4,7 +4,8 @@
     <div class="o-players__table">
         <?php
         
-            include './bdd/players/Players.php';
+            require_once './bdd/Players.php';
+            require_once './bdd/Teams.php';
 
             $team = new Teams();
             $teams = $team->findAll();

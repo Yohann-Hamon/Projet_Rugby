@@ -43,7 +43,7 @@
     <body>
         <?php
             // header
-            // include './front/components/organisms/header/header.php'; ?>      
+            include './front/components/organisms/header/header.php'; ?>      
 
   <?php
             // hero
@@ -51,8 +51,6 @@
 
             // meetings
             include './front/components/organisms/meetings/meetings.php';
-            include './front/components/organisms/players/players.php';
-            include './front/components/organisms/teams/teams.php';
 
             include './front/components/molecules/insta/insta.php';
         ?>  

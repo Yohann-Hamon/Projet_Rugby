@@ -4,7 +4,7 @@ include 'bdd/BDD.php';
 include 'bdd/utilisateurs/Utilisateurs.php';
 
 
-$con = mysqli_connect("localhost","root","","rugby_world_cup_2023");
+$con = mysqli_connect("localhost","root","","rugby__world_cup_2023");
 
 if(!$con){
     die('Connection Failed'. mysqli_connect_error());
@@ -91,9 +91,9 @@ if(isset($_POST['connexion'])){
 			$row = mysqli_fetch_assoc($query);
             if ($row['mail'] === $mail && $row['pswd'] === $pass && $row['username'] === $pseudo ) {
             	$_SESSION['mail'] = $row['mail'];
-            	$_SESSION['name'] = $row['name'];
-                $_SESSION['pseudo'] = $row['pseudo'];
-            	header("Location: index.php");
+            	$_SESSION['pswd'] = $row['pswd'];
+                $_SESSION['username'] = $row['username'];
+            	header("Location:  ../index.php");
 		        exit();
             }else{
 				header("Location: connexion.php?error=Incorect mail,password or username");

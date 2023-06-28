@@ -3,7 +3,7 @@
 
     <div class="o-teams__table">
         <?php
-            include './bdd/teams/Teams.php';
+            require_once './bdd/Teams.php';
             
             
             
@@ -48,6 +48,16 @@
             //   }
             
             
+        ?>
+    </div>
+
+    <div>
+        <?php
+            include './front/components/molecules/team/add_team.php';
+            
+            include './front/components/molecules/team/edit_team.php';
+
+            include './front/components/molecules/team/delete_team.php';
         ?>
     </div>
     

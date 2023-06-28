@@ -5,6 +5,12 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- fonts -->
+        <!-- anton -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!-- michroma -->
+        <!--  -->
         <!-- style.css -->
         <link rel="stylesheet" href="./front/style/colors.css">
         <link rel="stylesheet" href="./front/style/text-styles.css">
@@ -43,7 +49,7 @@
     <body>
         <?php
             // header
-            // include './front/components/organisms/header/header.php'; ?>      
+            include './front/components/organisms/header/header.php'; ?>      
 
   <?php
             // hero
@@ -51,8 +57,6 @@
 
             // meetings
             include './front/components/organisms/meetings/meetings.php';
-            include './front/components/organisms/players/players.php';
-            include './front/components/organisms/teams/teams.php';
 
             include './front/components/molecules/insta/insta.php';
         ?>  

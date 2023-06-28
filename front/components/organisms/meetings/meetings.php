@@ -3,7 +3,8 @@
 
     <div class="o-meetings__table">
         <?php
-            include './bdd/meetings/Meetings.php';
+
+            include './bdd/Meetings.php';
 
             $meeting = new Meetings();
             $meetings = $meeting->findAll();
@@ -12,6 +13,16 @@
 
                 include './front/components/molecules/meeting/meeting.php';
             }
+        ?>
+    </div>
+
+    <div>
+        <?php
+            include './front/components/molecules/meeting/add_meeting.php';
+            
+            include './front/components/molecules/meeting/edit_meeting.php';
+
+            include './front/components/molecules/meeting/delete_meeting.php';
         ?>
     </div>
 
