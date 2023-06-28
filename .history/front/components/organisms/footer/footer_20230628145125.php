@@ -15,7 +15,7 @@
 </ul>
 
 <ul>
- <li><img src="front/components/organisms/footer/logo.png"></li>
+ <li><img src=""></li>
 </ul>
 </div>
 

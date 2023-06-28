@@ -15,7 +15,11 @@
 </ul>
 
 <ul>
- <li><img src="front/components/organisms/footer/logo.png"></li>
+ <li>Lorem ipsum</li>
+ <li>Lorem ipsum</li>
+ <li>Lorem ipsum</li>
+ <li>Lorem ipsum</li>
+  <li>Lorem ipsum</li>
 </ul>
 </div>
 
