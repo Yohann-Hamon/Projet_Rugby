@@ -1,9 +1,9 @@
 <?
-require_once 'Utilisateurs.php';
+    // require_once 'Utilisateurs.php';
 ?>
 
 <body>
-<form action="gestion_utilisateurs.php" method="POST" >
+<form action="user_processing.php" method="POST" >
 
     <label for="mail"> E-mail </label>
     <input type="email" name="mail" id="mail">
@@ -14,7 +14,7 @@ require_once 'Utilisateurs.php';
     <label for="password" > Mot de passe : </label>
     <input type="password" name="password" id="password" >
 
-    <input type="submit" name="inscription" value="S'inscrire">
+    <input type="submit" name="registration" value="S'inscrire">
 </form>
 </body>
 </html>

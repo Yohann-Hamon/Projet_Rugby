@@ -1,3 +1,10 @@
+<?php
+	session_start();
+?>
+
+
+                    
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -35,45 +42,27 @@
     </head>
     <body>
         <?php
+            if(isset($_SESSION['Admin']))
+            {
+                echo '<p>'.$_SESSION['username'].' ADMIN connecté </p>';
+                echo '<a href="disconnection.php" class="button">deconnexion</a>';
+                
+                //meetings
+                include './admin_components/meetings/admin_meetings.php';
+                //  //teams
+                include './admin_components/teams/admin_teams.php';
+                // // //players
+                include './admin_components/players/admin_players.php';
+            
+                //footer
+                include '../front/components/organisms/footer/footer.php';
 
-            //meetings
-            include './admin_components/meetings/admin_meetings.php';
-            //  //teams
-            include './admin_components/teams/admin_teams.php';
-            // // //players
-            include './admin_components/players/admin_players.php';
-           
-            //footer
-            include '../front/components/organisms/footer/footer.php';
-
+            }
+            else
+            {
+                echo "<h1>VOUS N'ETES PAS INVITES"; 
+            }  
         ?>
-        <div>
-            <?php
-                // include '../front/components/molecules/team/add_team.php';
-                
-                // include '../front/components/molecules/team/edit_team.php';
-
-                // include '../front/components/molecules/team/delete_team.php';
-            ?>
-        </div>
-        <div> 
-            <?php
-                // include '../front/components/molecules/player/add_player.php';
-                
-                // include '../front/components/molecules/player/edit_player.php';
-
-                // include '../front/components/molecules/player/delete_player.php';
-            ?>
-        </div>
-        <div>
-            <?php
-                // include '../front/components/molecules/meeting/add_meeting.php';
-                
-                // include '../front/components/molecules/meeting/edit_meeting.php';
-
-                // include '../front/components/molecules/meeting/delete_meeting.php';
-            ?>
-        </div>
     </body>
 </html>
 
