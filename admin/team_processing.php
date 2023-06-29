@@ -10,6 +10,7 @@
     // require_once __DIR__.'/BDD.php';
     // include 'teams.php';
     require_once '../bdd/Teams.php';
+    include '../htaccess.php'
 ?>
 
 <!DOCTYPE html>

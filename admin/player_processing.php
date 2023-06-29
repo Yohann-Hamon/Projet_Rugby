@@ -8,6 +8,7 @@
     }
 
     require_once '../bdd/Players.php';
+    include '../htaccess.php'
 ?>
 
 <!DOCTYPE html>

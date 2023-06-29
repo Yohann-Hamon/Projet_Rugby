@@ -5,23 +5,27 @@
 
 .o-footer {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  flex-direction: column;
   margin-top: 40px;
   padding: 12px 20px;
   background-color: var(--primary-200);
   color: var(--base-200);
 }
 
+.o-footer .o-footer-text{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
 .o-footer__content {
   display: inline;
   font-family: 'Inter';
   align-items: center;
-
 }
 
 .o-footer__logo {
-
   margin: 20px;
 }

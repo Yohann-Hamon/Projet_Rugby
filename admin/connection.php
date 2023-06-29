@@ -1,3 +1,6 @@
+<?php
+    include '../includes/config.php';
+?>
 <body>
     <form action="user_processing.php" method="POST" >
         <label for="mail"> Email : </label>

@@ -3,6 +3,10 @@
   src: url('../../../style/fonts/anton.woff2');
 }
 
+.o-embed__user{
+  display: flex;
+}
+
 .posts {
   position: relative;
   display: flex;

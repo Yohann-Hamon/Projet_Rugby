@@ -1,5 +1,5 @@
 <?
-    // require_once 'Utilisateurs.php';
+    include '../includes/config.php';
 ?>
 
 <body>
