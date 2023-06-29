@@ -17,13 +17,11 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>edit player</title>
+        <title>Modification joueurs</title>
     </head>
     <body>
 
         <?php
-            
-                   
 
             if(isset($_POST['choose']))
             {   
@@ -59,7 +57,7 @@
                                     </select>
                                     <br>
                                     <br>
-                                    <label for="teams">teams : </label>
+                                    <label for="teams">Equipes : </label>
                                     <select name="teams" id="teams">
                                     <?php
                                         foreach($teams as $a_team)
@@ -78,21 +76,21 @@
                                     </select>
                                     <br>
                                     <br>
-                                    <label for="lastname">lastname : </label>
+                                    <label for="lastname">Nom : </label>
                                     <input type="text" name="lastname" id="lastname"
                                     value="<?php
                                         echo $a_player['lastname'];
                                     ?>">
                                     <br>
                                     <br>
-                                    <label for="firstname">firstname : </label>
+                                    <label for="firstname">Prénom : </label>
                                     <input type="text" name="firstname" id="firstname"
                                     value="<?php
                                         echo $a_player['firstname'];
                                     ?>">
                                     <br>
                                     <br>
-                                    <label for="position">positions : </label>
+                                    <label for="position">Postes : </label>
                                     <select name="position" id="position">
                                     <?php
                                         echo '<option value="'.$a_player['position'].'" hidden>'.$a_player['position'].'</option>';
@@ -123,21 +121,21 @@
                                     ?>">
                                     <br>
                                     <br>
-                                    <label for="height">height (165 à 300 cm) : </label>
+                                    <label for="height">Taille (165 à 300 cm) : </label>
                                     <input type="number" name="height" id="height" min="165" max="300"
                                     value="<?php
                                         echo $a_player['height'];
                                     ?>">
                                     <br>
                                     <br>
-                                    <label for="weight">weight (65 à 140 kg) : </label>
+                                    <label for="weight">Poids (65 à 140 kg) : </label>
                                     <input type="number" name="weight" id="weight" min="65" max="140"
                                     value="<?php
                                         echo $a_player['weight'];
                                     ?>">
                                     <br>
                                     <br>
-                                    <label for="picture">Picture : </label>
+                                    <label for="picture">Photo : </label>
                                     <input type="text" name="picture" id="picture" 
                                     value="<?php
                                         echo $a_player['picture'];
@@ -158,7 +156,7 @@
                 }
                 else{
                     $erreurs = true;
-                    echo "<p>Veuillez sélectionnez le player</p>";
+                    echo "<p>Veuillez sélectionnez le joueur !</p>";
                 }
             }
         ?>    

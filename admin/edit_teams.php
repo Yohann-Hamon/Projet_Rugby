@@ -8,7 +8,6 @@
             }
 
             require '../bdd/Teams.php';
-            // require_once '../teams/Teams.php';
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +16,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>edit player</title>
+        <title>Modification équipes</title>
     </head>
     <body>
 
@@ -47,19 +46,19 @@
                                         echo '<option value="'.$a_team['id'].'" hidden>'.$a_team['id'].'</option>';
                                     ?>
                                     <br>
-                                    <label for="country">country : </label>
+                                    <label for="country">Pays : </label>
                                     <input type="text" name="country" id="country">
                                     <br>
                                     <br>
-                                    <label for="world_rank">world_rank : </label>
+                                    <label for="world_rank">Classement mondial : </label>
                                     <input type="number" name="world_rank" id="world_rank">
                                     <br>
                                     <br>
-                                    <label for="pool">pool : </label>
+                                    <label for="pool">Poule : </label>
                                     <input type="text" name="pool" id="pool">
                                     <br>
                                     <br>
-                                    <label for="emblem">emblem : </label>
+                                    <label for="emblem">Emblem : </label>
                                     <input type="text" name="emblem" id="emblem">
                                     <br>
                                     <br>
@@ -77,7 +76,7 @@
                 }
                 else{
                     $erreurs = true;
-                    echo "<p>Veuillez sélectionnez le team</p>";
+                    echo "<p>Veuillez sélectionnez l'équipe !'</p>";
                 }
             }
         ?>    

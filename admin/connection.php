@@ -1,6 +1,6 @@
 <body>
     <form action="user_processing.php" method="POST" >
-        <label for="mail"> E-mail </label>
+        <label for="mail"> Email : </label>
         <input type="mail" name="mail" id="mail">
         <br>
         <label for="password"> Mot de passe :  </label>
