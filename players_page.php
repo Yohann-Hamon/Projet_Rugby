@@ -4,6 +4,9 @@
         <!-- style.css -->
         <link rel="stylesheet" href="./front/style/colors.css">
         
+        <!-- main.css -->
+        <link rel="stylesheet" href="./front/style/main.css">
+        
         <!-- players-page.css -->
         <link rel="stylesheet" href="./front/style/players-page.css">
         
