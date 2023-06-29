@@ -8,6 +8,7 @@
             }
 
             require '../bdd/Teams.php';
+            include '../htaccess.php'
 ?>
 
 <!DOCTYPE html>

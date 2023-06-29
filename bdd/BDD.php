@@ -3,9 +3,9 @@
 	class BDD{
 		
 		private $host = 'localhost';
-		private $dbname = 'rugby_world_cup_2023';
-		private $user = 'root';
-		private $pwd = '';
+		private $dbname = 'erzl0369_esin_e2p2026_rugby';
+		private $user = 'erzl0369_esin';
+		private $pwd = 'fw@t2X>m,7CBl0';
 
 		protected $co = false;
 

@@ -12,9 +12,9 @@
   
   <div class="o-header__nav">
     <?php
-      navButtonComponent('./meetings_page','rencontres');
-      navButtonComponent('./teams_page','équipes');
-      navButtonComponent('./players_page','joueurs');
+      navButtonComponent('./meetings_page.php','rencontres');
+      navButtonComponent('./teams_page.php','équipes');
+      navButtonComponent('./players_page.php','joueurs');
     ?>
   </div>
 </header>
