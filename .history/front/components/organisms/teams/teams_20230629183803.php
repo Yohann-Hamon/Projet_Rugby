@@ -1,5 +1,4 @@
 <section class="o-teams">
-    <div class="team-background"></div>
     <h1 class="o-teams title  primary900">Les équipes</h1>
 
     <div class="o-teams__table">

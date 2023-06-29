@@ -1,6 +1,5 @@
 <section class="o-teams">
-    <div class="team-background"></div>
-    <h1 class="o-teams title  primary900">Les équipes</h1>
+    <h2 class="o-teams__title title neutral100">LISTES DES EQUIPES</h2>
 
     <div class="o-teams__table">
         <?php

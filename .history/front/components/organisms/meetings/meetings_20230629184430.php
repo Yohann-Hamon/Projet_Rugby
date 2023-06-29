@@ -1,5 +1,5 @@
 <section class="o-meetings">
-    <div class="meeting-background"></div>
+<div class="meeting-background"></div>
     <h1 class="o-meetings title primary100">Les rencontres</h1>
 
     <div class="o-meetings__table">
