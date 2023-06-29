@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 29 juin 2023 à 06:49
+-- Généré le : jeu. 29 juin 2023 à 15:50
 -- Version du serveur : 8.0.31
 -- Version de PHP : 8.0.26
 
@@ -54,8 +54,7 @@ INSERT INTO `meetings` (`id`, `datetime`, `team_1`, `team_2`, `place`, `score`) 
 (7, '2023-09-27 17:45:00', 5, 3, 'Stade de la Beaujoire, Nantes', '--'),
 (8, '2023-09-29 21:00:00', 4, 2, '\'\'', '--'),
 (9, '2023-10-05 21:00:00', 4, 5, '\'\'', '--'),
-(10, '2023-10-06 21:00:00', 1, 2, '\'\'', '--'),
-(39, '2023-12-24 00:00:00', 2, 3, '555', 'VIVIV');
+(10, '2023-10-06 21:00:00', 1, 2, '\'\'', '--');
 
 -- --------------------------------------------------------
 
@@ -204,9 +203,7 @@ INSERT INTO `players` (`id`, `position`, `country_id`, `club`, `age`, `height`, 
 (118, 'Arrière', 2, 'Trévise', 30, 1.91, 100, 'Padovani', 'Edoardo', 'https://medias.lequipe.fr/img-sportif-rugby/8395/100'),
 (125, 'Pilier', 4, 'Otago Highlanders', 27, 1.92, 127, 'Laumax', 'Tyrel', 'https://medias.lequipe.fr/img-sportif-rugby/10404/100'),
 (126, 'Pilier', 4, 'Crusaders', 23, 1, 1, 'Newell', 'Fletcher', ''),
-(127, 'Pilier', 4, 'Chiefs', 27, 1.89, 111, 'Ross', 'Aidan', ''),
-(130, 'Pilier', 1, 'Zebre', 32, 176, 76, 'banana', 'sqdqdd', '0'),
-(131, 'Talonneur', 1, 'Zebre', 27, 177, 77, 'vivi', 'sdqdqd', '0');
+(127, 'Pilier', 4, 'Chiefs', 27, 1.89, 111, 'Ross', 'Aidan', '');
 
 -- --------------------------------------------------------
 
@@ -222,7 +219,7 @@ CREATE TABLE IF NOT EXISTS `teams` (
   `country` varchar(255) NOT NULL,
   `pool` varchar(2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `teams`
@@ -248,8 +245,7 @@ INSERT INTO `teams` (`id`, `emblem`, `world_rank`, `country`, `pool`) VALUES
 (17, 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/langfr-225px-Flag_of_Argentina.svg.png', 8, 'Argentine', 'D'),
 (18, 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Flag_of_Chile.svg/langfr-225px-Flag_of_Chile.svg.png', 22, 'Chili', 'D'),
 (19, 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/langfr-225px-Flag_of_Japan.svg.png', 10, 'Japon', 'D'),
-(20, 'https://upload.wikimedia.org/wikipedia/commons/3/31/Flag_of_Samoa.svg', 12, 'Samoa', 'D'),
-(25, 'QDSQDSQD', 444, 'VVIV', '0');
+(20, 'https://upload.wikimedia.org/wikipedia/commons/3/31/Flag_of_Samoa.svg', 12, 'Samoa', 'D');
 
 -- --------------------------------------------------------
 
@@ -261,19 +257,28 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int NOT NULL AUTO_INCREMENT,
   `mail` varchar(255) NOT NULL,
-  `pswd` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `username` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `mail`, `pswd`, `username`) VALUES
+INSERT INTO `users` (`id`, `mail`, `password`, `username`) VALUES
 (4, 'vivien24@gmail.com', 'vivi', 'babayaga'),
 (5, 'vivi@gmail.com', 'vivi', 'vivi'),
-(6, 'vivi@gmail.com', 'vivi', 'Vivounet');
+(6, 'vivi@gmail.com', 'vivi', 'Vivounet'),
+(7, 'v@gmail.com', 'vv', 'vv'),
+(8, 'vivi', '$2y$10$BGc1ZDsC/itBSdazQNWaS.mOwXGEb2S/qkxlpA.1.i5.r3H0sAW4S', 'vivi'),
+(9, 'vovo', '$2y$10$wQlcU3IfrQvzD93nzRS93.tykKO6s0qSr.MoCX/8ziWGzZdsWdsoK', 'vovo'),
+(10, 'vovo', '$2y$10$2dJEBktECymFJThQ73Dcaukb.u4IqghCKF.KY68lp5nIB1Gb31kJK', 'vovo'),
+(11, 'vivian', '$2y$10$zWNZkll.eGiP2tx.VfdMG.VUdpWPtFUgPV4QVLmNtT7.rzHRRGfJm', 'vivian'),
+(12, 'vivi', '$2y$10$wtFelBf7Cq/TvsNt7DtEcO.uUgOPklU7AdmjLmb3bhKJAoUThuxa.', 'vivi'),
+(13, 'vava', '$2y$10$8iPUb4nzpNlh4IlvcJGfIOdM6wQxKq8IvBhC1O0w6KHctbKUCsAWa', 'vava'),
+(14, 'vuvu', '$2y$10$lVZsdAw1b67FxzElCDMPferJH0ZHMYh6AIvfEuTGEAiAzpgTv98cq', 'vuvu'),
+(15, 'vuvu', '$2y$10$O0KdAkkgVDkq54AvKRFR0eLzM71q20qTWAFiEfHDzpKJGxPuZnfMS', 'vuvu');
 
 --
 -- Contraintes pour les tables déchargées

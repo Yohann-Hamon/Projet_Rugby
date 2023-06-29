@@ -3,9 +3,9 @@ require_once __DIR__. '/BDD.php';
 
 class Users extends BDD{
 	private $id;
-	private $email;
+	private $mail;
 	private $password;
-	private $pseudo;
+	private $username;
 
 	public function setId(int $id) : self
 	{
@@ -18,15 +18,15 @@ class Users extends BDD{
 		return $this->id;
 	}
 
-	public function setEmail(string $email) : self
+	public function setmail(string $mail) : self
 	{
-		$this->email = $email;
+		$this->mail = $mail;
 		return $this;
 	}
 
-	public function getEmail() : string
+	public function getmail() : string
 	{
-		return $this->email;
+		return $this->mail;
 	}
 
     public function setPassword(string $password) : self
@@ -40,31 +40,31 @@ class Users extends BDD{
 		return $this->password;
 	}
 
-	public function setPseudo(string $pseudo) : self
+	public function setUsername(string $username) : self
 	{
-		$this->pseudo = $pseudo;
+		$this->username = $username;
 		return $this;
 	}
 
-	public function getPseudo() : string
+	public function getUsername() : string
 	{
-		return $this->pseudo;
+		return $this->username;
 	}
 
-    public function signUp( $email, $password, $pseudo, ){
+    public function signUp( $mail, $password, $username, ){
         $co = $this->co;
 
 		// Hash the password using the salt
 		$password = $_POST['password'];
 		$hash = password_hash($password, PASSWORD_DEFAULT);
 
-		$sql = 'INSERT INTO users(pseudo, email, password) 
-		VALUES(:pseudo, :email, :password )';
+		$sql = 'INSERT INTO users(username, mail, password) 
+		VALUES(:username, :mail, :password )';
         $req = $co->prepare($sql);
 		
 		$req->execute([
-			'pseudo' => $pseudo,
-            'email' => $email,
+			'username' => $username,
+            'mail' => $mail,
             'password' => $hash
 		]);
 
@@ -74,44 +74,27 @@ class Users extends BDD{
 	
 
 	public function signIn(){
-		
-		echo 'function signIn <br>';
-		
-		$co = $this->co;
+        
+        $co = $this->co;
 
-		$sql = 'SELECT email, password FROM users WHERE email = :email';
-		$req = $co->prepare($sql);
-		
-		$email = $_POST['email'];
-		$password = $_POST['password'];
+        $sql = 'SELECT  mail, password FROM users WHERE mail = :mail';
+        $req = $co->prepare($sql);
+        
+        $mail = $_POST['mail'];
+		// $username = $_POST['username'];
+        $password = $_POST['password'];
 
+        $req->bindParam(':mail', $mail, PDO::PARAM_STR);
+		// $req->bindParam(':username', $username, PDO::PARAM_STR);
+        $req->execute();
 
-		$req->bindParam(':email', $email, PDO::PARAM_STR);
-		// $req->bindParam('password', $password, PDO::PARAM_STR);
-		
-		$req->execute();
+        $row = $req->fetch(PDO::FETCH_ASSOC);
 
+        if(!$row)
+        {
+            return false;
+        }
 
-		$row = $req->fetch(PDO::FETCH_ASSOC);
-		var_dump($row );
-		$hashed_password = $row['password'];
-		
-		// $utilisateurs = $req->rowCount();
-		// return $utilisateurs;
-	
-		// Check if the provided password is correct
-		$password_to_check = $password;
-
-		$count = $req->rowCount();
-		if ($count =='1') {
-			// The password is correct
-			echo '<p>Correct password</p>';
-		} else {
-			// The password is incorrect
-			echo '<p>Incorrect password</p>';
-		}
-		// password_verify($password_to_check, $hashed_password)
-		var_dump($row );
-		var_dump(password_verify($password_to_check, $hashed_password));
-	}
+        return password_verify($password, $row['password']);
+    }
 }

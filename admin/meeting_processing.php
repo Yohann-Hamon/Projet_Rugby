@@ -1,6 +1,12 @@
 <?php
             session_start();
 
+            if(!isset($_SESSION['admin'])){
+                header('HTTP/1.0 404 Not Found');
+                header('Location: ../error404.php');
+                exit;
+            }
+
             // require_once '../BDD.php';
             require_once '../bdd/Meetings.php';
 ?>

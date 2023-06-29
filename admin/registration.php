@@ -6,10 +6,10 @@
 <form action="user_processing.php" method="POST" >
 
     <label for="mail"> E-mail </label>
-    <input type="email" name="mail" id="mail">
+    <input type="mail" name="mail" id="mail">
     <br>
-    <label for="pseudo" > Pseudo </label>
-    <input type="pseudo" name="pseudo" id="pseudo" >
+    <label for="username" > username </label>
+    <input type="username" name="username" id="username" >
     <br>
     <label for="password" > Mot de passe : </label>
     <input type="password" name="password" id="password" >

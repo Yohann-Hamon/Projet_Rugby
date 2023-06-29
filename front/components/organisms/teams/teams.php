@@ -18,34 +18,21 @@
             $teams_pool = $team->pool();
         
         ?>
-            <!-- <form method="POST"> -->
-                <label for="pools">Liste des pools : </label>
-                <select name="pools" id="pools" onchange="traiterSelection()">
-                <?php
-                    foreach($teams_pool  as $a_pool )
-                    {
-                        echo '<option value="'.$a_pool['pool'].'"> Pool '.$a_pool['pool'].'</option>';
-                    
-                    }
-                ?>
-                </select>
-            <!-- </form> -->
+             
         <?php
-            // if (isset($_POST['pools'])) { 
-
-                // $selectedValue = $_POST['selectedValue'];
-
-                // print($selectedValue);
+                
 
                 foreach($teams_ranked as $a_team)
                 {
                     // if($a_team['pool'] === $selectedValue)
                     // {
+                        $a_team['pool'] = 'A';
+
                         include './front/components/molecules/team/team.php';   
                     // }
                 }
 
-            //   }
+             
             
             
         ?>

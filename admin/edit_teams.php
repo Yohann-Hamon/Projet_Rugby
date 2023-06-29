@@ -1,8 +1,12 @@
 <?php
             session_start();
-            // var_dump($_SESSION);
-            // var_dump($_POST);
-            // require_once '../BDD.php';
+
+            if(!isset($_SESSION['admin'])){
+                header('HTTP/1.0 404 Not Found');
+                header('Location: ../error404.php');
+                exit;
+            }
+
             require '../bdd/Teams.php';
             // require_once '../teams/Teams.php';
 ?>

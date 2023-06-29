@@ -1,7 +1,12 @@
 <?php
 	session_start();
-?>
 
+    if(!isset($_SESSION['admin'])){
+        header('HTTP/1.0 404 Not Found');
+        header('Location: ../error404.php');
+        exit;
+    }
+?>
 
                     
 
@@ -42,8 +47,6 @@
     </head>
     <body>
         <?php
-            if(isset($_SESSION['Admin']))
-            {
                 echo '<p>'.$_SESSION['username'].' ADMIN connecté </p>';
                 echo '<a href="disconnection.php" class="button">deconnexion</a>';
                 
@@ -56,12 +59,6 @@
             
                 //footer
                 include '../front/components/organisms/footer/footer.php';
-
-            }
-            else
-            {
-                echo "<h1>VOUS N'ETES PAS INVITES"; 
-            }  
         ?>
     </body>
 </html>
