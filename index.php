@@ -17,6 +17,8 @@
         <link rel="stylesheet" href="./front/components/organisms/header/header.css">
         <!-- Hero -->
         <link rel="stylesheet" href="./front/components/organisms/hero/hero.css">
+        <!-- Footer -->
+        <link rel="stylesheet" href="./front/components/organisms/footer/footer.css">
 
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,19 +27,22 @@
         <title> Rugby World Cup 2023 by ESIN</title>
     </head>
     <body>
-        <?php
-            // header
-            include './front/components/organisms/header/header.php';
+        <div class="container">
+            <?php
 
-            // hero
-            include './front/components/organisms/hero/hero.php';
+                // hero
+                include './front/components/organisms/hero/hero.php';
+                
+                // header
+                include './front/components/organisms/header/header.php';
 
-            // post instagram
-            include './front/components/molecules/insta/insta.php';
+                // post instagram
+                include './front/components/molecules/insta/insta.php';
 
-            //footer
-            include './front/components/organisms/footer/footer.php';
+                //footer
+                include './front/components/organisms/footer/footer.php';
 
-        ?>  
+            ?>
+        </div>
     </body>
 </html>
