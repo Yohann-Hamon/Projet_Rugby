@@ -23,15 +23,15 @@
         <?php
                 
 
-                // foreach($teams_ranked as $a_team)
-                // {
+                foreach($teams_ranked as $a_team)
+                {
                     // if($a_team['pool'] === $selectedValue)
                     // {
-                        // $a_team['pool'] = 'A';
+                        $a_team['pool'] = 'A';
 
-                        // include './front/components/molecules/team/team.php';   
+                        include './front/components/molecules/team/team.php';   
                     // }
-                // }
+                }
 
              
             

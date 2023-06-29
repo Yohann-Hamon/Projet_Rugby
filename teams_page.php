@@ -20,6 +20,8 @@
         <link rel="stylesheet" href="./front/components/organisms/header/header.css">
         <!-- teams -->
         <link rel="stylesheet" href="./front/components/organisms/teams/teams.css">
+        <!-- Footer -->
+        <link rel="stylesheet" href="./front/components/organisms/footer/footer.css">
 
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,9 +32,7 @@
     <body>
         <?php
             // header
-            include './front/components/organisms/header/header.php'; ?>      
-
-        <?php
+            include './front/components/organisms/header/header.php';
 
             // teams
             include './front/components/organisms/teams/teams.php';
