@@ -1,112 +1,136 @@
 <?php
     session_start();
 
+    // if(!isset($_SESSION['admin'])){
+    //     header('HTTP/1.0 404 Not Found');
+    //     header('Location: ../error404.php');
+    //     exit;
+    // }
+
     require_once '../bdd/Users.php';
 
+?>
 
-    $con = mysqli_connect("localhost","root","","rugby_world_cup_2023");
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Traitement du formulaire</title>
+    </head>
+    <body>
+        <?php
+            if(isset($_POST['registration'])){
+                echo "<p>Le formulaire a été envoyé</p>";
 
-    if(!$con){
-        die('Connection Failed'. mysqli_connect_error());
-    }
+                $erreurs = false;
 
-
-
-    if(isset($_POST['registration'])){
-
-        $erreurs = false;
-
-        if(isset($_POST['mail']) && !empty($_POST['mail'])){
-            // email valide
-        } else {
-            $erreurs = true;
-        }
-
-        if(isset($_POST['pseudo']) && !empty($_POST['pseudo']))
-        {
-            // pseudo valide
-        } 
-        else {
-            $erreurs = true;
-        }
-
-        if(isset($_POST['password']) && !empty($_POST['password']))
-        {
-            // password valide
-        } 
-        else {
-            $erreurs = true;
-        }
-
-        if($erreurs == false)
-        {
-        $mail = mysqli_real_escape_string($con, $_POST['mail']);
-        $pswd = mysqli_real_escape_string($con, $_POST['password']);
-        $username = mysqli_real_escape_string($con, $_POST['pseudo']);
-
-        $query = "INSERT INTO users (mail,pswd,username) VALUES ('$mail','$pswd','$username')";
-            // Création d'une variable
-            $_SESSION['admin'] = true;
-            echo '<p>Vous avez été inscrit</p>';
-            
-            // Redirection 
-            $query_run = mysqli_query($con, $query);
-        }
-        else{
-            ?>
-                <a href="registration.php">
-                    Veuillez remplir tous les champs pour être inscrit(e).
-                </a> 
-            <?php
-        }
-    }
-
-
-    if(isset($_POST['connection'])){
-
-        function validate($data){
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-        }
-
-        $mail = validate($_POST['mail']);
-        $pass = validate($_POST['password']);
-        $pseudo = validate($_POST['pseudo']);
-
-            //  Vérification que l'mail et le mot de passe ont bien été saisis
-        if (empty($mail)) {
-            header("Location: login.php?error=mail is required");
-            exit();
-        }else if(empty($pass)){
-            header("Location: login.php?error=Password is required");
-            exit();
-        }else{
-            $sql = "SELECT * FROM users WHERE mail='$mail' AND pswd='$pass' AND username='$pseudo'";
-
-            $query = mysqli_query($con, $sql);
-
-            if (mysqli_num_rows($query) === 1) {
-                $row = mysqli_fetch_assoc($query);
-                if ($row['mail'] === $mail && $row['pswd'] === $pass && $row['username'] === $pseudo ) {
-                    $_SESSION['Admin'] = true;
-                    $_SESSION['mail'] = $row['mail'];
-                    $_SESSION['pswd'] = $row['pswd'];
-                    $_SESSION['username'] = $row['username'];
-                    header("Location:  ./admin_index.php");
-                    exit();
-                }else{
-                    header("Location: connection.php?error=Incorect mail,password or username");
-                    exit();
+                if(isset($_POST['username']) && !empty($_POST['username'])){
+                    echo "<p>Identifiant : ".$_POST['username']."</p>";
                 }
-            }else{
-                header("Location: connection.php?error=Incorect mail , password or username");
-                exit();
+                else{
+                    $erreurs = true;
+                    echo "<p>Veuillez renseigner l'identifiant</p>";
+                }
+
+                if(isset($_POST['mail']) && !empty($_POST['mail'])){
+                    echo "<p>mail : ".$_POST['mail']."</p>";
+                }
+                else{
+                    $erreurs = true;
+                    echo "<p>Veuillez renseigner l'mail'</p>";
+                }
+
+
+                if(isset($_POST['password']) && !empty($_POST['password'])){
+                    echo "<p>Mot de passe : ".$_POST['password']."</p>";
+                }
+                else{
+                    $erreurs = true;
+                    echo "<p>Veuillez renseigner le mot de passe</p>";
+                }
+
+
+                if($erreurs == false)
+                {
+                    $user = new Users();
+                    $users = $user->signUp( 
+                        $_POST['username'], 
+                        $_POST['mail'],
+                       $_POST['password']);
+
+                    // Création d'une variable de session
+                    // $_SESSION['admin'] = true;
+                    $_SESSION['username'] = $_POST['username'];
+                    echo '<p>Vous avez ' . $_SESSION['username'] . ' a bien été inscrit</p>';
+                    // $_SESSION['Admin'] = true;
+                    // $_SESSION['nom'] = $_POST['nom'];
+
+                    // Redirection vers index.php
+                    echo "<p><a href='./connection.php'>connection</a></p>";
+                    echo "<p><a href='../index.php'>Retour à l'accueil</a></p>";
+                }
+                else{
+                    echo "<p><a href='./registration.php'>Retour au formulaire</a></p>";
+                }
             }
-        }
-        
-    }else{
-        header("Location: connection.php");
-        exit();
-    }
+
+            if(isset($_POST['connection'])){
+                echo "<p>Le formulaire a été envoyé</p>";
+
+                $erreurs = false;
+
+                // if(isset($_POST['pseudo']) && !empty($_POST['pseudo'])){
+                //     echo "<p>Identifiant : ".$_POST['pseudo']."</p>";
+                // }
+                // else{
+                //     $erreurs = true;
+                //     echo "<p>Veuillez renseigner l'identifiant</p>";
+                // }
+
+                if(isset($_POST['mail']) && !empty($_POST['mail'])){
+                    echo "<p>mail : ".$_POST['mail']."</p>";
+                }
+                else{
+                    $erreurs = true;
+                    echo "<p>Veuillez renseigner l'mail'</p>";
+                }
+
+                if(isset($_POST['password']) && !empty($_POST['password'])){
+                    echo "<p>Mot de passe : ".$_POST['password']."</p>";
+                }
+                else{
+                    $erreurs = true;
+                    echo "<p>Veuillez renseigner le mot de passe</p>";
+                }
+
+
+                if($erreurs == false)
+                {
+                    // echo 'if error = false <br>';
+
+                    $user = new Users();
+                    $users = $user->signIn( 
+                        // $_POST['pseudo'], 
+                        $_POST['mail'],
+                        // $_POST['username'],
+                        $_POST['password']);
+
+                    // Création d'une variable de session
+                    $_SESSION['admin'] = true;
+                    $_SESSION['mail'] = $_POST['mail'];
+                    echo '<p>Vous avez ' . $_SESSION['username'] . ' bien été connecté</p>';
+                    // $_SESSION['Admin'] = true;
+                    // $_SESSION['nom'] = $_POST['nom'];
+
+                    // Redirection vers index.php
+                    echo "<p><a href='./admin_index.php'>accueil</a></p>";
+                }
+                else{
+                    echo "<p><a href='./connection.php'>Retour au formulaire</a></p>";
+                }
+            }
+        ?>    
+    </body>
+</html>
