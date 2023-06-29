@@ -3,24 +3,24 @@
     src: url('../../../style/fonts/anton.woff2');
 }
 
-body {
-    overflow: auto;
-    background-image: url("../../organisms/hero/background.png");
-    background-repeat: no-repeat;
-    height: 500px;
-    background-size: cover;
-    background-position: top center;
-}
-
 .o-hero {
     position: relative;
-    top: 300px;
-    left: 40px;
-    background-color: var(--base-200);
+    background-image: url("../../organisms/hero/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
     height: 956px;
     width: 100%;
     font-family: 'Anton';
-    padding-top: 20px;
+}
+
+.o-hero .o-hero-text{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    left: 120px;
+    top: 320px;
 }
 
 .title {
@@ -34,4 +34,18 @@ body {
 .description {
     font-size: 24px;
 
+}
+
+@media (max-width: 1150px){
+    .o-hero .o-hero-text{
+        left: 60px;
+        top: 320px;
+    }
+}
+
+@media (max-width: 500px){
+    .o-hero .o-hero-text{
+        left: 32px;
+        top: 320px;
+    }
 }

@@ -3,30 +3,18 @@
   src: url('../../../style/fonts/anton.woff2');
 }
 
-@font-face {
-  font-family: 'Inter';
-  src: url('../../../style/fonts/inter.woff2');
-}
-
-
 .o-header {
+  position: absolute;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 12px 34px;
+  width: 100%;
+  top: 0;
+  right: 0;
   background-color: none;
-  color: var(--neutral-9 00);
+  color: var(--neutral-900);
   font-family: 'Anton';
-}
-
-.o-header .o-header__user>*+* {
-  margin-left: 56px;
-  font-family: 'Inter';
-  font-size: 16px;
-}
-
-.navtitle {
-  font-size: 24px;
 }
 
 .o-header__logo {
@@ -35,5 +23,43 @@
   justify-content: space-between;
   align-items: center;
   gap: 40px;
+  top: 0px;
+  padding: 12px;
   right: calc(50% - 179px);
+}
+
+.o-header__logo .logo
+{
+  width: 36px;
+}
+
+@media (max-width: 1150px)
+{
+  .o-header
+  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+  .o-header .o-header__nav
+  {
+    display: flex;
+    position: absolute;
+    top: 100px;
+  }
+}
+
+@media (max-width: 500px)
+{
+  .o-header .o-header__nav
+  {
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+  }
+ 
+  .o-header__logo {
+    gap: 20px;
+  }
 }
