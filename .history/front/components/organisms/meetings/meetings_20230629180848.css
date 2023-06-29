@@ -6,10 +6,10 @@
 .title {
     position: absolute;
     /* text-decoration: underline 2px; */
-    top: 520px;
-    right: -15px;
+    top: 560px;
+    right: -10px;
     transform: translateX(-50%);
-    font-size: 64px;
+    font-size: 60px;
     font-family: 'Anton';
     z-index: 99;
 }

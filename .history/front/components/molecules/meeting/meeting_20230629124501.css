@@ -9,8 +9,6 @@ body {
 
 .o-meeting {
     font-family: 'Michroma';
-}
+    text-align: center;
 
-.nowrap {
-    white-space: nowrap;
 }

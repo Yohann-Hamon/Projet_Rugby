@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="o-meeting primary900">
-    <p><?=$a_meeting['datetime']?><p>
+    <p class="time"><?=$a_meeting['datetime']?><p>
     <div class="o-meeting__competitors">
         <p><?=$a_meeting['team_1']?><p>
         <p><?=$a_meeting['score']?><p>

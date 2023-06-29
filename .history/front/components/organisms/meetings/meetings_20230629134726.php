@@ -1,6 +1,5 @@
 <section class="o-meetings">
-<div class="meeting-background"></div>
-    <h2 class="o-meetings title primary100">Les rencontres</h2>
+    <h2 class="o-meetings title primary900">Les rencontres</h2>
 
     <div class="o-meetings__table">
         <?php

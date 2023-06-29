@@ -5,18 +5,18 @@
 
 .title {
     position: absolute;
-    /* text-decoration: underline 2px; */
-    top: 520px;
-    right: -15px;
+    text-decoration: underline 2px #C9D5FF;
+    top: 250px;
+    right: 650px;
     transform: translateX(-50%);
-    font-size: 64px;
-    font-family: 'Anton';
+    font-size: 50px;
+    font-family: 'Anton', sans-serif;
     z-index: 99;
 }
 
 .meeting-background {
     position: relative;
-    top: -100px;
+    top: 0;
     left: 0;
     margin: 0;
     background-image: url("../../../style/background-image/meeting-background.png");
@@ -25,11 +25,11 @@
     background-position: top center;
     width: 100%;
     height: 800px;
-    font-size: 0;
+    opacity: 0.5;
     z-index: -1;
-    border-radius: 0px 0px 300px 300px;
 }
 
 .o-meetings {
     margin: 0;
+    /* padding-top: 84px; */
 }

@@ -11,6 +11,8 @@ body {
     font-family: 'Michroma';
 }
 
-.nowrap {
-    white-space: nowrap;
+.o-meeting__competitors {
+    display: inline;
+    align-items: center;
+
 }

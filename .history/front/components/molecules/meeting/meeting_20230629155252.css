@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Michroma';
+    src: url('../../../style/fonts/michroma.woff2');
+}
+
+body {
+    background-color: #000E41;
+}
+
+.o-meeting {
+    font-family: 'Michroma';
+    position: relative;
+    background-image: url("../../molecules/meeting/meeting-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    height: 956px;
+    width: 100%;
+    /* font-family: 'Anton'; */
+}

@@ -4,32 +4,20 @@
 }
 
 .title {
-    position: absolute;
-    /* text-decoration: underline 2px; */
-    top: 520px;
-    right: -15px;
-    transform: translateX(-50%);
-    font-size: 64px;
+    font-size: 50px;
     font-family: 'Anton';
-    z-index: 99;
+    right: 50px;
 }
 
-.meeting-background {
+.o-meetings {
     position: relative;
-    top: -100px;
-    left: 0;
-    margin: 0;
     background-image: url("../../../style/background-image/meeting-background.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
+    height: 956px;
     width: 100%;
-    height: 800px;
-    font-size: 0;
-    z-index: -1;
-    border-radius: 0px 0px 300px 300px;
-}
-
-.o-meetings {
+    /* top: 200px; */
     margin: 0;
+    padding-top: 84px;
 }

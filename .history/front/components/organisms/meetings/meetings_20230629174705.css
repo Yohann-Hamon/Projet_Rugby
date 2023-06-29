@@ -5,11 +5,11 @@
 
 .title {
     position: absolute;
-    /* text-decoration: underline 2px; */
-    top: 520px;
-    right: -15px;
+    text-decoration: underline 2px;
+    top: 200px;
+    left: 20%;
     transform: translateX(-50%);
-    font-size: 64px;
+    font-size: 50px;
     font-family: 'Anton';
     z-index: 99;
 }

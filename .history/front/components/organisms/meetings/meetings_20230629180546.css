@@ -6,8 +6,8 @@
 .title {
     position: absolute;
     /* text-decoration: underline 2px; */
-    top: 520px;
-    right: -15px;
+    top: 560px;
+    right: 70px;
     transform: translateX(-50%);
     font-size: 64px;
     font-family: 'Anton';
