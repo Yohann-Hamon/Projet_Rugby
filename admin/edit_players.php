@@ -3,8 +3,8 @@
             // var_dump($_SESSION);
             // var_dump($_POST);
             // require_once '../BDD.php';
-            require_once './bdd/Players.php';
-            require_once './bdd/Teams.php';
+            require_once '../bdd/Players.php';
+            require_once '../bdd/Teams.php';
 ?>
 
 <!DOCTYPE html>
@@ -19,10 +19,11 @@
 
         <?php
             
-            $id = $_POST['players'];       
+                   
 
             if(isset($_POST['choose']))
             {   
+                $id = $_POST['players'];
 
                 $team = new Teams();
                 $teams = $team->findAll();

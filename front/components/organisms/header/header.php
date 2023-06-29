@@ -10,9 +10,9 @@
   
   <div class="o-header__user">
     <?php
-      navButtonComponent('#','rencontres');
-      navButtonComponent('#','équipes');
-      navButtonComponent('#','joueurs');
+      navButtonComponent('./meetings_page','rencontres');
+      navButtonComponent('./teams_page','équipes');
+      navButtonComponent('./players_page','joueurs');
     ?>
   </div>
 </header>

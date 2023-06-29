@@ -1,5 +1,7 @@
 <?php
-class Utilisateurs extends BDD{
+require_once __DIR__. '/BDD.php';
+
+class Users extends BDD{
 	private $id;
 	private $email;
 	private $password;
@@ -56,7 +58,7 @@ class Utilisateurs extends BDD{
 		$password = $_POST['password'];
 		$hash = password_hash($password, PASSWORD_DEFAULT);
 
-		$sql = 'INSERT INTO utilisateurs(pseudo, email, password) 
+		$sql = 'INSERT INTO users(pseudo, email, password) 
 		VALUES(:pseudo, :email, :password )';
         $req = $co->prepare($sql);
 		
@@ -77,7 +79,7 @@ class Utilisateurs extends BDD{
 		
 		$co = $this->co;
 
-		$sql = 'SELECT email, password FROM utilisateurs WHERE email = :email';
+		$sql = 'SELECT email, password FROM users WHERE email = :email';
 		$req = $co->prepare($sql);
 		
 		$email = $_POST['email'];

@@ -3,7 +3,7 @@
             // var_dump($_SESSION);
             // var_dump($_POST);
             // require_once '../BDD.php';
-            require_once './bdd/Meetings.php';
+            require_once '../bdd/Meetings.php';
 ?>
 
 <!DOCTYPE html>
@@ -18,11 +18,11 @@
 
         <?php
 
-            print_r($_POST);
             $id = $_POST['meetings'];       
 
             if(isset($_POST['choose']))
             {   
+                
 
                 $meeting = new Meetings();
                 $meetings = $meeting->findAll();
@@ -37,6 +37,14 @@
                         {
                             ?>  
                                 <form action="meeting_processing.php" method="POST">
+                                    <label for="id">ID : </label>
+                                    <select name="id" id="id">
+                                    <?php
+                                        echo '<option value="'.$a_meeting['id'].'" hidden>'.$a_meeting['id'].'</option>';
+                                    ?>
+                                    </select>
+                                    <br>
+                                    <br>
                                     <br>
                                     <label for="datetime">date : </label>
                                     <input type="datetime" name="datetime" id="datetime">

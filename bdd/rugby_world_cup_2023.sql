@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : mar. 27 juin 2023 à 23:28
--- Version du serveur : 10.4.22-MariaDB
--- Version de PHP : 8.1.2
+-- Hôte : 127.0.0.1:3306
+-- Généré le : jeu. 29 juin 2023 à 06:49
+-- Version du serveur : 8.0.31
+-- Version de PHP : 8.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `rugby__world_cup_2023`
+-- Base de données : `rugby_world_cup_2023`
 --
 
 -- --------------------------------------------------------
@@ -27,14 +27,18 @@ SET time_zone = "+00:00";
 -- Structure de la table `meetings`
 --
 
-CREATE TABLE `meetings` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `meetings`;
+CREATE TABLE IF NOT EXISTS `meetings` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `datetime` datetime NOT NULL,
-  `team_1` int(11) NOT NULL,
-  `team_2` int(11) NOT NULL,
+  `team_1` int NOT NULL,
+  `team_2` int NOT NULL,
   `place` varchar(255) NOT NULL,
-  `score` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `score` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `equipe_1` (`team_1`) USING BTREE,
+  KEY `equipe_2` (`team_2`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `meetings`
@@ -50,7 +54,8 @@ INSERT INTO `meetings` (`id`, `datetime`, `team_1`, `team_2`, `place`, `score`) 
 (7, '2023-09-27 17:45:00', 5, 3, 'Stade de la Beaujoire, Nantes', '--'),
 (8, '2023-09-29 21:00:00', 4, 2, '\'\'', '--'),
 (9, '2023-10-05 21:00:00', 4, 5, '\'\'', '--'),
-(10, '2023-10-06 21:00:00', 1, 2, '\'\'', '--');
+(10, '2023-10-06 21:00:00', 1, 2, '\'\'', '--'),
+(39, '2023-12-24 00:00:00', 2, 3, '555', 'VIVIV');
 
 -- --------------------------------------------------------
 
@@ -58,18 +63,21 @@ INSERT INTO `meetings` (`id`, `datetime`, `team_1`, `team_2`, `place`, `score`) 
 -- Structure de la table `players`
 --
 
-CREATE TABLE `players` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `players`;
+CREATE TABLE IF NOT EXISTS `players` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `position` varchar(255) NOT NULL,
-  `country_id` int(11) NOT NULL,
+  `country_id` int NOT NULL,
   `club` varchar(255) NOT NULL,
-  `age` int(11) NOT NULL,
+  `age` int NOT NULL,
   `height` float NOT NULL,
   `weight` float NOT NULL,
   `lastname` varchar(255) NOT NULL,
   `firstname` varchar(255) NOT NULL,
-  `picture` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `picture` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `joueurs_ibfk_1` (`country_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=135 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `players`
@@ -196,7 +204,9 @@ INSERT INTO `players` (`id`, `position`, `country_id`, `club`, `age`, `height`, 
 (118, 'Arrière', 2, 'Trévise', 30, 1.91, 100, 'Padovani', 'Edoardo', 'https://medias.lequipe.fr/img-sportif-rugby/8395/100'),
 (125, 'Pilier', 4, 'Otago Highlanders', 27, 1.92, 127, 'Laumax', 'Tyrel', 'https://medias.lequipe.fr/img-sportif-rugby/10404/100'),
 (126, 'Pilier', 4, 'Crusaders', 23, 1, 1, 'Newell', 'Fletcher', ''),
-(127, 'Pilier', 4, 'Chiefs', 27, 1.89, 111, 'Ross', 'Aidan', '');
+(127, 'Pilier', 4, 'Chiefs', 27, 1.89, 111, 'Ross', 'Aidan', ''),
+(130, 'Pilier', 1, 'Zebre', 32, 176, 76, 'banana', 'sqdqdd', '0'),
+(131, 'Talonneur', 1, 'Zebre', 27, 177, 77, 'vivi', 'sdqdqd', '0');
 
 -- --------------------------------------------------------
 
@@ -204,19 +214,21 @@ INSERT INTO `players` (`id`, `position`, `country_id`, `club`, `age`, `height`, 
 -- Structure de la table `teams`
 --
 
-CREATE TABLE `teams` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `teams`;
+CREATE TABLE IF NOT EXISTS `teams` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `emblem` varchar(255) NOT NULL,
-  `world_ranking` int(11) NOT NULL,
+  `world_rank` int NOT NULL,
   `country` varchar(255) NOT NULL,
-  `pool` varchar(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `pool` varchar(2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `teams`
 --
 
-INSERT INTO `teams` (`id`, `emblem`, `world_ranking`, `country`, `pool`) VALUES
+INSERT INTO `teams` (`id`, `emblem`, `world_rank`, `country`, `pool`) VALUES
 (1, 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg/langfr-225px-Flag_of_France_%281794%E2%80%931815%2C_1830%E2%80%931974%2C_2020%E2%80%93present%29.svg.png', 2, 'France', 'A'),
 (2, 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Italy_%282003%E2%80%932006%29.svg/220px-Flag_of_Italy_%282003%E2%80%932006%29.svg.png', 14, 'Italie', 'A'),
 (3, 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Flag_of_Namibia.svg/langfr-225px-Flag_of_Namibia.svg.png', 21, 'Namibie', 'A'),
@@ -236,7 +248,8 @@ INSERT INTO `teams` (`id`, `emblem`, `world_ranking`, `country`, `pool`) VALUES
 (17, 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/langfr-225px-Flag_of_Argentina.svg.png', 8, 'Argentine', 'D'),
 (18, 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Flag_of_Chile.svg/langfr-225px-Flag_of_Chile.svg.png', 22, 'Chili', 'D'),
 (19, 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/langfr-225px-Flag_of_Japan.svg.png', 10, 'Japon', 'D'),
-(20, 'https://upload.wikimedia.org/wikipedia/commons/3/31/Flag_of_Samoa.svg', 12, 'Samoa', 'D');
+(20, 'https://upload.wikimedia.org/wikipedia/commons/3/31/Flag_of_Samoa.svg', 12, 'Samoa', 'D'),
+(25, 'QDSQDSQD', 444, 'VVIV', '0');
 
 -- --------------------------------------------------------
 
@@ -244,80 +257,23 @@ INSERT INTO `teams` (`id`, `emblem`, `world_ranking`, `country`, `pool`) VALUES
 -- Structure de la table `users`
 --
 
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `mail` varchar(255) NOT NULL,
-  `pswd` varchar(255) NOT NULL,
-  `username` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `pswd` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `username` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
 
 --
 -- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`id`, `mail`, `pswd`, `username`) VALUES
-(1, 'hamon.yohann0416@gmail.com', '$2y$10$N7N.dOj4xFU/TomjCe7dw.6Ch3kwlA.1X5SZPSip2zJfAUPk4sJGi', 'admin1'),
-(3, 'test@test', '$2y$10$wPGDcOG9toy6NuGvIpDmHOlMjPa4iOVd6QG0NhfwBFZ97k/qMWH7S', 'test'),
-(4, 'test@gmail.fr', '123', 'allo');
-
---
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `meetings`
---
-ALTER TABLE `meetings`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `equipe_1` (`team_1`) USING BTREE,
-  ADD KEY `equipe_2` (`team_2`) USING BTREE;
-
---
--- Index pour la table `players`
---
-ALTER TABLE `players`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `joueurs_ibfk_1` (`country_id`);
-
---
--- Index pour la table `teams`
---
-ALTER TABLE `teams`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `meetings`
---
-ALTER TABLE `meetings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
-
---
--- AUTO_INCREMENT pour la table `players`
---
-ALTER TABLE `players`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
-
---
--- AUTO_INCREMENT pour la table `teams`
---
-ALTER TABLE `teams`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
-
---
--- AUTO_INCREMENT pour la table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+(4, 'vivien24@gmail.com', 'vivi', 'babayaga'),
+(5, 'vivi@gmail.com', 'vivi', 'vivi'),
+(6, 'vivi@gmail.com', 'vivi', 'Vivounet');
 
 --
 -- Contraintes pour les tables déchargées
