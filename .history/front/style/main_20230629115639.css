@@ -1,7 +1,11 @@
+@font-face {
+  font-family: 'Michroma';
+  src: url('../../../style/fonts/michroma.woff2');
+}
+
 body {
   margin: 0;
   background-color: #000E41;
-  /* overflow-x: hidden; */
 }
 
 ul {
@@ -20,9 +24,4 @@ h1 {
 
 h2 {
   margin: 0;
-}
-
-.container
-{
-  width: 100%;
 }
