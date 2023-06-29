@@ -1,5 +1,5 @@
 <section class="o-players">
-    <h1 class="o-players title primary900">Les joueurs</h1>
+    <h2 class="o-players__title title neutral100">SCORE DES RENCONTRES</h2>
 
     <div class="o-players__table">
         <?php
@@ -21,7 +21,7 @@
 
             foreach($players as $a_player){
 
-                // include './front/components/molecules/player/player.php';
+                include './front/components/molecules/player/player.php';
             }
         ?>
     </div>

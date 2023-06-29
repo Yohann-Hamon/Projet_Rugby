@@ -9,7 +9,7 @@ body {
 
 .title {
     position: absolute;
-    top: 520px;
+    top: 0px;
     right: -15px;
     transform: translateX(-50%);
     font-size: 64px;
