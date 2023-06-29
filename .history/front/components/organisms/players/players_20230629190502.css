@@ -16,3 +16,9 @@ body {
     font-family: 'Anton';
     z-index: 99;
 }
+
+.o-players {
+    margin: 0;
+    padding-top: 84px;
+    text-align: center;
+}

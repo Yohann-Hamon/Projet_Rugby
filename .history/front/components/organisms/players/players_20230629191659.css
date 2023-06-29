@@ -9,8 +9,8 @@ body {
 
 .title {
     position: absolute;
-    top: 520px;
-    right: -15px;
+    top: 0px;
+    left: -15px;
     transform: translateX(-50%);
     font-size: 64px;
     font-family: 'Anton';

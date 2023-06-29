@@ -1,5 +1,5 @@
 <section class="o-players">
-    <h1 class="o-players title primary900">Les joueurs</h1>
+    <h1 class="o-players__title title neutral100">Les Joueurs</h1>
 
     <div class="o-players__table">
         <?php
