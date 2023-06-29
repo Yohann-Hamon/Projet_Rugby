@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Anton';
+    src: url('../../../style/fonts/anton.woff2');
+}
+
+body {
+    background-color: #000E41;
+}
+
+
+.o-players {
+    margin: 0;
+    background-color: var(--primary-600);
+    padding-top: 84px;
+    text-align: center;
+}
