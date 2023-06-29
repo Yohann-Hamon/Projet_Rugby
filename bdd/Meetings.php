@@ -1,6 +1,7 @@
 <?php
 
-require_once './bdd/BDD.php';
+// require_once './bdd/BDD.php';
+require_once __DIR__. '/BDD.php';
 
 class Meetings extends BDD{
 	private $id;
@@ -135,7 +136,7 @@ class Meetings extends BDD{
 
 		$req->bindParam(':id', $id, PDO::PARAM_INT);
 		$req->bindParam(':datetime', $datetime, PDO::PARAM_STR);
-		$req->bindParam(':team_1', $team_1, PDO::PARAM_STR);
+		$req->bindParam(':team_1', $team_1, PDO::PARAM_INT);
 		$req->bindParam(':team_2', $team_2, PDO::PARAM_INT);
 		$req->bindParam(':place', $place, PDO::PARAM_STR);
 		$req->bindParam(':score', $score, PDO::PARAM_STR);

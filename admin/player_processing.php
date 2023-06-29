@@ -3,7 +3,7 @@
 
             // require_once '../BDD.php';
             // include 'Players.php';
-            require_once './bdd/Players.php';
+            require_once '../bdd/Players.php';
 ?>
 
 <!DOCTYPE html>
@@ -130,10 +130,10 @@
                     // exit;
                     // Redirection vers index.php
                     // header('Location:   ../../index.php');
-                    echo "<p><a href='../../index.php'>Retour a la page d'accueil</a></p>";
+                    echo "<p><a href='./admin_index.php'>Retour a la page d'accueil</a></p>";
                 }
                 else{
-                    echo "<p><a href='../../index.php'>Retour au formulaire</a></p>";
+                    echo "<p><a href='./admin_index.php'>Retour a la page d'accueil</a></p>";
                 }
             }
 
@@ -224,12 +224,12 @@
                    
                     // exit;
                     // Redirection vers index.php
-                    // header('Location:   ../../../index.php');
+                    // header('Location:   .././admin_index.php');
                     echo '<p>Le player a bien été modifié</p>';
-                    echo "<p><a href='../../index.php'>Retour a la page d'accueil</a></p>";
+                    echo "<p><a href='./admin_index.php'>Retour a la page d'accueil</a></p>";
                 }
                 else{
-                    echo "<p><a href='./edit_players.php'>Retour au formulaire</a></p>";
+                    echo "<p><a href='./admin_index.php'>Retour a la page d'accueil</a></p>";
                 }
             }
 
@@ -256,10 +256,10 @@
                     $_SESSION['delete'] = true;
                     
                     echo '<p>Le player a bien été supprimée</p>';
-                    echo "<p><a href='../../index.php'>Retour a la page d'accueil</a></p>";
+                    echo "<p><a href='./admin_index.php'>Retour a la page d'accueil</a></p>";
                 }
                 else{
-                    echo "<p><a href='../../index.php'>Retour au formulaire</a></p>";
+                    echo "<p><a href='./admin_index.php'>Retour a la page d'accueil</a></p>";
                 }
             }   
         ?>    

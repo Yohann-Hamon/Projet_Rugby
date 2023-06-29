@@ -1,9 +1,9 @@
 <?php
         session_start();
 
-        // require_once '../BDD.php';
+        // require_once __DIR__.'/BDD.php';
         // include 'teams.php';
-        require_once './bdd/Teams.php';
+        require_once '../bdd/Teams.php';
 ?>
 
 <!DOCTYPE html>
@@ -77,10 +77,10 @@
                     // exit;
                     // Redirection vers index.php
                     // header('Location:   ../../index.php');
-                    echo "<p><a href='../../index.php'>Retour a la page d'accueil</a></p>";
+                    echo "<p><a href='./admin_index.php'>Retour a la page d'accueil</a></p>";
                 }
                 else{
-                    echo "<p><a href='../../index.php'>Retour au formulaire</a></p>";
+                    echo "<p><a href='./admin_index.php'>Retour a la page d'accueil</a></p>";
                 }
             }
 
@@ -101,25 +101,13 @@
                 if(isset($_POST['country']) && !empty($_POST['country'])){
                     echo "<p>Country : ".$_POST['country']."</p>";
                 }
-                else{
-                    $erreurs = true;
-                    echo "<p>Veuillez renseigner l'équipe</p>";
-                }
 
                 if(isset($_POST['world_rank']) && !empty($_POST['world_rank'])){
                     echo "<p>world_rank : ".$_POST['world_rank']."</p>";
                 }
-                else{
-                    $erreurs = true;
-                    echo "<p>Veuillez renseigner le world rank</p>";
-                }
 
                 if(isset($_POST['pool']) && !empty($_POST['pool'])){
                     echo "<p>pool : ".$_POST['pool']."</p>";
-                }
-                else{
-                    $erreurs = true;
-                    echo "<p>Veuillez renseigner le pool</p>";
                 }
 
                 if(isset($_POST['emblem']) && !empty($_POST['emblem'])){
@@ -160,10 +148,10 @@
                     // Redirection vers index.php
                     // header('Location:   ../../../index.php');
                     echo '<p>Le player a bien été modifié</p>';
-                    echo "<p><a href='../../index.php'>Retour a la page d'accueil</a></p>";
+                    echo "<p><a href='./admin_index.php'>Retour a la page d'accueil</a></p>";
                 }
                 else{
-                    echo "<p><a href='./edit_players.php'>Retour au formulaire</a></p>";
+                    echo "<p><a href='./admin_index.php'>Retour a la page d'accueil</a></p>";
                 }
             }
 
@@ -190,10 +178,10 @@
                     $_SESSION['delete'] = true;
                     
                     echo '<p>Le team a bien été supprimée</p>';
-                    echo "<p><a href='../../index.php'>Retour a la page d'accueil</a></p>";
+                    echo "<p><a href='./admin_index.php'>Retour a la page d'accueil</a></p>";
                 }
                 else{
-                    echo "<p><a href='../../index.php'>Retour au formulaire</a></p>";
+                    echo "<p><a href='./admin_index.php'>Retour a la page d'accueil</a></p>";
                 }
             }   
         ?>    

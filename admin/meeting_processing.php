@@ -2,7 +2,7 @@
             session_start();
 
             // require_once '../BDD.php';
-            require_once './bdd/Meetings.php';
+            require_once '../bdd/Meetings.php';
 ?>
 
 <!DOCTYPE html>
@@ -89,10 +89,10 @@
                     // exit;
                     // Redirection vers index.php
                     // header('Location:   ../../index.php');
-                    echo "<p><a href='../../index.php'>Retour a la page d'accueil</a></p>";
+                    echo "<p><a href='./admin_index.php'>Retour a la page d'accueil</a></p>";
                 }
                 else{
-                    echo "<p><a href='../../index.php'>Retour au formulaire</a></p>";
+                    echo "<p><a href='./admin_index.php'>Retour a la page d'accueil</a></p>";
                 }
             }
 
@@ -113,41 +113,21 @@
                 if(isset($_POST['datetime']) && !empty($_POST['datetime'])){
                     echo "<p>datetime : ".$_POST['datetime']."</p>";
                 }
-                else{
-                    $erreurs = true;
-                    echo "<p>Veuillez renseigner l'équipe</p>";
-                }
 
                 if(isset($_POST['team_1']) && !empty($_POST['team_1'])){
                     echo "<p>team_1 : ".$_POST['team_1']."</p>";
-                }
-                else{
-                    $erreurs = true;
-                    echo "<p>Veuillez renseigner le world rank</p>";
                 }
 
                 if(isset($_POST['team_2']) && !empty($_POST['team_2'])){
                     echo "<p>team_2 : ".$_POST['team_2']."</p>";
                 }
-                else{
-                    $erreurs = true;
-                    echo "<p>Veuillez renseigner le team_2</p>";
-                }
 
                 if(isset($_POST['place']) && !empty($_POST['place'])){
                     echo "<p>place : ".$_POST['place']."</p>";
                 }
-                else{
-                    $erreurs = true;
-                    echo "<p>Veuillez renseigner le place</p>";
-                }
 
                 if(isset($_POST['score']) && !empty($_POST['score'])){
                     echo "<p>score : ".$_POST['score']."</p>";
-                }
-                else{
-                    $erreurs = true;
-                    echo "<p>Veuillez renseigner le score</p>";
                 }
 
                 if(isset($_POST['cgu']) && !empty($_POST['cgu'])){
@@ -183,12 +163,12 @@
                 
                     // exit;
                     // Redirection vers index.php
-                    // header('Location:   ../../../index.php');
+                    // header('Location:   .././admin_index.php');
                     echo '<p>Le Meeting a bien été modifié</p>';
-                    echo "<p><a href='../../index.php'>Retour a la page d'accueil</a></p>";
+                    echo "<p><a href='./admin_index.php'>Retour a la page d'accueil</a></p>";
                 }
                 else{
-                    echo "<p><a href='./edit_meetings.php'>Retour au formulaire</a></p>";
+                    echo "<p><a href='./admin_index.php'>Retour a la page d'accueil</a></p>";
                 }
             }
 
@@ -215,10 +195,10 @@
                     $_SESSION['delete'] = true;
                     
                     echo '<p>Le Meeting a bien été supprimée</p>';
-                    echo "<p><a href='../../index.php'>Retour a la page d'accueil</a></p>";
+                    echo "<p><a href='./admin_index.php'>Retour a la page d'accueil</a></p>";
                 }
                 else{
-                    echo "<p><a href='../../index.php'>Retour au formulaire</a></p>";
+                    echo "<p><a href='./admin_index.php'>Retour a la page d'accueil</a></p>";
                 }
             }   
         ?>    

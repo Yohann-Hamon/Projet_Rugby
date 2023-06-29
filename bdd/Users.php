@@ -1,5 +1,5 @@
 <?php
-class Utilisateurs extends BDD{
+class Users extends BDD{
 	private $id;
 	private $email;
 	private $password;

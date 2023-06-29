@@ -3,7 +3,7 @@
 	class BDD{
 		
 		private $host = 'localhost';
-		private $dbname = 'rugby__world_cup_2023';
+		private $dbname = 'rugby_world_cup_2023';
 		private $user = 'root';
 		private $pwd = '';
 

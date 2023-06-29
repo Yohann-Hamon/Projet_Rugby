@@ -1,5 +1,5 @@
 <?php
-require_once './bdd/BDD.php';
+require_once __DIR__. '/BDD.php';
 
 class Players extends BDD{
 	private $id;

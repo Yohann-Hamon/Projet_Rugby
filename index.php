@@ -10,24 +10,13 @@
         <!-- COMPONENTS -->
         <!-- buttons -->
         <link rel="stylesheet" href="./front/components/molecules/buttons/navbutton/navbutton.css">
-        <!-- meeting -->
-        <!-- team -->
-        <link rel="stylesheet" href="./front/components/molecules/team/team.css">
-
+        <!-- insta -->
         <link rel="stylesheet" href="./front/components/molecules/insta/insta.css">
-        <!-- player -->
-        <link rel="stylesheet" href="./front/components/molecules/player/player.css">
 
         <!-- Header -->
         <link rel="stylesheet" href="./front/components/organisms/header/header.css">
         <!-- Hero -->
         <link rel="stylesheet" href="./front/components/organisms/hero/hero.css">
-        <!-- meetings -->
-        <link rel="stylesheet" href="./front/components/organisms/meetings/meetings.css">
-        <!-- teams -->
-        <link rel="stylesheet" href="./front/components/organisms/teams/teams.css">
-        <!-- players -->
-        <link rel="stylesheet" href="./front/components/organisms/players/players.css">
 
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
