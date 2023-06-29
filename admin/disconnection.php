@@ -9,8 +9,7 @@
 
     session_destroy();
     
-    echo'Vous avez bien été deconnecté';
-    // header('Location: index.php');
+    echo'Vous êtes deconnecté';
 ?>
 
 <a href="../index.php">Revenir à l'accueil</a> 

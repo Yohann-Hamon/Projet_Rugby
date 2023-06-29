@@ -5,10 +5,10 @@
 <body>
 <form action="user_processing.php" method="POST" >
 
-    <label for="mail"> E-mail </label>
+    <label for="mail"> E-mail : </label>
     <input type="mail" name="mail" id="mail">
     <br>
-    <label for="username" > username </label>
+    <label for="username" > Identifiant : </label>
     <input type="username" name="username" id="username" >
     <br>
     <label for="password" > Mot de passe : </label>

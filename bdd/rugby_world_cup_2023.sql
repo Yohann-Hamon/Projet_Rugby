@@ -31,7 +31,7 @@ DROP TABLE IF EXISTS `meetings`;
 CREATE TABLE IF NOT EXISTS `meetings` (
   `id` int NOT NULL AUTO_INCREMENT,
   `datetime` datetime NOT NULL,
-  `team_1` int NOT NULL,
+  `team_1` int NOT NULL, 
   `team_2` int NOT NULL,
   `place` varchar(255) NOT NULL,
   `score` varchar(255) NOT NULL,

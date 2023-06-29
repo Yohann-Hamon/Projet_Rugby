@@ -17,7 +17,7 @@
         
         ?>
             <!-- <form method="POST"> -->
-                <label for="pools">Liste des pools : </label>
+                <label for="pools">Liste des poules : </label>
                 <select name="pools" id="pools" onchange="traiterSelection()">
                 <?php
                     foreach($teams_pool  as $a_pool )

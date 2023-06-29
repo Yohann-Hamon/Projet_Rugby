@@ -7,7 +7,6 @@
                 exit;
             }
 
-            // require_once '../BDD.php';
             require_once '../bdd/Meetings.php';
 ?>
 
@@ -17,69 +16,66 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Traitement des formulaires meeting</title>
+        <title>Traitement des formulaires rencontres</title>
     </head>
     <body>
         <?php
 
             if(isset($_POST['add'])){
-                echo "<p>Le formulaire a été envoyé</p>";
+                echo "<p>Formulaire envoyée !</p>";
 
                 $erreurs = false;
 
                 if(isset($_POST['datetime']) && !empty($_POST['datetime'])){
-                    echo "<p>datetime : ".$_POST['datetime']."</p>";
+                    echo "<p>Date : ".$_POST['datetime']."</p>";
                 }
                 else{
                     $erreurs = true;
-                    echo "<p>Veuillez renseigner l'équipe</p>";
+                    echo "<p>Veuillez renseigner la date !</p>";
                 }
 
                 if(isset($_POST['team_1']) && !empty($_POST['team_1'])){
-                    echo "<p>team_1 : ".$_POST['team_1']."</p>";
+                    echo "<p>Equipe 1 : ".$_POST['team_1']."</p>";
                 }
                 else{
                     $erreurs = true;
-                    echo "<p>Veuillez renseigner le world rank</p>";
+                    echo "<p>Veuillez renseigner l'Equipe 1 !</p>";
                 }
 
                 if(isset($_POST['team_2']) && !empty($_POST['team_2'])){
-                    echo "<p>team_2 : ".$_POST['team_2']."</p>";
+                    echo "<p>Equipe 2 : ".$_POST['team_2']."</p>";
                 }
                 else{
                     $erreurs = true;
-                    echo "<p>Veuillez renseigner le team_2</p>";
+                    echo "<p>Veuillez renseigner l'équipe 2 !</p>";
                 }
 
                 if(isset($_POST['place']) && !empty($_POST['place'])){
-                    echo "<p>place : ".$_POST['place']."</p>";
+                    echo "<p>Lieu : ".$_POST['place']."</p>";
                 }
                 else{
                     $erreurs = true;
-                    echo "<p>Veuillez renseigner le place</p>";
+                    echo "<p>Veuillez renseigner le lieu !</p>";
                 }
 
                 if(isset($_POST['score']) && !empty($_POST['score'])){
-                    echo "<p>score : ".$_POST['score']."</p>";
+                    echo "<p>Score : ".$_POST['score']."</p>";
                 }
                 else{
                     $erreurs = true;
-                    echo "<p>Veuillez renseigner le score</p>";
+                    echo "<p>Veuillez renseigner le score !</p>";
                 }
 
                 if(isset($_POST['cgu']) && !empty($_POST['cgu'])){
-                    echo "<p>CGU acceptées</p>";
+                    echo "<p>CGU acceptées !</p>";
                 }
                 else{
                     $erreurs = true;
-                    echo "<p>Veuillez accepter la politique de confidentialitée</p>";
+                    echo "<p>Veuillez accepter la politique de confidentialitée !</p>";
                 }
 
                 if($erreurs == false)
                 {
-                    // Création d'une variable de session
-                    // $_SESSION['Admin'] = true;
-                    // $_SESSION['Admin'] = $_POST['lastname'];
                     $meeting = new Meetings();
                     $meetings = $meeting->add( 
                         $_POST['datetime'], 
@@ -90,11 +86,8 @@
 
                     $_SESSION['add'] = true;
                     $_SESSION['datetime'] = $_POST['datetime'];
-                    echo '<p>Le meeting ' . $_SESSION['datetime'] . ' a bien été ajouté</p>';
+                    echo '<p>La rencontre ' . $_SESSION['datetime'] . ' a bien été ajoutée !</p>';
                 
-                    // exit;
-                    // Redirection vers index.php
-                    // header('Location:   ../../index.php');
                     echo "<p><a href='./admin_index.php'>Retour a la page d'accueil</a></p>";
                 }
                 else{
@@ -104,20 +97,20 @@
 
 
             if(isset($_POST['edit'])){
-                echo "<p>Le formulaire a été envoyé</p>";
+                echo "<p>Formulaire envoyée !</p>";
 
                 $erreurs = false;
 
                 if(isset($_POST['id']) && !empty($_POST['id'])){
-                    echo "<p>meeting : ".$_POST['id']."</p>";
+                    echo "<p>Rencontre : ".$_POST['id']."</p>";
                 }
                 else{
                     $erreurs = true;
-                    echo "<p>Veuillez sélectionnée le meeting</p>";
+                    echo "<p>Veuillez sélectionnée la rencontre !</p>";
                 }
 
                 if(isset($_POST['datetime']) && !empty($_POST['datetime'])){
-                    echo "<p>datetime : ".$_POST['datetime']."</p>";
+                    echo "<p>Date : ".$_POST['datetime']."</p>";
                 }
 
                 if(isset($_POST['team_1']) && !empty($_POST['team_1'])){
@@ -129,31 +122,25 @@
                 }
 
                 if(isset($_POST['place']) && !empty($_POST['place'])){
-                    echo "<p>place : ".$_POST['place']."</p>";
+                    echo "<p>Lieu : ".$_POST['place']."</p>";
                 }
 
                 if(isset($_POST['score']) && !empty($_POST['score'])){
-                    echo "<p>score : ".$_POST['score']."</p>";
+                    echo "<p>Score : ".$_POST['score']."</p>";
                 }
 
                 if(isset($_POST['cgu']) && !empty($_POST['cgu'])){
-                    echo "<p>CGU acceptées</p>";
+                    echo "<p>CGU acceptées !</p>";
                 }
                 else{
                     $erreurs = true;
-                    echo "<p>Veuillez accepter la politique de confidentialitée</p>";
+                    echo "<p>Veuillez accepter la politique de confidentialitée !</p>";
                 }
 
                 if($erreurs == false)
                 {
-                    // $id = $_POST['id'];
-                    
-                    // Création d'une variable de session
-                    // $_SESSION['Admin'] = true;
-                    // $_SESSION['Admin'] = $_POST['lastname'];
                     $meeting = new Meetings();
 
-                    // $meetings = $_POST['meetings'];
                     $datetime = $_POST['datetime'];
                     $team_1 = $_POST['team_1'];
                     $team_2 = $_POST['team_2'];
@@ -165,12 +152,9 @@
 
                     $_SESSION['edit'] = true;
                     $_SESSION['datetime'] = $_POST['datetime'];
-                    echo '<p>Le meeting ' . $_SESSION['datetime'] . ' a bien été modifié</p>';
+                    echo '<p>La rencontre du ' . $_SESSION['datetime'] . ' a bien été modifiée !</p>';
                 
-                    // exit;
-                    // Redirection vers index.php
-                    // header('Location:   .././admin_index.php');
-                    echo '<p>Le Meeting a bien été modifié</p>';
+                    echo '<p>La rencontre a bien été modifiée !</p>';
                     echo "<p><a href='./admin_index.php'>Retour a la page d'accueil</a></p>";
                 }
                 else{
@@ -180,16 +164,16 @@
 
 
             if(isset($_POST['delete'])){
-                echo "<p>Le meeting à bien été supprimée</p>";
+                echo "<p>Le rencontre à bien été supprimée ! </p>";
 
                 $erreurs = false;
 
                 if(isset($_POST['meetings']) && !empty($_POST['meetings'])){
-                    echo "<p>meeting : ".$_POST['meetings']."</p>";
+                    echo "<p>Rencontre : ".$_POST['meetings']."</p>";
                 }
                 else{
                     $erreurs = true;
-                    echo "<p>Veuillez sélectionnée le meeting</p>";
+                    echo "<p>Veuillez sélectionnée la rencontre !</p>";
                 }
 
                 if($erreurs == false)
@@ -200,7 +184,7 @@
 
                     $_SESSION['delete'] = true;
                     
-                    echo '<p>Le Meeting a bien été supprimée</p>';
+                    echo '<p>Le rencontre a bien été supprimée !</p>';
                     echo "<p><a href='./admin_index.php'>Retour a la page d'accueil</a></p>";
                 }
                 else{

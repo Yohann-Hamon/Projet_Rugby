@@ -16,7 +16,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>edit meeting</title>
+        <title>Modification rencontre</title>
     </head>
     <body>
 
@@ -50,23 +50,23 @@
                                     <br>
                                     <br>
                                     <br>
-                                    <label for="datetime">date : </label>
+                                    <label for="datetime">Date : </label>
                                     <input type="datetime" name="datetime" id="datetime">
                                     <br>
                                     <br>
-                                    <label for="team_1">team 1 : </label>
+                                    <label for="team_1">Equipe 1 : </label>
                                     <input type="number" name="team_1" id="team_1">
                                     <br>
                                     <br>
-                                    <label for="team_2">team 2 : </label>
+                                    <label for="team_2">Equipe 2 : </label>
                                     <input type="number" name="team_2" id="team_2">
                                     <br>
                                     <br>
-                                    <label for="place">place : </label>
+                                    <label for="place">Lieu : </label>
                                     <input type="text" name="place" id="place">
                                     <br>
                                     <br>
-                                    <label for="score">score : </label>
+                                    <label for="score">Score : </label>
                                     <input type="text" name="score" id="score">
                                     <br>
                                     <br>
@@ -82,7 +82,7 @@
                 }
                 else{
                     $erreurs = true;
-                    echo "<p>Veuillez sélectionnez le meeting</p>";
+                    echo "<p>Veuillez sélectionnez la rencontre !</p>";
                 }
             }
         ?>    
