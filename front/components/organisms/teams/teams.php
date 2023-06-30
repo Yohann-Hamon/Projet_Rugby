@@ -17,47 +17,34 @@
 <section class="o-teams">
     <div class="team-background"></div>
     <h1 class="o-teams title  primary900">Les équipes</h1>
-
-    
         
-    <div class="o-teams__pools">
+    <div class="o-teams__pools js-pools">
         <?php
-            // foreach($teams_pool as $a_pool)
-            // {
-            //     poolbuttonComponent($a_pool['pool']);    
-            // } 
+            foreach($teams_pool as $a_pool)
+            {
+                poolbuttonComponent($a_pool['pool'],$a_pool['pool']);    
+            } 
         ?>
-        <button class="pool-a">A</button>
-        <button class="pool-b">B</button>
-        <button class="pool-c">C</button>
-        <button class="pool-d">D</button>
+        
     </div>
    
-    <div class="o-teams__table">
+    <div class="o-teams__table js-teams">
         <?php
-            // foreach($teams_ranked as $a_team)
-            // {
-                
-
                 foreach($teams_ranked as $a_team)
                 {
                     // if($a_team['pool'] === $selectedValue)
-                    // {
-                        $a_team['pool'] = 'A';
+                    // {                  
 
                         include './front/components/molecules/team/team.php';   
                     // }
                 }
 
-
-                
-
                     //     if($une_equipe['Id'] == $un_joueur['Equipe_id'])
                     //     {
-                            include './front/components/molecules/team/team.php';    
+                            // include './front/components/molecules/team/team.php';    
                     //     }
-                    } 
-                }  
+                //     } 
+                // }  
             ?>
 
     </div>

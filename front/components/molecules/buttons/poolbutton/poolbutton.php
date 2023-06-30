@@ -1,8 +1,10 @@
 <div class="poolButton">
     <?php
-        function poolButtonComponent($text)
+        function poolButtonComponent($class, $text)
         {
-            echo'<button class="m-button button '.$text.'-pool">'.$text.'</button>';
+            echo'<button class="m-button pool-button '.$class.'-pool">
+                '.$text.'
+            </button>';
         }   
     ?>
 </div>

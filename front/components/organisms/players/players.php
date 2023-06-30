@@ -21,7 +21,7 @@
 
             foreach($players as $a_player){
 
-                // include './front/components/molecules/player/player.php';
+                include './front/components/molecules/player/player.php';
             }
         ?>
     </div>
