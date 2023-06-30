@@ -22,7 +22,7 @@
 <br>
 <br>
 <br>
-    <input type="submit" class=" position-absolute top-100 start-50 translate-middle text-center btn btn-dark fs-3" name="registration" value="S'inscrire">
+    <input type="submit" name="registration" value="S'inscrire">
 </form>
 </div>
 </body>

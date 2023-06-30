@@ -77,7 +77,7 @@
                 }
                 else{
                     $erreurs = true;
-                    echo "<p>Veuillez renseigner votre email !</p>";
+                    echo "<p>Veuillez renseigner l'email !</p>";
                 }
 
                 if(isset($_POST['password']) && !empty($_POST['password'])){
@@ -85,7 +85,7 @@
                 }
                 else{
                     $erreurs = true;
-                    echo "<p>Veuillez renseigner votre mot de passe !</p>";
+                    echo "<p>Veuillez renseigner le mot de passe !</p>";
                 }
 
 
