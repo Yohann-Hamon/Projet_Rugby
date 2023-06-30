@@ -11,6 +11,8 @@
 <form action="user_processing.php" method="POST" >
 <h1 class="title text-center">S'inscrire</h1> 
 <br>
+<br>
+<br>
     <label for="mail"> E-mail : </label>
     <input type="mail" name="mail" id="mail">
     <br>

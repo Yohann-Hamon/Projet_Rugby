@@ -9,7 +9,9 @@
 <body class="p-3 mb-2 bg-primary text-white text-center fs-3">
 <div class=" position-absolute top-50 start-50 translate-middle border border-primary border-3">
 <form action="user_processing.php" method="POST" >
-<h1 class="title text-center">S'inscrire</h1> 
+<h1 class="title text-center">Se connecter</h1> 
+<br>
+<br>
 <br>
     <label for="mail"> E-mail : </label>
     <input type="mail" name="mail" id="mail">
