@@ -103,7 +103,7 @@
                     echo "<p>L'admin " . $_SESSION['username'] . " est connecté.</p>";
 
                     // Redirection vers index.php
-                    echo "<p><a href='./admin_index.php' class='text-center btn btn-dark fs-3'>Accueil</a></p>";
+                    echo "<p><a href='./admin_index.php'>Accueil</a></p>";
                 }
                 else{
                     echo "<p><a href='./connection.php' class='text-center btn btn-dark fs-3'>Retour au formulaire</a></p>";
