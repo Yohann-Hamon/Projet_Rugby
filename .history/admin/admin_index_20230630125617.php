@@ -35,7 +35,7 @@
     <body class="p-3 mb-2 bg-primary text-white text-center fs-3">
         <?php
                 echo '<p>'.$_SESSION['username'].' ADMIN connecté </p>';
-                echo '<a href="disconnection.php" class=" text-center btn btn-dark fs-3 button">deconnexion</a>';
+                echo '<a href="disconnection.php" class="  position-absolute top-100 start-50 translate-middle text-center btn btn-dark fs-3 button">deconnexion</a>';
                 
                 //meetings
                 include './admin_components/meetings/admin_meetings.php';
