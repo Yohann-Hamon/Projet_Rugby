@@ -27,7 +27,7 @@
         <img src="./front/components/molecules/meeting/country/france.png" class="country">
         <p><?=$a_meeting['score']?><p>
         <p><?=$a_meeting['team_2']?><p>
-        <img src="./front/components/molecules/meeting/country/italie.png" class="country">
+        <img src="./country/italie.png" class="country">
         
     </div>
     <p><?=$a_meeting['place']?><p>
