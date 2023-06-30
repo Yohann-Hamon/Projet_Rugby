@@ -34,7 +34,19 @@ body {
 }
 
 .o-teams {
+    display: flex;
+    
     margin: 0;
     padding-top: 84px;
     text-align: center;
+}
+
+.pool_visible
+{
+    display: inline-block;
+}
+
+.pool_hidden
+{
+    display: none;
 }

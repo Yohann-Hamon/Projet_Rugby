@@ -12,6 +12,17 @@
 
             foreach($meetings as $a_meeting){
 
+                // $date = new DateTime($a_meeting['datetime']);
+
+                // setlocale(LC_TIME, 'fr_FR.utf8', 'fra');
+
+                // // Formatage de l'heure selon le format souhaité
+                // $jour_semaine = strftime('%A', $date->getTimestamp());
+                // $day = $date->format('j');
+                // $month = $strftime('%B', $date->getTimestamp());
+                // $hour = $date->format('H');
+                // $minute = $date->format('i');
+                
                 include './front/components/molecules/meeting/meeting.php';
             }
         ?>

@@ -1,4 +1,4 @@
-<table class="o-team">
+<table class="o-team js-team">
   <tr>
     <td><?=$a_team['world_rank']?></td>
     <td><img class="o-team__emblem" src="<?=$a_team['emblem']?>" alt="emblem"></td>
