@@ -1,11 +1,22 @@
 .o-player
 {
+    color: aliceblue;
     display: flex;
-    justify-content: space-around;
+    width: 1000px;
+    height: 1000px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
 }
 
 .o-player__picture
 {
-    width: 200px;
-    height: 200px;
+    width: 600px;
+    height: 600px;
+}
+
+.o-player__data
+{
+    /* width: 200px;
+    height: 200px; */
 }

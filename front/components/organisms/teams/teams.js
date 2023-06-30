@@ -23,7 +23,7 @@
 // teams.elements.team = teams.elements.teams.querySelector('.js-team')
 // teams.elements.poolButton = teams.elements.teamsSection.querySelectorAll('.js-pool')
  
-
+const team = document.querySelectorAll('.js-team')
 const poolButtons = document.querySelectorAll('.pool-button')
 
 for( const poolButton of poolButtons)

@@ -32,11 +32,7 @@
         <?php
                 foreach($teams_ranked as $a_team)
                 {
-                    // if($a_team['pool'] === $selectedValue)
-                    // {                  
-
-                        include './front/components/molecules/team/team.php';   
-                    // }
+                    include './front/components/molecules/team/team.php';   
                 }
 
                     //     if($une_equipe['Id'] == $un_joueur['Equipe_id'])
@@ -53,4 +49,4 @@
     ?>
 </section>
 
-<script src="./front/components/organisms/teams/teams.js"></script>
+<!-- <script src="./front/components/organisms/teams/teams.js"></script> -->
