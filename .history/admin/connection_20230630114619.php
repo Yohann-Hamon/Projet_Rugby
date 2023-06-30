@@ -20,7 +20,7 @@
 <br>
 <br>
 <br>
-        <input type="submit" class=" position-absolute top-100 start-50 translate-middle text-center btn btn-dark fs-3" name="connection" value="Se connecter">
+        <input type="submit" class=" text-center btn btn-dark fs-3" name="connection" value="Se connecter">
     </form>
 </div>
 </body>

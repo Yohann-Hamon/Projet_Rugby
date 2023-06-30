@@ -7,20 +7,17 @@
 ?>
 <body class="p-3 mb-2 bg-primary text-white">
 <div class=" position-absolute top-50 start-50 translate-middle border border-primary border-3">
-<h1 class="title text-center">Se connecter</h1>    
-<br>
-<br>
-<br>
+<h1 class="title text-center"></h1>    
 <form action="user_processing.php" method="POST" >
-        <label for="mail" class=" text-center fs-3"> Email : </label>
-        <input type="mail" class=" text-center fs-3" name="mail" id="mail">
+        <label for="mail" class=" text-center"> Email : </label>
+        <input type="mail" class=" text-center" name="mail" id="mail">
         <br>
-        <label for="password" class=" text-center fs-3"> Mot de passe :  </label>
-        <input type="password" class=" text-center fs-3" name="password" id="password">
+        <label for="password" class=" text-center"> Mot de passe :  </label>
+        <input type="password" class=" text-center" name="password" id="password">
 <br>
 <br>
 <br>
-        <input type="submit" class=" position-absolute top-100 start-50 translate-middle text-center btn btn-dark fs-3" name="connection" value="Se connecter">
+        <input type="submit" class=" text-center btn btn-dark" name="connection" value="Se connecter">
     </form>
 </div>
 </body>

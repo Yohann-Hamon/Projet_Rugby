@@ -13,7 +13,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
         <title>Traitement du formulaire admin</title>
     </head>
-    <body class="p-3 mb-2 bg-primary text-white text-center fs-3">
+    <body class="p-3 mb-2 bg-primary text-white">
         <?php
             if(isset($_POST['registration'])){
                 echo "<p>Formulaire envoyé !</p>";
@@ -77,7 +77,7 @@
                 }
                 else{
                     $erreurs = true;
-                    echo "<p>Veuillez renseigner votre email !</p>";
+                    echo "<p>Veuillez renseigner l'email !</p>";
                 }
 
                 if(isset($_POST['password']) && !empty($_POST['password'])){
@@ -85,7 +85,7 @@
                 }
                 else{
                     $erreurs = true;
-                    echo "<p>Veuillez renseigner votre mot de passe !</p>";
+                    echo "<p>Veuillez renseigner le mot de passe !</p>";
                 }
 
 
